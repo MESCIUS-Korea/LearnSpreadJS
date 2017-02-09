@@ -5,8 +5,8 @@ import { RouterModule, Routes }  from '@angular/router';
 import { OverviewComponent } from "./overview/overview.component";
 import { InstallationComponent } from "./installation/installation.component";
 import { RequirementsComponent } from "./requirements/requirements.component";
-import { ReferencingComponent } from "./referencing/referencing.component";
-import { FilterComponent } from "./flexgrid/filter/filter.component";
+import { LicensingComponent } from "./licensing/licensing.component";
+import { InitializeComponent } from "./core/initialize/initialize.component";
 
 
 
@@ -14,8 +14,8 @@ const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
     { path: 'installation', component: InstallationComponent },      
     { path: 'requirements', component: RequirementsComponent },      
-    { path: 'referencing', component: ReferencingComponent },  
-    { path: 'flexgrid-filter', component: FilterComponent },
+    { path: 'licensing', component: LicensingComponent },              
+    { path: 'initialize', component: InitializeComponent },      
 ];
 
 @NgModule({

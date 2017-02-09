@@ -5,20 +5,20 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ReferencingComponent } from './referencing/referencing.component';
 import { OverviewComponent } from './overview/overview.component';
-import { FilterComponent } from './flexgrid/filter/filter.component';
 import { InstallationComponent } from './installation/installation.component';
 import { RequirementsComponent } from './requirements/requirements.component';
+import { LicensingComponent } from './licensing/licensing.component';
+import { InitializeComponent } from './core/initialize/initialize.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ReferencingComponent,
-    OverviewComponent,
-    FilterComponent,
+    AppComponent,    
+    OverviewComponent,    
     InstallationComponent,
-    RequirementsComponent
+    RequirementsComponent,
+    LicensingComponent,
+    InitializeComponent
   ],
   imports: [
     BrowserModule,
