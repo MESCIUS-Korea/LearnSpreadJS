@@ -12,6 +12,7 @@ import { InitializeComponent } from "./core/initialize/initialize.component";
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
+    { path: 'main', component: OverviewComponent },  
     { path: 'installation', component: InstallationComponent },      
     { path: 'requirements', component: RequirementsComponent },      
     { path: 'licensing', component: LicensingComponent },              
