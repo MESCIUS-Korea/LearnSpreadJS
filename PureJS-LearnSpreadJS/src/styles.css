@@ -1,5 +1,9 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nanum Gothic'), local('NanumGothic-Regular'), url(./assets/fonts/NanumGothic-Regular.ttf) format('ttf');
+}
 
 .nav-side-menu {
   overflow-x: hidden;  
@@ -219,7 +223,7 @@ body {
   font-weight: 300;  
   margin: 0px;
   padding: 0px;  	
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   line-height: 2.0em;
 }
 
@@ -387,3 +391,6 @@ pre, pre.hljs {
     color: #d14;
 }
 
+hr{
+  padding-bottom: 15px;
+}
