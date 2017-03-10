@@ -16,14 +16,10 @@ const APP_ROUTES:Routes = [
     { path: 'main', component: OverviewComponent },  
     { path: 'installation', component: InstallationComponent },      
     { path: 'requirements', component: RequirementsComponent },      
-    { path: 'licensing', component: LicensingComponent },              
-<<<<<<< HEAD
-    { path: 'initialize', component: InitializeComponent },   
-    { path: 'tabstrip', component: TabStripComponent }   
-=======
+    { path: 'licensing', component: LicensingComponent },   
     { path: 'initialize', component: InitializeComponent },
-    { path: 'spreadsheet', component: SpreadsheetComponent },      
->>>>>>> origin/master
+    { path: 'spreadsheet', component: SpreadsheetComponent },    
+    { path: 'tabstrip', component: TabStripComponent },
 ];
 
 @NgModule({
