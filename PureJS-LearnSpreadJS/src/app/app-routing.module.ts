@@ -7,17 +7,24 @@ import { InstallationComponent } from "./installation/installation.component";
 import { RequirementsComponent } from "./requirements/requirements.component";
 import { LicensingComponent } from "./licensing/licensing.component";
 import { InitializeComponent } from "./core/initialize/initialize.component";
-
+import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.component';
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
+
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
     { path: 'main', component: OverviewComponent },  
     { path: 'installation', component: InstallationComponent },      
-    { path: 'requirements', component: RequirementsComponent },      
+    { path: 'requirements', component: RequirementsComponent },
     { path: 'licensing', component: LicensingComponent },              
     { path: 'initialize', component: InitializeComponent },
     { path: 'spreadbackground', component: SpreadBackgroundComponent },      
+    { path: 'licensing', component: LicensingComponent },   
+    { path: 'initialize', component: InitializeComponent },
+    { path: 'spreadsheet', component: SpreadsheetComponent },    
+    { path: 'tabstrip', component: TabStripComponent },
+
 ];
 
 @NgModule({

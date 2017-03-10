@@ -10,7 +10,11 @@ import { InstallationComponent } from './installation/installation.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { LicensingComponent } from './licensing/licensing.component';
 import { InitializeComponent } from './core/initialize/initialize.component';
+import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.component';
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
+
+
 
 
 @NgModule({
@@ -21,7 +25,9 @@ import { SpreadBackgroundComponent } from './core/spread/spread-background/sprea
     RequirementsComponent,
     LicensingComponent,
     InitializeComponent,
-    SpreadBackgroundComponent
+    SpreadsheetComponent,
+    TabStripComponent,    
+    SpreadBackgroundComponent,
   ],
   imports: [
     BrowserModule,

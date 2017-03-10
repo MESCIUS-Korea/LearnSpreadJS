@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
         "header": "Overview",
         "path": "main"
@@ -156,6 +157,73 @@
                     }
                 ]
             }
+=======
+[
+  {
+    "header": "Overview",
+    "path": "main"
+  },
+  {
+    "header": "SpreadJS 설치",
+    "path": "installation"
+  },
+  {
+    "header": "요구사양",
+    "path": "requirements"
+  },
+  {
+    "header": "SpreadJS 라이선싱",
+    "path": "licensing"
+  },   
+  {
+    "header": "핵심기능 (Core)",
+    "path": "core-main",
+    "items": [
+      {
+        "header": "Spread/스프레드",
+        "path": "core-spread",
+        "items": [
+          {
+            "header": "Spread 초기화",
+            "path": "initialize"
+          },
+          {
+            "header": "Spreadsheet",
+            "path": "spreadsheet"
+          },
+          {
+            "header": "탭 스트립",
+            "path": "tabstrip"
+          },
+          {
+            "header": "스크롤 바",
+            "path": ""
+          },
+          {
+            "header": "Spread 배경",
+            "path": ""
+          },
+          {
+            "header": "Spread 속도향상",
+            "path": ""
+          },
+          {
+            "header": "Spread 이벤트",
+            "path": ""
+          },
+          {
+            "header": "Spread JSON 데이터",
+            "path": ""
+          },
+          {
+            "header": "데이터 소스 Serialize",
+            "path": ""
+          },
+          {
+            "header": "사용자 Item Serialize",
+            "path": ""
+          }
+>>>>>>> origin/master
         ]
     },
     {
