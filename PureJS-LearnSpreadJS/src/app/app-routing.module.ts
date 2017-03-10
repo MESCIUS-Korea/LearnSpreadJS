@@ -9,6 +9,7 @@ import { LicensingComponent } from "./licensing/licensing.component";
 import { InitializeComponent } from "./core/initialize/initialize.component";
 import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.component';
 import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
+import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
 
 
@@ -19,12 +20,10 @@ const APP_ROUTES:Routes = [
     { path: 'requirements', component: RequirementsComponent },
     { path: 'licensing', component: LicensingComponent },              
     { path: 'initialize', component: InitializeComponent },
-    { path: 'spreadbackground', component: SpreadBackgroundComponent },      
-    { path: 'licensing', component: LicensingComponent },   
-    { path: 'initialize', component: InitializeComponent },
     { path: 'spreadsheet', component: SpreadsheetComponent },    
     { path: 'tabstrip', component: TabStripComponent },
-
+    { path: 'ScrollBar', component: ScrollBarComponent },
+    { path: 'spreadbackground', component: SpreadBackgroundComponent },    
 ];
 
 @NgModule({
