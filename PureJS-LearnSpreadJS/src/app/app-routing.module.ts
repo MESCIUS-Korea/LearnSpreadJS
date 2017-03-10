@@ -8,7 +8,7 @@ import { RequirementsComponent } from "./requirements/requirements.component";
 import { LicensingComponent } from "./licensing/licensing.component";
 import { InitializeComponent } from "./core/initialize/initialize.component";
 
-
+import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -16,7 +16,8 @@ const APP_ROUTES:Routes = [
     { path: 'installation', component: InstallationComponent },      
     { path: 'requirements', component: RequirementsComponent },      
     { path: 'licensing', component: LicensingComponent },              
-    { path: 'initialize', component: InitializeComponent },      
+    { path: 'initialize', component: InitializeComponent },
+    { path: 'spreadbackground', component: SpreadBackgroundComponent },      
 ];
 
 @NgModule({
