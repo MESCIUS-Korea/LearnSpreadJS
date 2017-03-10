@@ -11,6 +11,9 @@ import { RequirementsComponent } from './requirements/requirements.component';
 import { LicensingComponent } from './licensing/licensing.component';
 import { InitializeComponent } from './core/initialize/initialize.component';
 import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.component';
+import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.component';
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.componen
     RequirementsComponent,
     LicensingComponent,
     InitializeComponent,
-    ScrollBarComponent
+    ScrollBarComponent,
+    TabStripComponent,
+    SpreadsheetComponent
+
   ],
   imports: [
     BrowserModule,

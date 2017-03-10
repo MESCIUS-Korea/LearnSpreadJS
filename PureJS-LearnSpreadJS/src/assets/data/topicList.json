@@ -29,11 +29,11 @@
           },
           {
             "header": "Spreadsheet",
-            "path": ""
+            "path": "spreadsheet"
           },
           {
             "header": "탭 스트립",
-            "path": ""
+            "path": "tabstrip"
           },
           {
             "header": "스크롤 바",

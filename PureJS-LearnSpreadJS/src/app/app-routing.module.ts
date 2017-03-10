@@ -8,7 +8,8 @@ import { RequirementsComponent } from "./requirements/requirements.component";
 import { LicensingComponent } from "./licensing/licensing.component";
 import { InitializeComponent } from "./core/initialize/initialize.component";
 import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.component';
-
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
+import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -18,6 +19,11 @@ const APP_ROUTES:Routes = [
     { path: 'licensing', component: LicensingComponent },              
     { path: 'initialize', component: InitializeComponent },     
     { path: 'ScrollBar', component: ScrollBarComponent },  
+    { path: 'licensing', component: LicensingComponent },   
+    { path: 'initialize', component: InitializeComponent },
+    { path: 'spreadsheet', component: SpreadsheetComponent },    
+    { path: 'tabstrip', component: TabStripComponent },
+
 ];
 
 @NgModule({
