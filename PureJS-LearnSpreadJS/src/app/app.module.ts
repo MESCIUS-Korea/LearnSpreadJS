@@ -10,6 +10,7 @@ import { InstallationComponent } from './installation/installation.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { LicensingComponent } from './licensing/licensing.component';
 import { InitializeComponent } from './core/initialize/initialize.component';
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InitializeComponent } from './core/initialize/initialize.component';
     InstallationComponent,
     RequirementsComponent,
     LicensingComponent,
-    InitializeComponent
+    InitializeComponent,
+    TabStripComponent
   ],
   imports: [
     BrowserModule,

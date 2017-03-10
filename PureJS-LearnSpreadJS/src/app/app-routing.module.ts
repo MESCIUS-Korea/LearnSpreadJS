@@ -7,6 +7,7 @@ import { InstallationComponent } from "./installation/installation.component";
 import { RequirementsComponent } from "./requirements/requirements.component";
 import { LicensingComponent } from "./licensing/licensing.component";
 import { InitializeComponent } from "./core/initialize/initialize.component";
+import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 
 
 
@@ -16,7 +17,8 @@ const APP_ROUTES:Routes = [
     { path: 'installation', component: InstallationComponent },      
     { path: 'requirements', component: RequirementsComponent },      
     { path: 'licensing', component: LicensingComponent },              
-    { path: 'initialize', component: InitializeComponent },      
+    { path: 'initialize', component: InitializeComponent },   
+    { path: 'tabstrip', component: TabStripComponent }   
 ];
 
 @NgModule({
