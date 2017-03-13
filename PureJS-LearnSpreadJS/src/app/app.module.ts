@@ -15,6 +15,7 @@ import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.comp
 import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
 import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.component';
+import { SpreadeventsComponent } from './core/spread/spreadevents/spreadevents.component';
 
 
 
@@ -33,6 +34,7 @@ import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.comp
     ScrollBarComponent,
     SpreadBackgroundComponent,
     SpreadpaintComponent,
+    SpreadeventsComponent,
   ],
   imports: [
     BrowserModule,
