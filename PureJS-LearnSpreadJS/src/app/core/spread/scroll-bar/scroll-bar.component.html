@@ -2,51 +2,30 @@
   스크롤바 | Scroll Bar
 </h1>
 <div id="content" class="content">
-  <p>1. 스프레드 시트는 <b>의존성이 없습니다.</b> 다음 파일이 필요합니다.</p>
-  
-  <ul>
-    <li><b>gc.spread.sheets.x.xx.xxxxx.x.css</b></li>
-    <li><b>gc.spread.sheets.all.x.xx.xxxxx.x.min.js</b></li>
-  </ul>
+  <p>1.Spread.Sheets의 가로 및 세로 스크롤 바를 사용하여 시트를 이동하여 시트의 일부를 볼 수 있습니다.</p>
 
   <br/>
-  <p>2. <b>gc.spread.sheets.x.xx.xxxxx.x.css</b> 와 <b>gc.spread.sheets.all.x.xx.xxxxx.x.min.js</b>를 파일들의 상대경로를 문서의 head 섹션에 포함시킵니다. 예:</p>
-  <pre class="sample-code"><code class="html hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">'gc.spread.sheets.x.xx.xxxxx.x.css'</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">'stylesheet'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/css'</span>/&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">'gc.spread.sheets.all.x.xx.xxxxx.x.min.js'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/javascript'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/javascript'</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">'utf-8'</span>&gt;</span><span class="undefined">
-      ...
-      </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">'ss'</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">'width:100%; height:400px;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
-
-
+  <p>2. 스크롤 바는 화살표 버튼, 스크롤 박스 및 스크롤 박스 컨테이너로 구성됩니다. 스프레드의 스크롤 바를 사용하면 화살표 버튼을 누르거나 스크롤 박스를 드래그하거나 스크롤 박스와 화살표 버튼 사이의 간격을 클릭 할 수 있습니다. 이러한 동작은 다음과 같은 결과를 제공합니다:</p>
+  <ul>
+    <li><b>한 번에 한 행 또는 열을 스크롤하려면 화살표 단추를 누릅니다. </b></li>
+    <li><b>스크롤 박스를 위아래로 드래그하여 시트를 위아래로 스크롤합니다 (또는 왼쪽 및 오른쪽). </b></li>
+    <li><b>스크롤 박스와 화살표 단추 사이의 간격을 클릭하여 시트를 한 페이지 스크롤합니다. </b></li>
+  </ul>
   <br/>
   <p>
-    3. 스프레드 구성 요소는 <b>새로운 GC.Spread.Sheets.Workbook(document.getElementById('ss'), &#123; sheetCount: 1 &#125;)</b>,
-    로 초기화되고 스프레드는 'ss' id로 div에 추가됩니다. <br/>
-    여러분은 다음과 같은 방법으로 스프레드 객체를 얻을 수 있습니다: <b>var spread = GC.Spread.Sheets.findControl(document.getElementById('ss'))</b>.<br/>
-    이후, 스프레드를 커스터마이즈 할 수 있습니다. 예:
+    3. 스프레드 시트는 스크롤 박스를 끌 때 스크롤 도구 설명을 표시 할 수 있습니다. <b>showScrollTip</b> 옵션 항목을 사용하여 표시 할 스크롤 도구 설명 유형을 설정할 수 있습니다. 스크롤 툴팁은 스크롤 박스를 끌 때 뷰의 맨 위 행 또는 왼쪽 열의 번호를 표시합니다. 
   </p>
-  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
-   <span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'ss'</span>), &#123; sheetCount: <span class="hljs-number">1</span> &#125;);
-   <span class="hljs-comment">// get spread object</span>
-   <span class="hljs-comment">// var spread = GC.Spread.Sheets.findControl(document.getElementById('ss'));</span>
-&#125;;</code></pre>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread.options.showScrollTip = GC.Spread.Sheets.ShowScrollTip.horizontal;
+spread.options.showScrollTip = GC.Spread.Sheets.ShowScrollTip.vertical;
+spread.options.showScrollTip = GC.Spread.Sheets.ShowScrollTip.both;
+spread.options.showScrollTip = GC.Spread.Sheets.ShowScrollTip.none;</code></pre>
 
   <br/>
-  <p>4. jQuery와 함께 Spread.Sheets를 사용할 수 있습니다. 예:</p>
-  <pre class="sample-code"><code class="js hljs javascript">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
-   <span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook($(<span class="hljs-string">'#ss'</span>)[<span class="hljs-number">0</span>], &#123; sheetCount: <span class="hljs-number">1</span> &#125;);
-   <span class="hljs-comment">// get spread object</span>
-   <span class="hljs-comment">// var spread = $('#ss').data('workbook');</span>
-&#125;);</code></pre>
-
+  <p><b>3. showVerticalScrollbar</b> 및 <b>showHorizontalScrollbar</b> 옵션 항목을 사용하여 스크롤 바를 표시할지 여부를 제어 할 수 있습니다.</p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread.options.showVerticalScrollbar = <span class="hljs-number">false</span>;
+spread.options.showHorizontalScrollbar = <span class="hljs-number">false</span>;</code></pre>
 <br/>
 <h2>
   샘플코드:

@@ -1,48 +1,29 @@
 <h1 class="page-header">
-    Spread 배경화면
+    Spread 배경화면 | Spread Background
 </h1>
 <div id="content" class="content">
-    <p>1. 스프레드 시트는 <b>의존성이 없습니다.</b> 다음 파일이 필요합니다.</p>
-
-    <ul>
-        <li><b>gc.spread.sheets.x.xx.xxxxx.x.css</b></li>
-        <li><b>gc.spread.sheets.all.x.xx.xxxxx.x.min.js</b></li>
-    </ul>
-
+    <p>1. 스프레드 시트의 배경 모양을 사용자 정의 할 수 있습니다.</p>
     <br/>
-    <p>2. <b>gc.spread.sheets.x.xx.xxxxx.x.css</b> 와 <b>gc.spread.sheets.all.x.xx.xxxxx.x.min.js</b>를 파일들의 상대경로를 문서의 head 섹션에 포함시킵니다. 예:</p>
-    <pre class="sample-code"><code class="html hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">'gc.spread.sheets.x.xx.xxxxx.x.css'</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">'stylesheet'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/css'</span>/&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">'gc.spread.sheets.all.x.xx.xxxxx.x.min.js'</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/javascript'</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'text/javascript'</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">'utf-8'</span>&gt;</span><span class="undefined">
-      ...
-      </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">'ss'</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">'width:100%; height:400px;'</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-   <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
-
-
+    <p>2. backColor 또는 backgroundImage를 사용하여 모든 시트의 배경색 또는 배경 이미지를 설정할 수 있습니다. 배경색과 배경 이미지를 모두 설정하면 배경 이미지가 표시됩니다. 이미지가 표시됩니다. </p>
+    <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread.options.backColor = <span class="hljs-string">'red'</span>;
+<span class="hljs-comment">// The backColor will work if the backgroundImage not set.</span>  
+spread.options.backgroundImage = <span class="hljs-string">'images/back.PNG'</span>;</code></pre>
+    <p>Spread.Sheets는 <b>backgroundImageLayout</b>을 사용하여 이미지 레이아웃을 제어하는 기능을 제공합니다. 이미지 레이아웃에는 다음 유형이 포함됩니다. :</p>
+     <ul>
+      <li><b>stretch: 영역의 크기가 변경 되더라도 배경 이미지가 영역을 채웁니다.</b></li>
+      <li><b>center: 배경 이미지가 영역의 중앙에 표시됨을 나타냅니다. </b></li>
+      <li><b>zoom: 원래의 비율을 유지하면서 배경 이미지가 영역에 표시됨을 나타냅니다. </b></li>
+      <li><b>none: 배경 이미지가 원본 영역이있는 영역의 왼쪽 위 모서리에 표시됨을 나타냅니다. </b></li>
+      </ul>
+     <pre class="sample-code"><code class="js hljs javascript">spread.options.backgroundImageLayout = GC.Spread.Sheets.ImageLayout.stretch; </code></pre>   
     <br/>
     <p>
-        3. 스프레드 구성 요소는 <b>새로운 GC.Spread.Sheets.Workbook(document.getElementById('ss'), &#123; sheetCount: 1 &#125;)</b>, 로 초기화되고 스프레드는 'ss' id로 div에 추가됩니다. <br/> 여러분은 다음과 같은 방법으로 스프레드 객체를 얻을 수 있습니다: <b>var spread = GC.Spread.Sheets.findControl(document.getElementById('ss'))</b>.<br/>        이후, 스프레드를 커스터마이즈 할 수 있습니다. 예:
+        3. <b>grayAreaBackColor</b>를 사용하여 시트 뒤에 있는 회색 영역의 배경색을 설정할 수도 있습니다.
     </p>
-    <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-built_in">window</span>.onload = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
-   <span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'ss'</span>), &#123; sheetCount: <span class="hljs-number">1</span> &#125;);
-   <span class="hljs-comment">// get spread object</span>
-   <span class="hljs-comment">// var spread = GC.Spread.Sheets.findControl(document.getElementById('ss'));</span>
-&#125;;</code></pre>
+    <pre class="sample-code"><code class="js hljs javascript">spread.options.grayAreaBackColor = <span class="hljs-string">'gray'</span>; </code></pre>
 
-    <br/>
-    <p>4. jQuery와 함께 Spread.Sheets를 사용할 수 있습니다. 예:</p>
-    <pre class="sample-code"><code class="js hljs javascript">$(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>&#123;
-   <span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook($(<span class="hljs-string">'#ss'</span>)[<span class="hljs-number">0</span>], &#123; sheetCount: <span class="hljs-number">1</span> &#125;);
-   <span class="hljs-comment">// get spread object</span>
-   <span class="hljs-comment">// var spread = $('#ss').data('workbook');</span>
-&#125;);</code></pre>
+ 
 
     <br/>
     <h2>
