@@ -44,8 +44,8 @@
             "path": "spreadbackground"
           },
           {
-            "header": "Spread 속도향상",
-            "path": ""
+            "header": "Spread Paint",
+            "path": "spreadpaint"
           },
           {
             "header": "Spread 이벤트",

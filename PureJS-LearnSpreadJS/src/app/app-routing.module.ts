@@ -11,7 +11,7 @@ import { SpreadsheetComponent } from './core/spread/spreadsheet/spreadsheet.comp
 import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
-
+import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -24,6 +24,7 @@ const APP_ROUTES:Routes = [
     { path: 'tabstrip', component: TabStripComponent },
     { path: 'ScrollBar', component: ScrollBarComponent },
     { path: 'spreadbackground', component: SpreadBackgroundComponent },    
+    { path: 'spreadpaint', component: SpreadpaintComponent }
 ];
 
 @NgModule({
