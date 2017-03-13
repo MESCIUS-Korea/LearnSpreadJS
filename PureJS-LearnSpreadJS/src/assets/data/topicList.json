@@ -53,7 +53,7 @@
           },
           {
             "header": "Spread JSON 데이터",
-            "path": ""
+            "path": "SpreadfromJSONToJSONComponent"
           },
           {
             "header": "데이터 소스 Serialize",

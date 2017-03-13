@@ -13,6 +13,7 @@ import { ScrollBarComponent } from './core/Spread/scroll-bar/scroll-bar.componen
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
 import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.component';
 import { SpreadeventsComponent } from './core/spread/spreadevents/spreadevents.component';
+import { SpreadfromJSONToJSONComponent } from './core/spread/spreadfrom-json-to-json/spreadfrom-json-to-json.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -26,7 +27,8 @@ const APP_ROUTES:Routes = [
     { path: 'ScrollBar', component: ScrollBarComponent },
     { path: 'spreadbackground', component: SpreadBackgroundComponent },    
     { path: 'spreadpaint', component: SpreadpaintComponent },
-    { path: 'spreadevents', component: SpreadeventsComponent }
+    { path: 'spreadevents', component: SpreadeventsComponent },
+    { path: 'SpreadfromJSONToJSONComponent', component: SpreadfromJSONToJSONComponent }
 ];
 
 @NgModule({

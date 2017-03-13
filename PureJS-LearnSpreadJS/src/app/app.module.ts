@@ -16,6 +16,7 @@ import { TabStripComponent } from './core/spread/tab-strip/tab-strip.component';
 import { SpreadBackgroundComponent } from './core/spread/spread-background/spread-background.component';
 import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.component';
 import { SpreadeventsComponent } from './core/spread/spreadevents/spreadevents.component';
+import { SpreadfromJSONToJSONComponent } from './core/spread/spreadfrom-json-to-json/spreadfrom-json-to-json.component';
 
 
 
@@ -35,6 +36,7 @@ import { SpreadeventsComponent } from './core/spread/spreadevents/spreadevents.c
     SpreadBackgroundComponent,
     SpreadpaintComponent,
     SpreadeventsComponent,
+    SpreadfromJSONToJSONComponent,
   ],
   imports: [
     BrowserModule,

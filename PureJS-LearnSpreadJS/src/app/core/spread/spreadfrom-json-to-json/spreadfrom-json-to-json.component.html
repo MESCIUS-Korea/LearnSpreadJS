@@ -1,0 +1,28 @@
+<h1 class="page-header">
+    Spread JSON 데이터 | Spread from JSON / toJSON
+</h1>
+<div id="content" class="content">
+<p>
+1. 스프레드 시트는 JSON 직렬화 및 비 직렬화를 지원합니다. 스프레드를 JSON에 저장하고 JSON을 열어 스프레드를 초기화 할 수 있습니다.
+</p>  
+<p>
+2. <b>JSON.stringify</b>를 사용하여 스프레드의 <b>toJSON</b>에서 오는 JSON 객체를 직렬화 할 수 있습니다. 예:
+</p>  
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> jsonString = <span class="hljs-keyword">JSON</span>.stringify(spread1.toJSON()); </code></pre> 
+<p>
+3. 그런 다음 <b>JSON.parse</b>를 사용하여 JSON 문자열을 비 직렬화하고 <b>fromJSON</b>을 사용하여 Spread 객체를 초기화합니다. 그러면 <b>spread1</b>과 같은 새로운 스프레드가 생깁니다. 예:
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread2 = $(<span class="hljs-string">'#ss1'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread2.fromJSON(<span class="hljs-keyword">JSON</span>.parse(jsonStr));</code></pre> 
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/JSON' src='//codepen.io/GrapeCity-Korea/embed/jVgmJo/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/jVgmJo/'>SpreadJS.10/JSON</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>
+
+
