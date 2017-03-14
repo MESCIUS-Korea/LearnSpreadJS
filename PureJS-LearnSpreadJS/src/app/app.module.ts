@@ -17,6 +17,13 @@ import { SpreadBackgroundComponent } from './core/spread/spread-background/sprea
 import { SpreadpaintComponent } from './core/spread/spreadpaint/spreadpaint.component';
 import { SpreadeventsComponent } from './core/spread/spreadevents/spreadevents.component';
 import { SpreadfromJSONToJSONComponent } from './core/spread/spreadfrom-json-to-json/spreadfrom-json-to-json.component';
+import { DataSourceSerializeComponent } from './core/spread/data-source-serialize/data-source-serialize.component';
+import { CustomItemSerializeComponent } from './core/spread/custom-item-serialize/custom-item-serialize.component';
+import { InitializeSheetComponent } from './core/sheet/initialize-sheet/initialize-sheet.component';
+import { SheetAppearanceComponent } from './core/sheet/sheet-appearance/sheet-appearance.component';
+import { SheetheaderComponent } from './core/sheet/sheetheader/sheetheader.component';
+import { RowsAndColumnsComponent } from './core/sheet/rows-and-columns/rows-and-columns.component';
+import { CellsComponent } from './core/sheet/cells/cells.component';
 
 
 
@@ -37,6 +44,13 @@ import { SpreadfromJSONToJSONComponent } from './core/spread/spreadfrom-json-to-
     SpreadpaintComponent,
     SpreadeventsComponent,
     SpreadfromJSONToJSONComponent,
+    DataSourceSerializeComponent,
+    CustomItemSerializeComponent,
+    InitializeSheetComponent,
+    SheetAppearanceComponent,
+    SheetheaderComponent,
+    RowsAndColumnsComponent,
+    CellsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+<h1 class="page-header">
+    Sheet 초기화 | Initialize Sheet
+</h1>
+<div id="content" class="content">
+<p>
+1. 다른 라이브러리와 마찬가지로 Sheet에는 다음과 같은 포함 파일이 필요합니다. 
+</p>  
+ <ul>
+    <li><b>gc.spread.sheets.x.xx.xxxxx.x.css</b></li>
+    <li><b>gc.spread.sheets.all.x.xx.xxxxx.x.min.js</b></li>
+  </ul>
+<p>
+2. 다음 코드를 사용하여 시트 만들기 (매개 변수는 시트의 이름입니다).
+</p> 
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sheet = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Sheet(<span class="hljs-string">'NewSheet'</span>);</code></pre>  
+<p>
+3. 기존 스프레드 구성 요소의 지정된 위치에 추가합니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">spread.addSheet(<span class="hljs-number">0</span>, sheet);</code></pre> 
+<p>
+4. 스프레드 구성 요소에서 기존 시트를 제거하려면 다음 코드를 사용하십시오. 이 예제 코드는 스프레드의 첫 번째 시트를 제거합니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">spread.removeSheet(<span class="hljs-number">0</span>, sheet);</code></pre>
+<p>
+5. 스프레드 구성 요소의 모든 시트를 제거하려면 편리한 <b>clearSheets</b> 메소드를 사용하십시오.
+</p>
+<pre class="sample-code"><code class="js hljs javascript">spread.clearSheets(); </code></pre>
+<p>
+6. 시트의 이름을 사용자 정의하려면 이름 메소드를 사용하여 시트의 이름을 가져오고 설정하십시오.
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span>  sheetName = sheet.name();
+sheet.name(<span class="hljs-string">'sheet1'</span>);
+</code></pre>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet Initialize' src='//codepen.io/GrapeCity-Korea/embed/dvRLXj/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/dvRLXj/'>SpreadJS.10/Sheet Initialize</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

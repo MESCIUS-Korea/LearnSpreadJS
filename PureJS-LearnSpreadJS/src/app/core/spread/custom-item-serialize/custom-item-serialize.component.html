@@ -1,0 +1,40 @@
+<h1 class="page-header">
+    사용자 item Serialize | Custom Item Serialize
+</h1>
+<div id="content" class="content">
+<p>
+Spread.Sheets는 사용자 정의 셀 유형, 함수, 포맷터, sparklineEx, 태그 및 행 필터와 같은 사용자 정의 항목의 직렬화를 지원합니다.
+<br/><br/>
+대응하는 형태는, 그 형태의 이름을 window에 관련 짓고 하는, toJSON에 typeName 필드를 제공 할 필요가 있습니다. 직렬화 복원 할 때 getTypeFromString을 사용하여 유형의 이름을 가져오고 인스턴스를 작성한 후 JSON을 호출하십시오..
+<br/><br/>
+다음 규칙을 사용하면 사용자 지정 항목을 올바르게 serialize 및 deserialize 할 수 있습니다. :
+<br/><br/>
+</p>
+  <ul>
+    <li><b>전체 유형 문자열을 typeName 필드로 설정합니다. (존재하는 경우 네임 스페이스 포함).</b></li>
+    <li><b>사용자 정의 유형에 순환 종속성이 있거나 JSON 크기를 줄이려는 경우 또는 기타 고급 요구 사항이 있는 경우 사용자 정의 유형은 toJSON 및 fromJSON 메소드를 대체해야 합니다.</b></li>
+    <li><b>사용자 정의 유형이 클로저에 있는 경우, 즉 윈도우 객체에 사용자 정의 유형을 넣고 싶지 않은 경우 유형 문자열을 파싱하려면 getTypeFromString 메소드를 재정의해야 합니다.</b></li>
+  </ul>
+<p><br/>예: </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> mynamespace = &#123;&#125;;
+(<span class="hljs-keyword">function</span> () &#123;
+     <span class="hljs-keyword">function</span> <span class="hljs-built_in">MyFunction</span>() &#123;
+     GC.Spread.CalcEngine.Functions.Function.apply(<span class="hljs-keyword">this</span>, [<span class="hljs-string">"MyFunction"</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]);
+     <span class="hljs-keyword"> this</span>.typeName = <span class="hljs-string">"mynamespace.MyFunction"</span>;
+     &#125;
+MyFunction.prototype = <span class="hljs-keyword"> new</span> GC.Spread.CalcEngine.Functions.Function();
+MyFunction.prototype.evaluate = <span class="hljs-keyword">function</span> (args) &#123;
+    <span class="hljs-keyword">var</span> now = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    <span class="hljs-keyword">return</span> now.getFullYear() + <span class="hljs-built_in">"/"</span> + (now.getMonth() + <span class="hljs-number">1</span>) + <span class="hljs-built_in">"/"</span> + now.getDate();
+&#125;;    
+mynamespace.MyFunction = MyFunction;
+&#125;)();  
+</code></pre>
+
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Item Serialize' src='//codepen.io/GrapeCity-Korea/embed/ENqXyW/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ENqXyW/'>SpreadJS.10/Item Serialize</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

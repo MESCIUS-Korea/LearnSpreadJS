@@ -1,0 +1,43 @@
+<h1 class="page-header">
+    Sheet 외관 | Sheet Appearance
+</h1>
+<div id="content" class="content">
+<p>
+스프레드 시트에서 시트는 4 개의 영역으로 구성됩니다. :
+</p>  
+ <ul>
+    <li><b>corner</b></li>
+    <li><b>colHeader</b></li>
+    <li><b>rowHeader</b></li>
+    <li><b>viewport</b></li>
+  </ul>
+<p>
+따라서 시트의 머리글에는 행 머리글과 열 머리글이 포함되며 행, 열 머리글에는 여러 행 / 열이 포함될 수 있습니다. <br/><br/>
+1. 머리글의 행이나 열 중 하나에서 각 셀에는 열 또는 행의 인덱스를 나타내는 자동 텍스트 ( "자동 텍스트")가 있습니다. 어떤 행이나 열에 자동 텍스트가 표시되는지 알고 싶거나 특정 행이나 열에 자동 텍스트를 표시하려면 다음과 같은 코드를 사용하십시오 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.options.rowHeaderAutoTextIndex = <span class="hljs-number">0</span>; 
+sheet.options.rowHeaderAutoTextIndex;
+
+sheet.options.colHeaderAutoTextIndex = <span class="hljs-number">0</span>;
+sheet.options.colHeaderAutoTextIndex;</code></pre> 
+ 
+
+<p>
+2. 스프레드는 빈칸, 글자 및 숫자 중에서 선택할 수 있는 세 가지 유형의 헤더 자동 텍스트도 제공합니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">sheet.options.rowHeaderAutoText = GC.Spread.Sheets.HeaderAutoText.letters;
+sheet.options.colHeaderAutoText = GC.Spread.Sheets.HeaderAutoText.blank;  </code></pre> 
+
+<p>
+행 머리글이나 열 머리글을 숨기도록 선택할 수 있습니다. 다음 코드는 행 헤더의 모든 행을 숨 깁니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">sheet.options.rowHeaderVisible = <span class="hljs-number">false</span>; </code></pre> 
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet Header' src='//codepen.io/GrapeCity-Korea/embed/LbwJVX/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/LbwJVX/'>SpreadJS.10/Sheet Header</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>   
