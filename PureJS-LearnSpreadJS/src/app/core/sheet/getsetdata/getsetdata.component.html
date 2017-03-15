@@ -1,0 +1,40 @@
+<h1 class="page-header">
+   Get/Set 데이터 | Get Set Data
+</h1>
+<div id="content" class="content">
+<p>
+Spread.Sheets은 시트를 통해 셀의 데이터로 작업 할 수 있는 다양한 방법을 제공합니다.<br/><br/>
+1. 지정한 셀의 값을 가져 오거나 설정할 수 있습니다.
+</p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.setValue(<span class="hljs-number">7</span>,<span class="hljs-number">7</span>,<span class="hljs-string">'2014'</span>);
+sheet.getValue(<span class="hljs-number">7</span>,<span class="hljs-number">7</span>);</code></pre>  
+<p>
+일련의 값을 가져 오거나 셀 범위에 값을 설정하려면 다음과 같은 코드를 사용할 수 있습니다:
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.setArray(<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, [[<span class="hljs-string">'value1'</span>,<span class="hljs-string">'value2'</span>,<span class="hljs-string">'value3'</span>,<span class="hljs-string">'value4'</span>'], [<span class="hljs-string">'value5'</span>,<span class="hljs-string">'value6'</span>,<span class="hljs-string">'value7'</span>,<span class="hljs-string">'value8'</span>]]);
+sheet.getArray(<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>);</code></pre>  
+<p>
+2. 지정된 셀에 텍스트를 가져 오거나 설정할 수도 있습니다. 이는 셀에 값을 가져 오거나 설정하는 것과 유사합니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">sheet.setText(<span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-string">'01/01/2014'</span>);
+sheet.getText(<span class="hljs-number">7</span>, <span class="hljs-number">7</span>);</code></pre>  
+<p>
+3. 일부 데이터를 삭제하려면 다음 방법을 사용하여 지정된 범위의 데이터를 지울 수 있습니다.
+</p> 
+
+<pre class="sample-code"><code class="js hljs javascript">sheet.clear(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>, GC.Spread.Sheets.SheetArea.viewport, GC.Spread.Sheets.StorageType.data);</code></pre>    
+<br/>
+
+<p>
+4. 스프레드 시트는 한 범위에서 다른 범위로 일련의 데이터를 복사하거나 이동하는 기능도 지원합니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">sheet.copyTo(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">14</span>, <span class="hljs-number">14</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, GC.Spread.Sheets.CopyToOptions.all);
+sheet.moveTo(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">14</span>, <span class="hljs-number">14</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, GC.Spread.Sheets.CopyToOptions.all);
+</code></pre>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Get Set Data' src='//codepen.io/GrapeCity-Korea/embed/XNvPaB/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/XNvPaB/'>SpreadJS.10/Get Set Data</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    

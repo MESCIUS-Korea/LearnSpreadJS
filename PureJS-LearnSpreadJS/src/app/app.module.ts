@@ -24,6 +24,10 @@ import { SheetAppearanceComponent } from './core/sheet/sheet-appearance/sheet-ap
 import { SheetheaderComponent } from './core/sheet/sheetheader/sheetheader.component';
 import { RowsAndColumnsComponent } from './core/sheet/rows-and-columns/rows-and-columns.component';
 import { CellsComponent } from './core/sheet/cells/cells.component';
+import { CellSpanComponent } from './core/sheet/cell-span/cell-span.component';
+import { FrozenlineAndViewportComponent } from './core/sheet/frozenline-and-viewport/frozenline-and-viewport.component';
+import { GetsetdataComponent } from './core/sheet/getsetdata/getsetdata.component';
+import { FormulaComponent } from './core/sheet/formula/formula.component';
 
 
 
@@ -51,6 +55,10 @@ import { CellsComponent } from './core/sheet/cells/cells.component';
     SheetheaderComponent,
     RowsAndColumnsComponent,
     CellsComponent,
+    CellSpanComponent,
+    FrozenlineAndViewportComponent,
+    GetsetdataComponent,
+    FormulaComponent,
   ],
   imports: [
     BrowserModule,

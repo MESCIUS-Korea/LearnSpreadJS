@@ -1,0 +1,31 @@
+<h1 class="page-header">
+   셀 병합 | Cell Span
+</h1>
+<div id="content" class="content">
+<p>
+병합은 둘 이상의 셀을 결합하여 더 큰 새로운 셀을 만듭니다. 여러 열에 걸쳐 라벨을 만드는 훌륭한 방법입니다.
+<br/><br/>
+1. 다음 코드와 같이 <b>addSpan</b> 메서드를 사용하여 지정된 범위의 셀을 새롭고 큰 셀에 병합합니다.
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-comment">// 셀 병합 및 레이블 설정</span>
+sheet.addSpan(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">1</span>, <span class="hljs-number">7</span>);
+sheet.setValue(<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-string">"Goods"</span>);
+<span class="hljs-comment">// 행 (3) 및 열 (4)에 셀 병합</span>
+sheet.addSpan(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+sheet.getCell(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>).value(<span class="hljs-string">"Demo"</span>).hAlign(<span class="hljs-number">1</span>).vAlign(<span class="hljs-number">1</span>);</code></pre>  
+
+<p>
+2. removeSpan 메서드를 사용하여 지정된 셀이 포함 된 범위를 제거합니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.removeSpan(<span class="hljs-number">20</span>, <span class="hljs-number">1</span>);</code></pre>   
+<p>
+<b>참고 : 병합 된 셀에 표시 할 데이터가 왼쪽 위 셀에 있는지 확인하십시오. 병합 된 다른 셀의 모든 데이터는 Span이 제거 될 때까지 숨겨집니다.</b>
+</p>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Cell Span' src='//codepen.io/GrapeCity-Korea/embed/xRvaqQ/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/xRvaqQ/'>SpreadJS.10/Cell Span</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

@@ -21,6 +21,10 @@ import { SheetAppearanceComponent } from './core/sheet/sheet-appearance/sheet-ap
 import { SheetheaderComponent } from './core/sheet/sheetheader/sheetheader.component';
 import { RowsAndColumnsComponent } from './core/sheet/rows-and-columns/rows-and-columns.component';
 import { CellsComponent } from './core/sheet/cells/cells.component';
+import { CellSpanComponent } from './core/sheet/cell-span/cell-span.component';
+import { FrozenlineAndViewportComponent } from './core/sheet/frozenline-and-viewport/frozenline-and-viewport.component';
+import { GetsetdataComponent } from './core/sheet/getsetdata/getsetdata.component';
+import { FormulaComponent } from './core/sheet/formula/formula.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -43,6 +47,10 @@ const APP_ROUTES:Routes = [
     { path: 'SheetheaderComponent', component: SheetheaderComponent },
     { path: 'RowsAndColumnsComponent', component: RowsAndColumnsComponent },
     { path: 'CellsComponent', component: CellsComponent },
+    { path: 'CellSpanComponent', component: CellSpanComponent },
+    { path: 'FrozenlineAndViewportComponent', component: FrozenlineAndViewportComponent },
+    { path: 'GetsetdataComponent', component: GetsetdataComponent },
+    { path: 'FormulaComponent', component: FormulaComponent },
 ];
 
 @NgModule({

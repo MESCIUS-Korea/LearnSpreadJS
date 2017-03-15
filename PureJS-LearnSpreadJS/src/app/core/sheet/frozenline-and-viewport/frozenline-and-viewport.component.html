@@ -1,0 +1,40 @@
+<h1 class="page-header">
+   행/열 고정 | Cell Span
+</h1>
+<div id="content" class="content">
+<p>
+Step 3에서 설명한 것처럼 Spread.Sheets는 corner, rowHeader, colHeader 및 viewport의 네 영역으로 구성됩니다. 뷰포트는 시트의 오른쪽 하단 영역입니다..
+시트의 고정 된 행과 열은 고정 된 선 디바이더를 사용하여 시트의 뷰포트 영역에서 행과 열을 스크롤하지 못하게 합니다. 고정 된 선은 또한 뷰포트를 여러 행 및 열 뷰포트로 나눕니다.
+<br/><br/>
+1. 한 시트에 최대 4 개의 고정 된 선을 설정할 수 있습니다. 이렇게 하면 뷰포트가 3 개의 행 뷰포트와 3 개의 열 뷰포트로 나뉩니다. 다음 코드는 시트에 고정 된 선 4 개를 만듭니다. :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-comment">// 행 고정, 열고정을 설정</span>
+sheet.frozenRowCount(<span class="hljs-number">3</span>);
+sheet.frozenColumnCount(<span class="hljs-number">3</span>);
+sheet.frozenTrailingRowCount(<span class="hljs-number">3</span>);
+sheet.frozenTrailingColumnCount(<span class="hljs-number">3</span>);</code></pre> 
+<p>
+다음 코드와 같이 frozenLine의 색상을 사용자 정의 할 수 있습니다. :
+</p>      
+<pre class="sample-code"><code class="js hljs javascript">sheet.options.frozenlineColor = <span class="hljs-string">'red'</span>;</code></pre> 
+<p>
+2. Spread.Sheets는 width, height, topRow 등과 같은 각 뷰포트에 대한 정보를 가져올 수있는 메서드를 제공합니다. <br/>
+시트에서 열 고정 선과 열 고정 선을 설정했다고 가정합니다. 원래 뷰포트는 3 개의 행 뷰포트로 나뉘며 뷰포트 인덱스는 0, 1 및 2입니다. 다음 코드를 사용하여 두 번째 뷰포트에 대한 정보를 가져올 수 있습니다 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.getViewportWidth(<span class="hljs-number">1</span>);
+sheet.getViewportHeight(<span class="hljs-number">1</span>);
+ 
+sheet.getViewportTopRow(<span class="hljs-number">1</span>);
+sheet.getViewportBottomRow(<span class="hljs-number">1</span>);
+sheet.getViewportLeftColumn(<span class="hljs-number">1</span>);
+sheet.getViewportRightColumn(<span class="hljs-number">1</span>)
+</code></pre>  
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/FrozenLine and Viewport' src='//codepen.io/GrapeCity-Korea/embed/RoXYgw/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/RoXYgw/'>SpreadJS.10/FrozenLine and Viewport</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe> 
+</div>  

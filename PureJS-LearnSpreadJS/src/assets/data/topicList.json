@@ -91,19 +91,19 @@
           },
           {
             "header": "셀 병합",
-            "path": ""
+            "path": "CellSpanComponent"
           },
           {
             "header": "행/열 고정",
-            "path": ""
+            "path": "FrozenlineAndViewportComponent"
           },
           {
             "header": "Get/Set 데이터",
-            "path": ""
+            "path": "GetsetdataComponent"
           },
           {
             "header": "함수",
-            "path": ""
+            "path": "FormulaComponent"
           },
           {
             "header": "스타일",
