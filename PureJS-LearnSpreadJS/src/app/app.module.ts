@@ -28,6 +28,10 @@ import { CellSpanComponent } from './core/sheet/cell-span/cell-span.component';
 import { FrozenlineAndViewportComponent } from './core/sheet/frozenline-and-viewport/frozenline-and-viewport.component';
 import { GetsetdataComponent } from './core/sheet/getsetdata/getsetdata.component';
 import { FormulaComponent } from './core/sheet/formula/formula.component';
+import { StyleComponent } from './core/sheet/style/style.component';
+import { CellpaddingLabelsComponent } from './core/sheet/cellpadding-labels/cellpadding-labels.component';
+import { SelectionComponent } from './core/sheet/selection/selection.component';
+import { SheetActionsComponent } from './core/sheet/sheet-actions/sheet-actions.component';
 
 
 
@@ -59,6 +63,10 @@ import { FormulaComponent } from './core/sheet/formula/formula.component';
     FrozenlineAndViewportComponent,
     GetsetdataComponent,
     FormulaComponent,
+    StyleComponent,
+    CellpaddingLabelsComponent,
+    SelectionComponent,
+    SheetActionsComponent,
   ],
   imports: [
     BrowserModule,

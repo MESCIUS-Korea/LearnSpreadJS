@@ -107,19 +107,19 @@
           },
           {
             "header": "스타일",
-            "path": ""
+            "path": "StyleComponent"
           },
            {
             "header": "셀 패딩 & 라벨",
-            "path": ""
+            "path": "CellpaddingLabelsComponent"
           },
            {
             "header": "셀 선택",
-            "path": ""
+            "path": "SelectionComponent"
           },
            {
             "header": "Sheet 동작",
-            "path": ""
+            "path": "SheetActionsComponent"
           },
            {
             "header": "동작에 따른 값 변경",

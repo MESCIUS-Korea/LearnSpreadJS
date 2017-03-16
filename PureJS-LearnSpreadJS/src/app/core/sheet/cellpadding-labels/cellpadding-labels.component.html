@@ -1,0 +1,38 @@
+<h1 class="page-header">
+  셀 패딩 & 라벨 | Cell Padding & Labels
+</h1>
+<div id="content" class="content">
+<p>1. Spread.Sheets는 셀 수준의 패딩 및 셀 레이블을 지원합니다. <br/><br/>
+2. 당신은 스타일 속성의 <b>cellpadding</b>을 설정하여 셀 패딩을 추가 할 수 있습니다. 셀 패딩에는 CSS 패딩과 같은 정책이 있습니다. 예를 들어:
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> style = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Style();
+style.cellPadding(<span class="hljs-string">"10 20 10 20"</span>);</code></pre>
+<p>3. 레이블의 값은 워터 마크에서 가져온 것이므로 셀 레이블을 설정할 때 워터 마크 값을 설정해야 합니다. 예를 들어:</p>
+<pre class="sample-code"><code class="js hljs javascript">style.watermark = <span class="hljs-string">"Spread.Sheets"</span>;</code></pre>
+<p>4. 스타일 속성 <b>labelOptions</b>를 설정하여 레이블 스타일을 설정할 수 있습니다. labelOptions는 객체이며 5 개의 속성을 가집니다.:
+<br/><br/><b>정렬</b>: 레이블 위치. topLeft, topCenter, topRight, bottomLeft, bottomCenter 및 bottomRight의 6 가지 위치가 있습니다. 그리고 topLeft는 기본값입니다.
+<br/><b>visibility</b>: 라벨 표시 모드에는 3 가지 표시 모드가 있습니다. :  
+</p>
+ <ul>
+    <li><b>visible - 패딩 영역에 항상 워터 마크를 표시하고 셀에 값이 있는지 여부에 관계없이 셀 영역에 워터 마크를 표시하지 않습니다.</b></li>
+    <li><b>hidden - 패딩 영역에 워터 마크를 표시하지 않지만 값 영역 조건의 셀 영역에는 워터 마크를 표시합니다.</b></li>
+    <li><b>auto - 셀에 값이 있을 때 패딩 영역에 워터 마크를 표시하고, 셀에 값이 없을 때 셀 영역에 워터 마크를 표시합니다. 이것이 기본 표시 값입니다. </b></li>
+  </ul>
+<p>
+<b>font</b> : 라벨 폰트. labelFont 값이 없으면 스타일의 글꼴 값이 사용됩니다. 글꼴 값이 없으면 시트 기본 글꼴 값이 사용됩니다.<br/>
+<b>foreColor</b> : forecolor 레이블입니다. labelForeColor 값이 없으면 스타일의 foreColor 값이 사용됩니다. foreColor 값이없는 경우, forecolor는 '회색'입니다.<br/>
+<b>여백</b>: 레이블 여백. 레이블 여백에는 CSS 여백과 동일한 정책이 있습니다.
+</p>  
+<ul>
+    <li><b>margin-top  </b></li>
+    <li><b>margin-right </b></li>
+    <li><b>margin-bottom </b></li>
+    <li><b>margin-left  </b></li>
+</ul>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Cell Padding&Labels' src='//codepen.io/GrapeCity-Korea/embed/RoXYQP/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/RoXYQP/'>SpreadJS.10/Cell Padding&Labels</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

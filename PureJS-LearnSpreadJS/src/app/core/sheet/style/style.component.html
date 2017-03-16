@@ -1,0 +1,52 @@
+<h1 class="page-header">
+   스타일 | Style
+</h1>
+<div id="content" class="content">
+<p>
+Spread.Sheets는 foreColor, backColor 등과 같은 많은 속성을 포함하는 Style 클래스를 제공합니다.
+<br/><br/>
+1. 다음과 같은 코드를 사용하여 스타일을 만들고 속성을 설정할 수 있습니다. :
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> style = GC.Spread.Sheets.Style();
+style.backColor = <span class="hljs-string">'red'</span>;
+style.foreColor = <span class="hljs-string">'green'</span>;</code></pre>   
+<p>
+2. 그런 다음 스타일을 셀, 행 또는 열로 설정할 수 있습니다 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-comment">//셀에 스타일적용.</span>
+sheet.setStyle(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, style, GC.Spread.Sheets.SheetArea.viewport);
+<span class="hljs-comment">//행에 스타일 적용.</span>
+sheet.setStyle(<span class="hljs-number">5</span>, <span class="hljs-number">-1</span>, style, GC.Spread.Sheets.SheetArea.viewport);
+<span class="hljs-comment">//열에 스타일 적용.</span>
+sheet.setStyle(<span class="hljs-number">-1</span>, <span class="hljs-number">5</span>, style, GC.Spread.Sheets.SheetArea.viewport);</code></pre>   
+<p>
+각 레벨의 스타일은 다음과 같이 우선 순위가 다릅니다. cell> row> column. <br/><br/>
+3. Spread.Sheets를 사용하면 스타일의 이름을 설정하고 이 명명 된 스타일을 시트의 명명 된 스타일 컬렉션에 추가 할 수 있습니다. 따라서 스타일을보다 편리하게 사용하고 관리 할 수 있습니다.
+<br/><br/>스타일의 이름을 설정하고 시트 또는 Spread 구성 요소의 명명 된 스타일 모음에 이 스타일을 추가 할 수 있습니다.
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> style = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Style();
+style.name = <span class="hljs-string">'style1'</span>;
+style.backColor = <span class="hljs-string">'red'</span>;
+
+<span class="hljs-comment">//시트의 명명 된 스타일 컬렉션에 추가</span>
+sheet.addNamedStyle(style);
+<span class="hljs-comment">//스프레드의 명명 된 스타일 컬렉션에 추가</span>
+spread.addNamedStyle(style)
+</code></pre> 
+
+<p>
+명명 된 스타일이 명명 된 스타일 모음에 추가되면 이름으로 스타일을 가져올 수 있습니다 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.getNamedStyle(<span class="hljs-string">'style1'</span>);
+spread.getNamedStyle(<span class="hljs-string">'style1'</span>);</code></pre> 
+<p>명명 된 스타일을 사용하지 않으면 명명 된 스타일 컬렉션에서 제거 할 수 있습니다 :</p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.removeNamedStyle(<span class="hljs-string">'style1'</span>);
+spread.removeNamedStyle(<span class="hljs-string">'style1'</span>);</code></pre> 
+
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Style' src='//codepen.io/GrapeCity-Korea/embed/yMzjNB/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/yMzjNB/'>SpreadJS.10/Style</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

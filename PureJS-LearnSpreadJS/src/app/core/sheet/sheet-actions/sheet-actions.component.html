@@ -1,0 +1,23 @@
+<h1 class="page-header">
+  Sheet 동작 | Sheet Actions
+</h1>
+<div id="content" class="content">
+  <p>1. Spread.Sheets는 왼쪽 화살표 키를 눌러 왼쪽으로 이동하고, Delete 키를 눌러 값을 지우는 등의 다양한 키보드 동작을 지원합니다. 키 동작은 키 맵을 사용하여 키와 동작을 연결합니다.
+  <br/><br/>2. 다음 코드와 같이 register 메서드를 사용하여 keydown 이벤트를 작업에 연결하여 고유 한 키를 추가 할 수 있습니다. :
+  </p>
+<pre class="sample-code"><code class="html hljs xml"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> commandManager = spread.commandManager()
+commandManager.register(<span class="hljs-string">'customNavigationUp'</span>, GC.Spread.Sheets.Commands.navigationUp, <span class="hljs-string">'W'</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>);
+commandManager.register(<span class="hljs-string">'customNavigationLeft'</span>, GC.Spread.Sheets.Commands.navigationUp, <span class="hljs-string">'A'</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>);
+commandManager.register(<span class="hljs-string">'customNavigationDown'</span>, GC.Spread.Sheets.Commands.navigationUp, <span class="hljs-string">'S'</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>);
+commandManager.register(<span class="hljs-string">'customNavigationRight'</span>, GC.Spread.Sheets.Commands.navigationUp, <span class="hljs-string">'D'</span>.charCodeAt(<span class="hljs-number">0</span>), <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>, <span class="hljs-number">false</span>);</code></pre>
+<p>그런 다음 위, 왼쪽, 아래 및 오른쪽 화살표 키와 유사하게 탐색하려면 W, A, S 및 D 키를 누릅니다. </p>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet Action' src='//codepen.io/GrapeCity-Korea/embed/JEPZXg/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/JEPZXg/'>SpreadJS.10/Sheet Action</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>
