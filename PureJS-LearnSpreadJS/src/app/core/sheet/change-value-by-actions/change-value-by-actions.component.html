@@ -1,0 +1,30 @@
+<h1 class="page-header">
+  동작에 따른 값 변경 | Change Value By Actions
+</h1>
+<div id="content" class="content">
+<p>
+1. Spread.Sheets은 잘라 내기 / 복사 / 붙여 넣기, 드래그 드롭 및 채우기 드래그와 같은 기본 동작을 지원합니다. 이러한 행동은 가치를 바꿀 수 있습니다. <br/><br/>
+2. 범위를 복사하거나 자르고 현재 시트 나 다른 시트에 붙여 넣을 수 있습니다. 이 경우 복사 된 셀의 값과 스타일이 모두 복사됩니다. 그러나 스프레드 구성 요소의 내용을 메모장이나 Excel과 같은 다른 응용 프로그램에 붙여 넣으면 값만 붙여 넣어집니다. 다른 응용 프로그램에서 복사 또는 잘라내어 Spread 구성 요소에 붙여 넣을 수도 있습니다.<br/><br/>
+3. 일부 셀을 잘라내거나 복사하면 컨트롤은 복사 한 범위를 알려주는 표시기를 표시합니다. <b>cutCopyIndicatorVisible</b> 옵션을 사용하여 표시기를 표시할지 여부를 제어하고 <b>cutCopyIndicatorBorderColor</b> 옵션을 사용하여 표시기의 테두리 색상을 설정할 수 있습니다 (다음 코드 참조). :
+</p>  
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread.options.cutCopyIndicatorVisible = <span class="hljs-number">false</span>;
+spread.options.cutCopyIndicatorBorderColor = <span class="hljs-string">'blue'</span>;</code></pre>
+<p>
+4. 범위를 드래그하여 다른 셀에 놓을 수 있습니다. Ctrl 키를 누를 때 Ctrl 키를 누르면 드래그 한 셀을 복사합니다. Ctrl 키를 누르지 않으면 드래그 된 셀을 자릅니다.
+</p>  
+<p>
+5. Spread.Sheets는 <b>allowUserDragDrop<</b> 옵션을 제공하여 사용자가 셀 범위 데이터를 다른 범위로 끌어 놓을 수 있는지 여부를 제어합니다. 또한 <b>showDragDropTip</b> 옵션을 사용하여 드래그 할 때 팁을 표시할지 여부를 제어 할 수 있습니다. 팁에는 드래그하는 위치가 표시됩니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+spread.options.allowUserDragDrop = <span class="hljs-number">false</span>;
+spread.options.showDragDropTip = <span class="hljs-number">true</span>;</code></pre>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Change Value by Actions' src='//codepen.io/GrapeCity-Korea/embed/ggYKwg/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ggYKwg/'>SpreadJS.10/Change Value by Actions</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

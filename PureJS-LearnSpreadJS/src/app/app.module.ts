@@ -32,6 +32,13 @@ import { StyleComponent } from './core/sheet/style/style.component';
 import { CellpaddingLabelsComponent } from './core/sheet/cellpadding-labels/cellpadding-labels.component';
 import { SelectionComponent } from './core/sheet/selection/selection.component';
 import { SheetActionsComponent } from './core/sheet/sheet-actions/sheet-actions.component';
+import { ChangeValueByActionsComponent } from './core/sheet/change-value-by-actions/change-value-by-actions.component';
+import { ProtectionComponent } from './core/sheet/protection/protection.component';
+import { SheeteventsComponent } from './core/sheet/sheetevents/sheetevents.component';
+import { SheetpaintComponent } from './core/sheet/sheetpaint/sheetpaint.component';
+import { DocumentthemeComponent } from './core/documenttheme/documenttheme/documenttheme.component';
+import { SpreadthemeComponent } from './core/theme/spreadtheme/spreadtheme.component';
+import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme.component';
 
 
 
@@ -67,6 +74,13 @@ import { SheetActionsComponent } from './core/sheet/sheet-actions/sheet-actions.
     CellpaddingLabelsComponent,
     SelectionComponent,
     SheetActionsComponent,
+    ChangeValueByActionsComponent,
+    ProtectionComponent,
+    SheeteventsComponent,
+    SheetpaintComponent,
+    DocumentthemeComponent,
+    SpreadthemeComponent,
+    ExternalthemeComponent,
   ],
   imports: [
     BrowserModule,

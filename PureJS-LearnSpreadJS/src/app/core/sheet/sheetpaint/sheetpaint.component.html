@@ -1,0 +1,28 @@
+<h1 class="page-header">
+  Sheet 페인트 | Sheet Paint
+</h1>
+<div id="content" class="content">
+<p>1. 사용자가 시트를 변경 한 후에는 스프레드 구성 요소가 이러한 변경 사항을 처리하고 새 시트를 페인트 해야 합니다.<br/><br/>
+2. repaint 메서드를 사용하여 시트를 다시 칠할 수도 있습니다.
+ </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.repaint();</code></pre>  
+<p> 대부분 시트를 변경하면 구성 요소가 자동으로 새로 고침 되어 변경 내용에 응답합니다. 한 번에 많이 변경했지만 시트를 여러 번 다시 칠하지 않으려면 <b>suspendPaint</b> 메서드를 사용하여 변경이 완료 될 때까지 자동 다시 칠을 중지 할 수 있습니다. 다음 예제와 같이 <b>resumePaint</b> 메서드를 호출하여 시트를 다시 그립니다.: </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.suspendPaint();
+sheet.setValue(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'나를 클릭하고 키보드로 문자를 입력하세요'</span>); 
+sheet.addSpan(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>); 
+sheet.setValue(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-string">'검은 색 빈 셀을 두 번 클릭하십시오!'</span>); 
+sheet.addSpan(<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>); 
+<span class="hljs-comment">//...</span>
+sheet.resumePaint();</code></pre>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet Paint' src='//codepen.io/GrapeCity-Korea/embed/apoKWe/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/apoKWe/'>SpreadJS.10/Sheet Paint</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

@@ -44,7 +44,7 @@
             "path": "spreadbackground"
           },
           {
-            "header": "Spread Paint",
+            "header": "Spread 페인트",
             "path": "spreadpaint"
           },
           {
@@ -123,19 +123,19 @@
           },
            {
             "header": "동작에 따른 값 변경",
-            "path": ""
+            "path": "ChangeValueByActionsComponent"
           },
            {
             "header": "보호",
-            "path": ""
+            "path": "ProtectionComponent"
           },
            {
             "header": "Sheet 이벤트",
-            "path": ""
+            "path": "SheeteventsComponent"
           },
            {
-            "header": "Sheet 속도향상",
-            "path": ""
+            "header": "Sheet 페인트",
+            "path": "SheetpaintComponent"
           }          
         ]
       },
@@ -145,7 +145,7 @@
         "items": [
           {
             "header": "문서테마",
-            "path": ""
+            "path": "DocumentthemeComponent"
           }
         ]
       },
@@ -155,11 +155,11 @@
         "items": [
           {
             "header": "Spread 테마",
-            "path": ""
+            "path": "SpreadthemeComponent"
           },
           {
             "header": "확장 테마",
-            "path": ""
+            "path": "ExternalthemeComponent"
           }
         ]
       }                 

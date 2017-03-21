@@ -1,0 +1,31 @@
+<h1 class="page-header">
+  Sheet 이벤트 | Sheet Events
+</h1>
+<div id="content" class="content">
+<p>1. Spread.Sheets는 시트에 대한 이벤트를 제공합니다. 이벤트가 발생할 때 응용 프로그램에서 작업을 수행하게 할 수 있습니다. <br/><br/>
+2. 시트의 바인드 및 바인드 해제 메소드를 사용하여 시트 이벤트를 바인드 할 수 있습니다. unbindAll 메소드를 사용하여 모든 이벤트를 바인드 해제 할 수도 있습니다. jquery의 바인드 및 바인드 해제와 마찬가지로 다음 코드와 같이 시트의 바인드 및 바인드 해제를 처리 할 수 있습니다 :
+ </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span> selectionChanged = GC.Spread.Sheets.Events.SelectionChanged;
+sheet.bind(selectionChanged, <span class="hljs-keyword">function</span>(e,args) &#123; <span class="hljs-comment">// sheet event</span>
+<span class="hljs-comment">// do some thing...</span>
+&#125;);
+<span class="hljs-comment">// 시트 이벤트 바인딩을 제거</span>
+sheet.unbind(selectionChanged); 
+<span class="hljs-comment">시트의 모든 이벤트 바인딩을 제거</span>
+sheet.unbindAll(); </code></pre>  
+<p>3. 여러 이벤트를 트리거 할 수 있는 태스크를 수행하려는 경우 시트가 이러한 이벤트를 트리거하지 않게 하려면 <b>suspendEvent</b> 메소드를 사용하여 이벤트가 발생하지 않도록 하십시오. 작업이 완료되면 <b>resumeEvent</b> 메서드를 사용하여 다음 예제와 같이 트리거 이벤트를 다시 시작할 수 있습니다. : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.suspendEvent();
+<span class="hljs-comment">//do some operation...</span>
+sheet.resumeEvent();</code></pre>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet Event' src='//codepen.io/GrapeCity-Korea/embed/oBvyZX/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/oBvyZX/'>SpreadJS.10/Sheet Event</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

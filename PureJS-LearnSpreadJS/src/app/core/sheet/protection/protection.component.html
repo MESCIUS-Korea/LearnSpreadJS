@@ -1,0 +1,32 @@
+<h1 class="page-header">
+  보호 | Protection
+</h1>
+<div id="content" class="content">
+  <p>1. 때때로 이 시트의 셀 값을 편집하지 않기를 원합니다. 그렇다면 <b>isProtected</b>를 사용하여 시트가 보호되어 있는지 여부를 설정하고 가져올 수 있습니다.</p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.options.isProtected =  <span class="hljs-number">true</span>;
+sheet.options.isProtected;  <span class="hljs-number"> //true</span></code></pre>    
+<p>2. 시트가 보호되면 <b>protectionOption</b>을 사용하여 다음과 같은 속성을 가진 객체를 제공하여 사용자 동작을 제한 할 수 있습니다. : <br/><br/>
+<b>allowSelectLockedCells</b> : 사용자가 잠긴 셀을 선택할 수 있는지 여부를 나타내는 Boolean입니다. <br/><br/>
+<b>allowSelectUnlockedCells</b> : 사용자가 잠금 해제 된 셀을 선택할 수 있는지 여부를 나타내는 Boolean입니다.<br/><br/>
+<b>allowSort</b> : 사용자가 범위를 정렬 할 수 있는지 여부를 나타내는 Boolean입니다.<br/><br/>
+<b>allowFilter</b> : 사용자가 범위를 필터링 할 수 있는지 여부를 나타내는 Boolean입니다.<br/><br/>
+<b>allowEditObjects</b> : 사용자가 부동 개체를 편집 할 수 있는지 여부를 나타내는 Boolean입니다.<br/><br/>
+<b>allowResizeRows</b> : 사용자가 행의 크기를 조정할 수 있는지 여부를 나타내는 Boolean입니다.<br/><br/>
+<b>allowResizeColumns</b> : 사용자가 열의 크기를 조정할 수 있는지 여부를 나타내는 Boolean입니다.
+</p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.options.protectionOption = &#123; 
+    allowSelectLockedCells: <span class="hljs-number">true,</span>
+    allowSelectUnlockedCells: <span class="hljs-number">true</span>,
+    allowSort: <span class="hljs-number">false</span> 
+&#125;;
+<span class="hljs-keyword">var</span> option = sheet.options.protectionOption;
+console.log(JSON.stringify(option, <span class="hljs-number">null</span>, <span class="hljs-number">2</span>));</code></pre>  
+
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Protection' src='//codepen.io/GrapeCity-Korea/embed/rjBKWP/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/rjBKWP/'>SpreadJS.10/Protection</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

@@ -1,0 +1,24 @@
+<h1 class="page-header">
+  Sheet 페인트 | Sheet Paint
+</h1>
+<div id="content" class="content">
+<p>1. Spread.Sheets은 글꼴 및 색상 설정을 포함하여 전반적인 스타일을 정의 할 수 있는 테마를 지원합니다.<br/><br/>
+2. Spread.Sheets은 몇 가지 기본 테마를 제공합니다. currentTheme 메서드를 사용하여 시트의 현재 테마를 가져오고 설정합니다 예 :
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.currentTheme(GC.Spread.Sheets.SpreadThemes.civic);</code></pre>  
+<p>3. 이 예제에서와 같이 테마 색상이나 표준 색상을 사용하여 셀의 foreColor 또는 backColor 메서드를 설정할 수 있습니다.</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.getCell(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>).foreColor(<span class="hljs-string">'Accent 1 50'</span>);
+sheet.getCell(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>).backColor(<span class="hljs-string">'Background 2 80'</span>);</code></pre>  
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Document Theme' src='//codepen.io/GrapeCity-Korea/embed/qRWKea/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/qRWKea/'>SpreadJS.10/Document Theme</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    
