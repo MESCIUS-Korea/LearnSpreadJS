@@ -39,8 +39,7 @@ import { SheetpaintComponent } from './core/sheet/sheetpaint/sheetpaint.componen
 import { DocumentthemeComponent } from './core/documenttheme/documenttheme/documenttheme.component';
 import { SpreadthemeComponent } from './core/theme/spreadtheme/spreadtheme.component';
 import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme.component';
-
-
+import { WhatComponent } from './use cases/templates/what/what.component';
 
 
 
@@ -81,6 +80,7 @@ import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme
     DocumentthemeComponent,
     SpreadthemeComponent,
     ExternalthemeComponent,
+    WhatComponent,
   ],
   imports: [
     BrowserModule,

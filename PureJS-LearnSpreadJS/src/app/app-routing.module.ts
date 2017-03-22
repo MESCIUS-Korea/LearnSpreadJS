@@ -36,6 +36,7 @@ import { SheetpaintComponent } from './core/sheet/sheetpaint/sheetpaint.componen
 import { DocumentthemeComponent } from './core/documenttheme/documenttheme/documenttheme.component';
 import { SpreadthemeComponent } from './core/theme/spreadtheme/spreadtheme.component';
 import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme.component';
+import { WhatComponent } from './use cases/templates/what/what.component';
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -73,6 +74,7 @@ const APP_ROUTES:Routes = [
     { path: 'DocumentthemeComponent', component: DocumentthemeComponent },
     { path: 'SpreadthemeComponent', component: SpreadthemeComponent },
     { path: 'ExternalthemeComponent', component: ExternalthemeComponent },
+    { path: 'WhatComponent', component: WhatComponent },
 ];
 
 @NgModule({

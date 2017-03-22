@@ -725,7 +725,7 @@
         ]
       },
       {
-        "header": "샘플",
+        "header": "활용할수 있는 템플릿",
         "path": "useCase-templete",
         "items": [
           {
@@ -742,7 +742,7 @@
           },
           {
             "header": "What If 분석 템플릿",
-            "path": ""
+            "path": "WhatComponent"
           }
         ]
       }
