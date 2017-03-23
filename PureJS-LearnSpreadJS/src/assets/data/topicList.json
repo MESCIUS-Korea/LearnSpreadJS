@@ -704,23 +704,23 @@
         "items": [
           {
             "header": "경비 예산",
-            "path": ""
+            "path": "ExpenseBudgetComponent"
           },
           {
             "header": "요리 책",
-            "path": ""
+            "path": "CookBookComponent"
           },
           {
             "header": "1040 세금 양식",
-            "path": ""
+            "path": "TaxFormComponent"
           },
           {
             "header": "매출 원가",
-            "path": ""
+            "path": "CostOfGoodsSoldComponent"
           },
           {
             "header": "학사 일정",
-            "path": ""
+            "path": "StudentCalendarComponent"
           }
         ]
       },
@@ -730,7 +730,7 @@
         "items": [
           {
             "header": "부동산 투자 분석",
-            "path": ""
+            "path": "RealEstateInvestmentAnalysisComponent"
           },
           {
             "header": "LBO DCF 모델",
@@ -738,7 +738,7 @@
           },
           {
             "header": "EVA 예제",
-            "path": ""
+            "path": "EVAExampleComponent"
           },
           {
             "header": "What If 분석 템플릿",

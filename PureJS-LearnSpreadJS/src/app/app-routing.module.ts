@@ -36,7 +36,14 @@ import { SheetpaintComponent } from './core/sheet/sheetpaint/sheetpaint.componen
 import { DocumentthemeComponent } from './core/documenttheme/documenttheme/documenttheme.component';
 import { SpreadthemeComponent } from './core/theme/spreadtheme/spreadtheme.component';
 import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme.component';
-import { WhatComponent } from './use cases/templates/what/what.component';
+import { WhatComponent } from './use-cases/templates/what/what.component';
+import { RealEstateInvestmentAnalysisComponent } from './use-cases/templates/real-estate-investment-analysis/real-estate-investment-analysis.component';
+import { ExpenseBudgetComponent } from './use-cases/samples/expense-budget/expense-budget.component';
+import { CookBookComponent } from './use-cases/samples/cook-book/cook-book.component';
+import { TaxFormComponent } from './use-cases/samples/1040-tax-form/1040-tax-form.component';
+import { StudentCalendarComponent } from './use-cases/samples/student-calendar/student-calendar.component';
+import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
+import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -75,6 +82,14 @@ const APP_ROUTES:Routes = [
     { path: 'SpreadthemeComponent', component: SpreadthemeComponent },
     { path: 'ExternalthemeComponent', component: ExternalthemeComponent },
     { path: 'WhatComponent', component: WhatComponent },
+    { path: 'RealEstateInvestmentAnalysisComponent', component: RealEstateInvestmentAnalysisComponent },
+    { path: 'ExpenseBudgetComponent', component: ExpenseBudgetComponent },
+    { path: 'CookBookComponent', component: CookBookComponent },
+    { path: 'TaxFormComponent', component: TaxFormComponent },
+    { path: 'StudentCalendarComponent', component: StudentCalendarComponent },
+    { path: 'CostOfGoodsSoldComponent', component: CostOfGoodsSoldComponent },
+    { path: 'EVAExampleComponent', component: EVAExampleComponent },
+    
 ];
 
 @NgModule({

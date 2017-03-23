@@ -1,4 +1,6 @@
+
 import { BrowserModule } from '@angular/platform-browser';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -39,9 +41,14 @@ import { SheetpaintComponent } from './core/sheet/sheetpaint/sheetpaint.componen
 import { DocumentthemeComponent } from './core/documenttheme/documenttheme/documenttheme.component';
 import { SpreadthemeComponent } from './core/theme/spreadtheme/spreadtheme.component';
 import { ExternalthemeComponent } from './core/theme/externaltheme/externaltheme.component';
-import { WhatComponent } from './use cases/templates/what/what.component';
-
-
+import { WhatComponent } from './use-cases/templates/what/what.component';
+import { RealEstateInvestmentAnalysisComponent } from './use-cases/templates/real-estate-investment-analysis/real-estate-investment-analysis.component';
+import { ExpenseBudgetComponent } from './use-cases/samples/expense-budget/expense-budget.component';
+import { CookBookComponent } from './use-cases/samples/cook-book/cook-book.component';
+import { TaxFormComponent } from './use-cases/samples/1040-tax-form/1040-tax-form.component';
+import { StudentCalendarComponent } from './use-cases/samples/student-calendar/student-calendar.component';
+import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
+import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
 
 @NgModule({
   declarations: [
@@ -81,6 +88,13 @@ import { WhatComponent } from './use cases/templates/what/what.component';
     SpreadthemeComponent,
     ExternalthemeComponent,
     WhatComponent,
+    RealEstateInvestmentAnalysisComponent,
+    ExpenseBudgetComponent,
+    CookBookComponent,
+    TaxFormComponent, 
+    CostOfGoodsSoldComponent, 
+    StudentCalendarComponent,
+    EVAExampleComponent,
   ],
   imports: [
     BrowserModule,
