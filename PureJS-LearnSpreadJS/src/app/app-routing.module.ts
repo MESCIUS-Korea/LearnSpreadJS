@@ -48,6 +48,8 @@ import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.co
 import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
 import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component'
 import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
+import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component'
+import { AsyncFunctionComponent } from './calc/async-function/async-function.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -97,6 +99,8 @@ const APP_ROUTES:Routes = [
     { path: 'IndirectFunctionComponent', component: IndirectFunctionComponent },
     { path: 'Excel2010functionComponent', component: Excel2010functionComponent },
     { path: 'FunctionWildcardsComponent', component: FunctionWildcardsComponent },
+    { path: 'CustomFunctionsComponent', component: CustomFunctionsComponent },
+    { path: 'AsyncFunctionComponent', component: AsyncFunctionComponent },
 ];
 
 @NgModule({

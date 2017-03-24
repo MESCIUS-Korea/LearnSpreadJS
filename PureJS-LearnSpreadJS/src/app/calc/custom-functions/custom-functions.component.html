@@ -1,0 +1,31 @@
+<h1 class="page-header">
+  와일드 카드 문자 | Function Wildcards
+</h1>
+<div id="content" class="content">
+<p>
+1. 스프레드 시트에서 자신 만의 함수를 만들어 시트에 추가 할 수 있습니다.<br/><br/>
+2. 다음 코드와 같이 <b>GC.Spread.CalcEngine.Functions.Function</b>을 상속하여 고유 한 함수를 만들 수 있습니다.
+</p>  
+<pre class="sample-code"><code class="html hljs xml"><span class="hljs-keyword">function</span><span class="hljs-function"> FactorialFunction</span>() &#123;
+    <span class="hljs-keyword">this</span>.name = <span class="hljs-string">'FACTORIAL'</span>;
+    <span class="hljs-keyword">this</span>.maxArgs = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">this</span>.minArgs = <span class="hljs-number">1</span>;
+ &#125;   
+FactorialFunction.prototype = <span class="hljs-keyword">new</span> GC.Spread.CalcEngine.Functions.Function();
+FactorialFunction.prototype.evaluate = <span class="hljs-keyword">function</span> (args) &#125;
+    <span class="hljs-comment">// your own evaluate content</span>
+<span class="hljs-keyword">var</span> factorial = <span class="hljs-keyword">new</span> FactorialFunction();
+sheet.addCustomFunction(factorial);</code></pre>
+
+<p>3. 사용자 고유의 함수를 추가 한 후 해당 함수를 제거하거나 모든 사용자 정의 함수를 지우려면 <b>removeCustomFunction</b> 또는 <b>clearCustomFunctions</b> 메소드를 사용하십시오 </p>
+<pre class="sample-code"><code class="html hljs xml">sheet.removeCustomFunction(<span class="hljs-string">'FACTORIAL'</span>);
+sheet.clearCustomFunctions();</code></pre>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Functions' src='//codepen.io/GrapeCity-Korea/embed/ygYbVV/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ygYbVV/'>SpreadJS.10/Custom Functions</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

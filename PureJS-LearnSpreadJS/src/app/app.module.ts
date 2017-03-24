@@ -52,7 +52,9 @@ import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-examp
 import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component';
 import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component';
 import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component';
-import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
+import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component';
+import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component';
+import { AsyncFunctionComponent } from './calc/async-function/async-function.component'
 
 @NgModule({
   declarations: [
@@ -103,6 +105,8 @@ import { FunctionWildcardsComponent } from './calc/function-wildcards/function-w
     IndirectFunctionComponent,
     Excel2010functionComponent,
     FunctionWildcardsComponent,
+    CustomFunctionsComponent,
+    AsyncFunctionComponent,
   ],
   imports: [
     BrowserModule,

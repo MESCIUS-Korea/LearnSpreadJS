@@ -191,11 +191,11 @@
           },
           {
             "header": "사용자 함수",
-            "path": ""
+            "path": "CustomFunctionsComponent"
           },
           {
             "header": "비동기 함수",
-            "path": ""
+            "path": "AsyncFunctionComponent"
           }
         ]
       },
