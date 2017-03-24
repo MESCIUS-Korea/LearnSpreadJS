@@ -183,11 +183,11 @@
           },
           {
             "header": "Excel 2010 함수",
-            "path": ""
+            "path": "Excel2010functionComponent"
           },
           {
             "header": "와일드 카드 문자",
-            "path": ""
+            "path": "FunctionWildcardsComponent"
           },
           {
             "header": "사용자 함수",

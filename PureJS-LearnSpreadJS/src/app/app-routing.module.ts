@@ -46,6 +46,8 @@ import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold
 import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
 import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component'
 import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
+import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component'
+import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -93,6 +95,8 @@ const APP_ROUTES:Routes = [
     { path: 'EVAExampleComponent', component: EVAExampleComponent },
     { path: 'BasicfunctionsComponent', component: BasicfunctionsComponent },
     { path: 'IndirectFunctionComponent', component: IndirectFunctionComponent },
+    { path: 'Excel2010functionComponent', component: Excel2010functionComponent },
+    { path: 'FunctionWildcardsComponent', component: FunctionWildcardsComponent },
 ];
 
 @NgModule({

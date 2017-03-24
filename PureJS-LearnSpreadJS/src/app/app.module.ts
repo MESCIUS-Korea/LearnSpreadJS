@@ -50,7 +50,9 @@ import { StudentCalendarComponent } from './use-cases/samples/student-calendar/s
 import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
 import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component';
 import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component';
-import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
+import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component';
+import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component';
+import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
 
 @NgModule({
   declarations: [
@@ -99,6 +101,8 @@ import { IndirectFunctionComponent } from './calc/indirect-function/indirect-fun
     EVAExampleComponent,
     BasicfunctionsComponent,
     IndirectFunctionComponent,
+    Excel2010functionComponent,
+    FunctionWildcardsComponent,
   ],
   imports: [
     BrowserModule,
