@@ -48,7 +48,9 @@ import { CookBookComponent } from './use-cases/samples/cook-book/cook-book.compo
 import { TaxFormComponent } from './use-cases/samples/1040-tax-form/1040-tax-form.component';
 import { StudentCalendarComponent } from './use-cases/samples/student-calendar/student-calendar.component';
 import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
-import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
+import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component';
+import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component';
+import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
 
 @NgModule({
   declarations: [
@@ -95,6 +97,8 @@ import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-examp
     CostOfGoodsSoldComponent, 
     StudentCalendarComponent,
     EVAExampleComponent,
+    BasicfunctionsComponent,
+    IndirectFunctionComponent,
   ],
   imports: [
     BrowserModule,

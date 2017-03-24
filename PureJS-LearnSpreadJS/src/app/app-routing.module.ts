@@ -44,6 +44,8 @@ import { TaxFormComponent } from './use-cases/samples/1040-tax-form/1040-tax-for
 import { StudentCalendarComponent } from './use-cases/samples/student-calendar/student-calendar.component';
 import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
 import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
+import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component'
+import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -89,7 +91,8 @@ const APP_ROUTES:Routes = [
     { path: 'StudentCalendarComponent', component: StudentCalendarComponent },
     { path: 'CostOfGoodsSoldComponent', component: CostOfGoodsSoldComponent },
     { path: 'EVAExampleComponent', component: EVAExampleComponent },
-    
+    { path: 'BasicfunctionsComponent', component: BasicfunctionsComponent },
+    { path: 'IndirectFunctionComponent', component: IndirectFunctionComponent },
 ];
 
 @NgModule({

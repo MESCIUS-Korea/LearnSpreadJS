@@ -175,11 +175,11 @@
         "items": [
           {
             "header": "기본 함수",
-            "path": ""
+            "path": "BasicfunctionsComponent"
           },
           {
             "header": "Indirect 함수",
-            "path": ""
+            "path": "IndirectFunctionComponent"
           },
           {
             "header": "Excel 2010 함수",
