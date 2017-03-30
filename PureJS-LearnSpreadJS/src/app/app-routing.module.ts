@@ -50,6 +50,8 @@ import { Excel2010functionComponent } from './calc/excel2010function/excel2010fu
 import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
 import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component'
 import { AsyncFunctionComponent } from './calc/async-function/async-function.component'
+import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduction/array-formula-introduction.component'
+import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -101,6 +103,8 @@ const APP_ROUTES:Routes = [
     { path: 'FunctionWildcardsComponent', component: FunctionWildcardsComponent },
     { path: 'CustomFunctionsComponent', component: CustomFunctionsComponent },
     { path: 'AsyncFunctionComponent', component: AsyncFunctionComponent },
+    { path: 'ArrayFormulaIntroductionComponent', component: ArrayFormulaIntroductionComponent },
+    { path: 'ArrayFormulaUsageComponent', component: ArrayFormulaUsageComponent },
 ];
 
 @NgModule({

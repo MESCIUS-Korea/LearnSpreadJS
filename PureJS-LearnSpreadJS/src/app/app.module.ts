@@ -54,7 +54,9 @@ import { IndirectFunctionComponent } from './calc/indirect-function/indirect-fun
 import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component';
 import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component';
 import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component';
-import { AsyncFunctionComponent } from './calc/async-function/async-function.component'
+import { AsyncFunctionComponent } from './calc/async-function/async-function.component';
+import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduction/array-formula-introduction.component';
+import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component'
 
 @NgModule({
   declarations: [
@@ -107,6 +109,8 @@ import { AsyncFunctionComponent } from './calc/async-function/async-function.com
     FunctionWildcardsComponent,
     CustomFunctionsComponent,
     AsyncFunctionComponent,
+    ArrayFormulaIntroductionComponent,
+    ArrayFormulaUsageComponent,
   ],
   imports: [
     BrowserModule,

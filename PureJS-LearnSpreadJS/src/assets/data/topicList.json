@@ -201,15 +201,15 @@
       },
       {
         "header": "배열/Array 함수",
-        "path": "calc-functions",
+        "path": "calc-array-functions",
         "items": [
           {
             "header": "배열함수 소개",
-            "path": ""
+            "path": "ArrayFormulaIntroductionComponent"
           },
           {
             "header": "배열함수 사용",
-            "path": ""
+            "path": "ArrayFormulaUsageComponent"
           }
         ]
       }
