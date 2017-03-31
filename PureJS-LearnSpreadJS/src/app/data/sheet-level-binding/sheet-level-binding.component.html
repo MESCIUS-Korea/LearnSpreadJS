@@ -1,0 +1,52 @@
+<h1 class="page-header">
+  시트-레벨 바인딩 | Sheet Level Binding
+</h1>
+<div id="content" class="content">
+  <p>1. 스프레드 시트는 데이터 소스를 시트에 바인딩하는 것을 지원합니다. 바인딩은 시트 수준 바인딩 및 셀 수준 바인딩 일 수 있습니다.
+  <br/><br/>2. <b>setDataSource</b> 및 <b>getDataSource</b> 메소드를 사용하여 데이터 소스를 설정하고 가져올 수 있습니다. setDataSource를 사용하기 전에 <b>autoGenerateColumns</b> 메서드를 사용하여 데이터를 바인딩하는 동안 열을 자동으로 생성할지 여부를 제어하십시오. 예 :  
+  </p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> customers = [
+     &#123; ID:<span class="hljs-number">0</span>, Name:<span class="hljs-string">'A'</span>, Info1:<span class="hljs-string">'Info0'</span> &#125;,  
+     &#123; ID:<span class="hljs-number">1</span>, Name:<span class="hljs-string">'B'</span>, Info1:<span class="hljs-string">'Info1'</span> &#125;,  
+     &#123; ID:<span class="hljs-number">2</span>, Name:<span class="hljs-string">'C'</span>, Info1:<span class="hljs-string">'Info2'</span> &#125;,  
+ ];
+ sheet.autoGenerateColumns = <span class="hljs-number">true</span>;
+ sheet.setDataSource(customers);</code></pre>
+<p>
+또한 <b>getDataItem</b> 메소드를 사용하여 지정된 행의 데이터 항목을 가져올 수 있습니다.
+<br/><br/>
+3. 다음 예제와 같이 지정된 데이터 필드를 사용하여 열을 바인딩 할 수 있습니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span>  datasource = [
+ &#123;name: <span class="hljs-string">'Alice'</span>, age: <span class="hljs-number">27</span>, birthday: <span class="hljs-string">'1985/08/31'</span>, position: <span class="hljs-string">'PM'</span> &#125;
+];
+<span class="hljs-comment">// 하나씩 bindColumn </span>
+<span class="hljs-keyword">var</span> nameColInfo = &#123;name: <span class="hljs-string">'name'</span>, dislayName: <span class="hljs-string">'Display Name'</span>, size: <span class="hljs-number">70</span> &#125;;
+<span class="hljs-keyword">var</span> ageColInfo = &#123;name: <span class="hljs-string">'age'</span>, dislayName: <span class="hljs-string">'Age'</span>, size: <span class="hljs-number">40</span>, resizable: <span class="hljs-number">false</span> &#125;;
+<span class="hljs-keyword">var</span> birthdayColInfo = &#123;name: <span class="hljs-string">'birthday'</span>, dislayName: <span class="hljs-string">'Birthday'</span>, formatter: <span class="hljs-string">'d/M/yy'</span>, size: <span class="hljs-number">120</span> &#125;;
+<span class="hljs-keyword">var</span> positionColInfo = &#123;name: <span class="hljs-string">'position'</span>, dislayName: <span class="hljs-string">'Position'</span>, size: <span class="hljs-number">50</span>, visible: <span class="hljs-number">false</span> &#125;;
+sheet.autoGenerateColumns = <span class="hljs-number">false</span>;
+sheet.setDataSource(datasource);
+sheet.bindColumn(<span class="hljs-number">0</span>, nameColInfo);
+sheet.bindColumn(<span class="hljs-number">1</span>, birthdayColInfo);
+sheet.bindColumn(<span class="hljs-number">2</span>, ageColInfo);
+sheet.bindColumn(<span class="hljs-number">3</span>, positionColInfo);
+
+<span class="hljs-comment">// 또느 bindColumns를 사용하여 모든 사용자 정의 컬럼을 바인드하십시오.</span>
+<span class="hljs-keyword">var</span> colInfos = [
+  &#123; name : <span class="hljs-string">'position'</span>, displayName: <span class="hljs-string">'Position'</span>, size: <span class="hljs-number">50</span>, visible: <span class="hljs-number">false</span> &#125;,
+  &#123; name : <span class="hljs-string">'name'</span>, displayName: <span class="hljs-string">'Display Name'</span>, size: <span class="hljs-number">70</span> &#125;,
+  &#123; name : <span class="hljs-string">'birthday'</span>, dislayName: <span class="hljs-string">'Birthday'</span>, formatter: <span class="hljs-string">'d/M/yy'</span>, size: <span class="hljs-number">120</span> &#125;,
+  &#123; name: <span class="hljs-string">'age'</span>, dislayName: <span class="hljs-string">'Age'</span>, size: <span class="hljs-number">40</span>, resizable: <span class="hljs-number">false</span> &#125;,
+];
+sheet.autoGenerateColumns = <span class="hljs-number">false</span>;
+sheet.setDataSource(datasource);
+sheet.bindColumns(colInfos);</code></pre>
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Sheet-Level Binding' src='//codepen.io/GrapeCity-Korea/embed/LxpygM/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/LxpygM/'>SpreadJS.10/Sheet-Level Binding</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

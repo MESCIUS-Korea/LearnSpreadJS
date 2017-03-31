@@ -1,0 +1,23 @@
+<h1 class="page-header">
+  셀-레벨 바인딩 | Cell-Level Binding
+</h1>
+<div id="content" class="content">
+<p>1. 데이터 소스를 셀에 바인딩 할 수 있습니다. Spread.Sheets는 셀 수준의 바인딩을 지원합니다.
+<br/><br/>
+2. 셀 바인딩 소스를 만든 다음 <b>setBindingPath</b> 메서드를 사용하여 지정된 시트 영역의 지정된 셀에서 셀 수준 바인딩의 바인딩 경로를 설정할 수 있습니다. 그런 다음 시트의 데이터 소스를 설정하십시오. 예 :  </p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> person = &#123; name: <span class="hljs-string">'Wang feng'</span>, age : <span class="hljs-number">25</span>, sex: <span class="hljs-string">'male'</span>,  address: &#123; postcode: <span class="hljs-string">'71075'</span> &#125;&#125;
+<span class="hljs-keyword">var</span> source = <span class="hljs-keyword">new</span>  GC.Spread.Sheets.Bindings.CellBindingSource(person);
+sheet.setBindingPath(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-string">'name'</span>);
+sheet.setBindingPath(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'age'</span>);
+sheet.setBindingPath(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'sex'</span>);
+sheet.setBindingPath(<span class="hljs-number">4</span>, <span class="hljs-number">4</span>, <span class="hljs-string">'address.postcode'</span>);
+sheet.setDataSource(source);</code></pre>
+<p><b>getBindingPath</b>를 사용하여 지정된 시트 영역의 지정된 셀에서 셀 레벨 바인딩의 바인딩 경로를 가져올 수 있습니다. </p>
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Cell-Level Binding' src='//codepen.io/GrapeCity-Korea/embed/pRjPqw/?height=520&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/pRjPqw/'>SpreadJS.10/Cell-Level Binding</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

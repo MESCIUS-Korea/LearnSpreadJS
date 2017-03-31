@@ -56,7 +56,10 @@ import { FunctionWildcardsComponent } from './calc/function-wildcards/function-w
 import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component';
 import { AsyncFunctionComponent } from './calc/async-function/async-function.component';
 import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduction/array-formula-introduction.component';
-import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component'
+import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component';
+import { SheetLevelBindingComponent } from './data/sheet-level-binding/sheet-level-binding.component';
+import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-binding.component';
+import { TableBindingComponent } from './data/table-binding/table-binding.component'
 
 @NgModule({
   declarations: [
@@ -111,6 +114,9 @@ import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-for
     AsyncFunctionComponent,
     ArrayFormulaIntroductionComponent,
     ArrayFormulaUsageComponent,
+    SheetLevelBindingComponent,
+    CellLevelBindingComponent,
+    TableBindingComponent,
   ],
   imports: [
     BrowserModule,

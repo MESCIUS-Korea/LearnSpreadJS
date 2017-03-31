@@ -225,15 +225,15 @@
         "items": [
           {
             "header": "시트-레벨 바인딩",
-            "path": ""
+            "path": "SheetLevelBindingComponent"
           },
           {
             "header": "셀-레벨 바인딩",
-            "path": ""
+            "path": "CellLevelBindingComponent"
           },
           {
             "header": "테이블 바인딩",
-            "path": ""
+            "path": "TableBindingComponent"
           }
         ]
       },
