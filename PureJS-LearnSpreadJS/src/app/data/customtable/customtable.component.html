@@ -1,0 +1,30 @@
+<h1 class="page-header">
+  사용자 테이블 | Custom Table
+</h1>
+<div id="content" class="content">
+<p>1. 일부 테이블을 추가 한 후 테이블을 사용자 정의하여 다른 범위로 이동하거나 크기를 조정하거나 제거하려는 경우가 있습니다.
+<br/><br/>
+2. 테이블을 얻으려면 <b>find</b>, <b>findByName</b> 또는 <b>all</b> 메소드를 사용하십시오. 예 : </p>
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span>  table = sheet.tables.add(<span class="hljs-string">'table1'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, tableStyle);
+table === sheet.tables.find(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>); <span class="hljs-comment"> // true</span>
+table === sheet.tables.findByName(<span class="hljs-string">'table1'</span>);
+<span class="hljs-comment"> // get all the tables in this sheet.</span>
+<span class="hljs-keyword">var</span>  tables = sheet.tables.all();</code></pre>
+
+<p>3. 테이블 위치를 변경하거나 테이블 크기를 변경하려면 <b>move</b> 메서드를 사용하여 위치를 변경하고 <b>resize</b> 메서드를 사용하여 크기를 변경할 수 있습니다. </p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.tables.move(table, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+sheet.tables.resize(table, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);</code></pre>
+
+<p>4. 테이블이 필요하지 않으면 <b>remove</b> 메소드를 사용하여 테이블을 제거 할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.tables.remove(table); </code></pre>
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Table' src='//codepen.io/GrapeCity-Korea/embed/apvWgR/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/apvWgR/'>SpreadJS.10/Custom Table</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

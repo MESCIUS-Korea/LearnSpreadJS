@@ -59,7 +59,10 @@ import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduc
 import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component';
 import { SheetLevelBindingComponent } from './data/sheet-level-binding/sheet-level-binding.component';
 import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-binding.component';
-import { TableBindingComponent } from './data/table-binding/table-binding.component'
+import { TableBindingComponent } from './data/table-binding/table-binding.component';
+import { BasictableComponent } from './data/basictable/basictable.component';
+import { CustomtableComponent } from './data/customtable/customtable.component';
+import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
 
 @NgModule({
   declarations: [
@@ -117,6 +120,9 @@ import { TableBindingComponent } from './data/table-binding/table-binding.compon
     SheetLevelBindingComponent,
     CellLevelBindingComponent,
     TableBindingComponent,
+    BasictableComponent,
+    CustomtableComponent,
+    TablestyleComponent,
   ],
   imports: [
     BrowserModule,

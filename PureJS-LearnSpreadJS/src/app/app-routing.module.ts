@@ -55,6 +55,9 @@ import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-for
 import { SheetLevelBindingComponent } from './data/sheet-level-binding/sheet-level-binding.component'
 import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-binding.component'
 import { TableBindingComponent } from './data/table-binding/table-binding.component'
+import { BasictableComponent } from './data/basictable/basictable.component'
+import { CustomtableComponent } from './data/customtable/customtable.component'
+import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -111,6 +114,9 @@ const APP_ROUTES:Routes = [
     { path: 'SheetLevelBindingComponent', component: SheetLevelBindingComponent },
     { path: 'CellLevelBindingComponent', component: CellLevelBindingComponent },
     { path: 'TableBindingComponent', component: TableBindingComponent },
+    { path: 'BasictableComponent', component: BasictableComponent },
+    { path: 'CustomtableComponent', component: CustomtableComponent },
+    { path: 'TablestyleComponent', component: TablestyleComponent },
 ];
 
 @NgModule({

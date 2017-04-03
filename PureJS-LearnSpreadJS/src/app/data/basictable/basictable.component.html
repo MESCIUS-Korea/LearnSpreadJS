@@ -1,0 +1,28 @@
+<h1 class="page-header">
+  기본 테이블 | Basic Table
+</h1>
+<div id="content" class="content">
+<p>1. 때로는 관련 데이터 그룹을 보다 쉽게 관리하고 분석 할 수 있기를 원합니다. Spread.Sheets은 당신을 도울 테이블을 제공합니다. 셀 범위를 테이블로 변환 할 수 있습니다.
+<br/><br/>
+2. 두 가지 다른 방법으로 테이블을 추가 할 수 있습니다. 첫 번째 방법은 다음 코드와 같이 <b>add</b> 메서드를 사용하여 빈 테이블을 추가하는 것입니다.
+ </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span>  sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span>  tableStyle = GC.Spread.Sheets.Tables.TableThemes.light1;
+<span class="hljs-keyword">var</span>  table = sheet.tables.add(<span class="hljs-string">'table1'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, tableStyle);</code></pre>  
+<p>두 번째 방법은 테이블을 데이터 소스로 추가하고 <b>addFromDataSource</b>를 사용하는 것입니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span>  source = [
+&#123; LastName: <span class="hljs-string">'Jone'</span>, FirstName: <span class="hljs-string">'Nancy'</span>,Phone: <span class="hljs-string">'(123)555-0100'</span> &#125;,
+&#123; LastName: <span class="hljs-string">'Tom'</span>, FirstName: <span class="hljs-string">'Andrew'</span>,Phone: <span class="hljs-string">'(123)555-0100'</span> &#125;,
+&#123; LastName: <span class="hljs-string">'Kotas'</span>, FirstName: <span class="hljs-string">'Jan'</span>,Phone: <span class="hljs-string">'(123)555-0100'</span> &#125;,
+<span class="hljs-keyword">var</span>  table = sheet.tables.addFromDataSource( <span class="hljs-string">'table2</span> , <span class="hljs-number">1</span>, <span class="hljs-number">1</span> , source); </code></pre>   
+<p>두 번째 방법을 사용하면 테이블의 일부 데이터를 초기화 할 수 있습니다.</p>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Table' src='//codepen.io/GrapeCity-Korea/embed/XpmRwY/?height=520&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/XpmRwY/'>SpreadJS.10/Basic Table</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

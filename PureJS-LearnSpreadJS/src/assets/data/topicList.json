@@ -244,15 +244,15 @@
         "items": [
           {
             "header": "기본 테이블",
-            "path": ""
+            "path": "BasictableComponent"
           },
           {
             "header": "사용자 테이블",
-            "path": ""
+            "path": "CustomtableComponent"
           },
           {
             "header": "테이블 스타일",
-            "path": ""
+            "path": "TablestyleComponent"
           }
         ]
       },
