@@ -62,7 +62,8 @@ import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-
 import { TableBindingComponent } from './data/table-binding/table-binding.component';
 import { BasictableComponent } from './data/basictable/basictable.component';
 import { CustomtableComponent } from './data/customtable/customtable.component';
-import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
+import { TablestyleComponent } from './data/tablestyle/tablestyle.component';
+import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component'
 
 @NgModule({
   declarations: [
@@ -123,6 +124,7 @@ import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
     BasictableComponent,
     CustomtableComponent,
     TablestyleComponent,
+    BasicSparklineComponent,
   ],
   imports: [
     BrowserModule,

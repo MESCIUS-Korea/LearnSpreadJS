@@ -1,0 +1,38 @@
+<h1 class="page-header">
+  기본 스파크라인 | Basic Sparkline
+</h1>
+<div id="content" class="content">
+<p>1. 스파크 라인은 시트 셀에있는 작은 차트로 데이터를 시각적으로 나타냅니다. 스파크 라인을 사용하여 계절별 증가 또는 감소, 경기 순환 등과 같은 일련의 값의 추세를 보여줍니다.
+<br/><br/>
+2. 스파크 라인을 만들려면 <b>setSparkline</b> 메서드를 사용하여 셀의 스파크 라인을 설정합니다. <b>getSparkline</b> 메서드를 사용하여 스파크 라인을 가져올 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span> data = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">var</span> dateAxis = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>);
+sheet.addSpan(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>);
+sheet.setSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>, data
+   , GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+   , GC.Spread.Sheets.Sparklines.SparklineType.line
+   , setting
+   , dateAxis
+   , GC.Spread.Sheets.Sparklines.DataOrientation.vertical
+);
+sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);</code></pre>  
+<p>스파크 라인에는 세 가지 유형이 있습니다. 열거 형 <b>SparklineType</b>은 스파크 라인 유형을 나타냅니다. </p>
+<ul>
+   <li><b>line</b></li>
+   <li><b>column</b></li>
+   <li><b>winloss</b></li>
+</ul>  
+<p>3. 스파크 라인을 제거하려면 <b>removeSparkline</b> 메서드를 사용하여 지정된 셀의 스파크 라인을 제거합니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.removeSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);</code></pre> 
+ 
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic SparkLine' src='//codepen.io/GrapeCity-Korea/embed/MJaoKG/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/MJaoKG/'>SpreadJS.10/Basic SparkLine</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

@@ -262,7 +262,7 @@
         "items": [
           {
             "header": "기본 스파크라인",
-            "path": ""
+            "path": "BasicSparklineComponent"
           },
           {
             "header": "사용자 스파크라인",

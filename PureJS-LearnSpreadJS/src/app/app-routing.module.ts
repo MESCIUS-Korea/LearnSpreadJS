@@ -58,6 +58,7 @@ import { TableBindingComponent } from './data/table-binding/table-binding.compon
 import { BasictableComponent } from './data/basictable/basictable.component'
 import { CustomtableComponent } from './data/customtable/customtable.component'
 import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
+import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component'
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -117,6 +118,7 @@ const APP_ROUTES:Routes = [
     { path: 'BasictableComponent', component: BasictableComponent },
     { path: 'CustomtableComponent', component: CustomtableComponent },
     { path: 'TablestyleComponent', component: TablestyleComponent },
+    { path: 'BasicSparklineComponent', component: BasicSparklineComponent },
 ];
 
 @NgModule({

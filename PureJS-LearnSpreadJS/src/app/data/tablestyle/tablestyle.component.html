@@ -5,11 +5,35 @@
 <p>1. Spread.Sheets은 테이블 작업을 위한 많은 API를 제공합니다. 이러한 API를 사용하면 관련 데이터의 그룹화를보다 쉽게 관리하고 분석 할 수 있습니다.
 <br/><br/>
 2. 테이블의 머리글 또는 바닥 글을 표시할지 여부, 행 스타일 또는 열 스타일을 번갈아 표시할지 여부, 첫 번째 열 또는 마지막 열을 강조 표시할지 여부를 제어 할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span>  table = sheet.tables.add(<span class="hljs-string">'table1'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">4</span>, tableStyle);
+<span class="hljs-string">'table1'</span> === table.name(); <span class="hljs-comment"> // true</span>
+<span class="hljs-number">0</span> === table.headerIndex(); <span class="hljs-comment"> // true</span>
+<span class="hljs-number">3</span> === table.footerIndex(); <span class="hljs-comment"> // true</span>
+table.showHeader(<span class="hljs-number">true</span>); <span class="hljs-comment">// 헤더를 표시할지 여부</span>
+table.showFooter(<span class="hljs-number">true</span>); <span class="hljs-comment">//푸터를 표시할지 여부</span>
+table.bandRows(<span class="hljs-number">true</span>); <span class="hljs-comment">//교대 행 스타일 표시 여부</span>
+table.bandColumns(<span class="hljs-number">true</span>); <span class="hljs-comment">//교대 컬럼 스타일 표시 여부</span>
+table.highlightFirstColumn(<span class="hljs-number">true</span>); <span class="hljs-comment">//첫 번째 열을 강조 표시할지 여부</span>
+table.highlightLastColumn(<span class="hljs-number">true</span>); <span class="hljs-comment">//마지막 열을 강조 표시할지 여부</span>
+<span class="hljs-keyword">var</span> columnName = table.getColumnName(<span class="hljs-number">0</span>);<span class="hljs-comment">//헤더 텍스트 폭을 지정된 테이블 인덱스로 가져옵니다.</span>
+table.setColumnName(<span class="hljs-number">1</span>, <span class="hljs-string">'column2'</span>); <span class="hljs-comment">//테이블 헤더 텍스트를 설정</span>
+table.setColumnFormula(<span class="hljs-number">0</span>, <span class="hljs-string">'=SUM(A1:A4)'</span>); <span class="hljs-comment">//지정된 인덱스를 사용하여 테이블 바닥 글 수식 설정</span>
+<span class="hljs-string">'SUM(B2:B5)'</span>  === table.getColumnFormula(<span class="hljs-number">0</span>); <span class="hljs-comment"> //지정된 인덱스가있는 테이블 바닥 글 수식을 가져옵니다.</span></code></pre>  
+<p>3. 스프레드 시트는 내장 된 표 스타일을 지원하거나 표 스타일을 사용자 정의 할 수 있습니다. 예 :</p>
+<pre class="sample-code"><code class="js hljs javascript">table.style(GC.Spread.Sheets.Tables.TableThemes.dark1);
+<span class="hljs-keyword">var</span> border = <span class="hljs-keyword">new</span> GC.Spread.Sheets.LineBorder();
+<span class="hljs-keyword">var</span> styleInfo = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Tables.TableStyle(<span class="hljs-string">'red'</span>, <span class="hljs-string">'black'</span>,<span class="hljs-string">'10px arial'</span>, border, border, border, border, border, border);
+<span class="hljs-keyword">var</span> tableStyle = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Tables.TableTheme();
+tableStyle.name(<span class="hljs-string">'tableStyle1'</span>);
+tableStyle.headerRowStyle(styleInfo)
+table.style(tableStyle);</code></pre>  
 <br/>
 <h2>
   샘플코드:
 </h2>
 <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
-<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Table' src='//codepen.io/GrapeCity-Korea/embed/apvWgR/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/apvWgR/'>SpreadJS.10/Custom Table</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='520' scrolling='no' title='SpreadJS.10/Table Style' src='//codepen.io/GrapeCity-Korea/embed/PWPjqz/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/PWPjqz/'>SpreadJS.10/Table Style</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
 </div>    
