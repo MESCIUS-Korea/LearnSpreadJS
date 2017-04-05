@@ -1,0 +1,41 @@
+<h1 class="page-header">
+  사용자 스파크라인 | Custome Sparkline
+</h1>
+<div id="content" class="content">
+<p>1. 스파크 라인을 작성한 후 제공된 API를 사용하여 스파크 라인 그룹 설정, 스파크 라인 유형 변경, 스파크 라인 데이터 설정, 날짜 축 데이터 설정 등의 스파크 라인을 사용자 정의 할 수 있습니다.
+<br/><br/>
+2. 스파크 라인을 그룹화 할 수 있습니다. 그 후에 이 스파크 라인은 몇 가지 공통 설정을 공유합니다. <b>groupSparkline</b> 및 <b>ungroupSparkline</b> 메소드를 사용하여 스파크 라인을 그룹화하거나 그룹 해제하십시오. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span>es = sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> esg = sheet.groupSparkline([es]);
+esg.sparklineType = GC.Spread.Sheets.Sparklines.SparklineType.column;
+sheet.ungroupSparkline(esg);</code></pre>  
+<p>3. <b>sparklineType</b> 메소드를 사용하여 sparkline 유형을 변경할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sparkline = sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);
+sparkline.sparklineType(GC.Spread.Sheets.Sparklines.SparklineType.column);</code></pre>   
+<p>4. 또한 data 및 dataAxisData 메소드를 가져오고 설정할 수 있습니다. <b>data</b> 메소드를 사용하여 데이터 오브젝트를 가져오고 설정하십시오. <b>dataOrientation</b> 메서드를 사용하여 데이터 방향을 가져오고 설정합니다. <b>dateAxisData</b> 메서드를 사용하여 날짜 축 데이터 객체를 가져오고 설정합니다. <b>dateAxisOrientation</b> 메서드를 사용하여 날짜 축 방향을 가져오고 설정합니다. <b>displayDateAxis</b> 메서드를 사용하여 날짜 축 표시 여부를 가져오고 설정합니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sparkline = sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);
+sparkline.data(<span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>));
+sparkline.dataOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.vertical);
+sparkline.dateAxisData(<span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>));
+sparkline.dateAxisOrientation(GC.Spread.Sheets.Sparklines.DataOrientation.vertical);
+sparkline.displayDateAxis(<span class="hljs-number">true</span>);</code></pre>  
+<p>5. 스파크 라인 설정이 많이 있습니다. <b>setting</b> 메소드를 사용하여 스파크 라인 설정을 가져오고 설정할 수 있습니다. 다음 단계에서 설정에 대한 자세한 내용을 볼 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sparkline = sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> setting  = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting();
+setting.showHigh(<span class="hljs-number">true</span>);
+sparkline.setting(setting);</code></pre>  
+<p>6. 스파크 라인 이벤트가 있습니다. 스파크 라인이 변경되면 발생합니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.bind(GC.Spread.Sheets.Events.SparklineChanged,<span class="hljs-keyword"> function</span>() &#123;
+<span class="hljs-comment">//event handler </span>
+&#125;);</code></pre>  
+<br/>
+
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Sparkline' src='//codepen.io/GrapeCity-Korea/embed/ggzLjL/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ggzLjL/'>SpreadJS.10/Custom Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

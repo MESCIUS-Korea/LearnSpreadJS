@@ -1,0 +1,36 @@
+<h1 class="page-header">
+ 캐스케이드 스파크라인 | Cascade Sparkline
+</h1>
+<div id="content" class="content">
+<p>수식에서 CascadeSparkline 함수를 사용하여 Cascade 스파크라인을 만들 수 있습니다.
+<br/><br/>
+=<b>CASCADESPARKLINE(pointsRange, pointIndex, labelsRange?, minimum?, maximum?, colorPositive?, colorNegative?, vertical?). </b> 
+<br/><br/>
+이 함수에는 다음과 같은 매개 변수가 있습니다.
+<br/><br/>
+<b>pointsRange</b>: "B2 : B8"과 같이 설명 할 모든 값을 포함하는 셀 범위를 나타내는 레퍼런스입니다.
+<br/><br/>
+<b>pointIndex</b>: Point의 Point 인덱스를 나타내는 숫자 또는 참조 및 pointIndex> = 1 (예 : 1 또는 "D2")
+<br/><br/>
+<b>labelsRange</b>: (선택 사항) 설명 할 모든 레이블을 포함하는 셀 범위를 나타내는 레퍼런스(예 : "A2 : A8"). 기본값은 레이블이 없습니다.
+<br/><br/>
+<b>minimum</b>: (선택 사항) 표시 영역의 최소값을 나타내는 숫자 또는 레퍼런스입니다 (예 : -2000). 기본값은 합계의 최소값 (점의 합계)입니다.
+<br/><br/>
+<b>maximum</b>: (선택 사항) 표시 영역의 최대 값을 나타내는 숫자 또는 레퍼런스(예 : 6000). 기본값은 합계의 최대 값 (점의 합계 값)입니다.
+<br/><br/>
+<b>colorPositive</b>: (선택 사항) 첫 번째 또는 마지막 양수인 스파크 라인 상자의 색상을 나타내는 문자열입니다 (이 점의 값은 양수입니다). 기본값은 "# 8CBF64"입니다.
+<br/><br/>
+<b>colorNegative</b>: (선택 사항) 첫 번째 또는 마지막 음수인 스파크 라인 상자의 색상을 나타내는 문자열입니다 (이 점의 값은 음수입니다). 기본값은 "# D6604D"입니다.)
+<br/><br/>
+<b>vertical</b>: (선택 사항) 상자의 방향이 세로 또는 가로인지 여부를 나타내는 Boolean입니다. 기본값은 false입니다.
+<br/><br/>
+</p>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Cascade SparkLine' src='//codepen.io/GrapeCity-Korea/embed/pRgdwd/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/pRgdwd/'>SpreadJS.10/Cascade SparkLine</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

@@ -1,0 +1,57 @@
+<h1 class="page-header">
+  스파크라인 설정 | Sparkline Setting
+</h1>
+<div id="content" class="content">
+<p>1. 스파크 라인을 만든 후에는 표시되는 값의 포인트 (예 : 높음, 낮음, 우선, 마지막 또는 음수 값), 스파크 라인 유형 변경 (선, 열 또는 WinLoss), 스타일 적용, 가로축을 표시할지 여부를 제어합니다.
+<br/><br/>
+2. 마커 중 일부 또는 전부를 표시하여 라인 스파크 라인의 개별 데이터 마커 (값)를 강조 표시 할 수 있습니다. </p>
+<ul>
+  <li><b>showFirst :이 스파크 라인 그룹의 각 스파크 라인에 대해 첫 번째 데이터 포인트의 형식이 다르게 지정되는지 여부 </b></li>
+  <li><b>showHigh :이 스파크 라인 그룹의 각 스파크 라인에 대해 가장 높은 값을 가진 데이터 포인트가 다르게 포맷되었는지 여부 </b></li>
+  <li><b>showLast :이 스파크 라인 그룹의 각 스파크 라인에 대해 마지막 데이터 포인트가 다르게 포맷되었는지 여부
+ </b></li>
+  <li><b>showLow : 가장 낮은 값을 가진 데이터 포인트가 이 스파크 라인 그룹의 각 스파크 라인에 대해 다르게 포맷되는지 여부 </b></li>
+  <li><b>showNegative : 음의 데이터 포인트가 이 스파크 라인 그룹의 각 스파크 라인에 대해 다르게 포맷되는지 여부
+ </b></li>
+  <li><b>showMarkers :이 스파크 라인 그룹의 각 스파크 라인에 데이터 마커가 표시되는지 여부 </b></li>
+</ul>  
+<p>3. 다음 방법을 사용하여 스파크 라인의 스타일과 형식을 변경할 수 있습니다. </p>
+<ul>
+  <li><b>axisColor : 축의 색 </b></li>
+  <li><b>firstMarkerColor :이 스파크 라인 그룹의 각 스파크 라인에 대한 첫 번째 데이터 포인트의 색상 </b></li>
+  <li><b>highMarkerColor :이 스파크 라인 그룹의 각 스파크 라인에 대해 가장 높은 데이터 포인트의 색상 </b></li>
+  <li><b>lastMarkerColor :이 스파크 라인 그룹의 각 스파크 라인에 대한 마지막 데이터 포인트의 색상 </b></li>
+  <li><b>lowMarkerColor :이 스파크 라인 그룹의 각 스파크 라인에 대한 가장 낮은 데이터 포인트의 색상 </b></li>
+  <li><b>markersColor :이 스파크 라인 그룹의 각 스파크 라인에 대한 데이터 마커의 색상 </b></li>
+  <li><b>negativeColor :이 스파크 라인 그룹의 각 스파크 라인에 대한 음수 데이터 포인트의 색상 </b></li>
+  <li><b>seriesColor :이 스파크 라인 그룹의 각 스파크 라인 색상 </b></li>
+</ul>  
+<p>4. 스파크 라인은 추가 설정을 제공합니다. 예를 들어 차트의 데이터 계열에 빈 값이있는 경우가 있습니다. 다음 예와 같이 <b>displayEmptyCellsAs</b> 옵션을 사용하여 빈 셀을 표시하는 방법을 제어 할 수 있습니다. </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> setting = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting();
+setting.options.displayEmptyCellsAs = GC.Spread.Sheets.Sparklines.EmptyValueStyle.gaps;
+setting.options.rightToLeft = <span class="hljs-number">true</span>;
+setting.options.displayHidden = <span class="hljs-number">false</span>;
+setting.options.displayXAxis = <span class="hljs-number">false</span>
+setting.options.lineWeight = <span class="hljs-number">2</span>;
+setting.options.manualMax = <span class="hljs-number">3</span>;
+setting.options.manualMin = <span class="hljs-number">1</span>;
+setting.options.markersColor = <span class="hljs-string">'Magenta'</span>;
+setting.options.maxAxisType = GC.Spread.Sheets.Sparklines.SparklineAxisMinMax.custom;
+setting.options.minAxisType = GC.Spread.Sheets.Sparklines.SparklineAxisMinMax.individual;</code></pre>
+<p>5. 다음 예제는 이러한 설정을 적용하는 방법을 보여줍니다. </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> setting = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Sparklines.SparklineSetting();
+setting.options.showFirst = <span class="hljs-number">true</span>;
+setting.options.showHigh = <span class="hljs-number">true</span>;
+setting.options.displayXAxis = <span class="hljs-number">true</span>;
+setting.options.axisColor = <span class="hljs-string">'Cyan'</span>;
+var sparkline = sheet.getSparkline(<span class="hljs-number">11</span>, <span class="hljs-number">0</span>);
+sparkline.setting(setting);</code></pre>
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/SparkLine Setting' src='//codepen.io/GrapeCity-Korea/embed/ygYXXE/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ygYXXE/'>SpreadJS.10/SparkLine Setting</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

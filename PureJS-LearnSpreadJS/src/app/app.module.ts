@@ -63,7 +63,10 @@ import { TableBindingComponent } from './data/table-binding/table-binding.compon
 import { BasictableComponent } from './data/basictable/basictable.component';
 import { CustomtableComponent } from './data/customtable/customtable.component';
 import { TablestyleComponent } from './data/tablestyle/tablestyle.component';
-import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component'
+import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component';
+import { CustomSparklineComponent } from './data/custom-sparkline/custom-sparkline.component';
+import { SparklineComponent } from './data/sparkline/sparkline.component';
+import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-sparkline.component'
 
 @NgModule({
   declarations: [
@@ -125,6 +128,9 @@ import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.
     CustomtableComponent,
     TablestyleComponent,
     BasicSparklineComponent,
+    CustomSparklineComponent,
+    SparklineComponent,
+    CascadeSparklineComponent,
   ],
   imports: [
     BrowserModule,

@@ -266,76 +266,76 @@
           },
           {
             "header": "사용자 스파크라인",
-            "path": ""
+            "path": "CustomSparklineComponent"
           },
           {
             "header": "스파크라인 설정",
-            "path": ""
+            "path": "SparklineComponent"
           }
         ]
       },
        {
         "header": "스파크 라인 확장",
-        "path": "data-sparkline",
+        "path": "data-sparkline-Expand",
         "items": [
           {
-            "header": "Cascade Sparkline",
+            "header": "캐스케이드 스파크라인",
+            "path": "CascadeSparklineComponent"
+          },
+          {
+            "header": "BoxPlot 스파크라인",
             "path": ""
           },
           {
-            "header": "BoxPlot Sparkline",
+            "header": "Bullet 스파크라인",
             "path": ""
           },
           {
-            "header": "Bullet Sparkline",
+            "header": "HBar / VBar 스파크라인",
             "path": ""
           },
           {
-            "header": "HBar / VBar Sparkline",
+            "header": "Pareto 스파크라인",
             "path": ""
           },
           {
-            "header": "Pareto Sparkline",
+            "header": "Pie 스파크라인",
             "path": ""
           },
           {
-            "header": "Pie Sparkline",
+            "header": "Area 스파크라인",
             "path": ""
           },
           {
-            "header": "Area Sparkline",
+            "header": "Scatter 스파크라인",
             "path": ""
           },
           {
-            "header": "Scatter Sparkline",
+            "header": "Spread 스파크라인",
             "path": ""
           },
           {
-            "header": "Spread Sparkline",
+            "header": "Stacked 스파크라인",
             "path": ""
           },
           {
-            "header": "Stacked Sparkline",
+            "header": "Vari 스파크라인",
             "path": ""
           },
           {
-            "header": "Vari Sparkline",
+            "header": "Compatible 스파크라인",
             "path": ""
           },
           {
-            "header": "Compatible Sparkline",
+            "header": "Custom 스파크라인",
             "path": ""
           },
           {
-            "header": "Custom Sparkline",
+            "header": "Month 스파크라인",
             "path": ""
           },
           {
-            "header": "Month Sparkline",
-            "path": ""
-          },
-          {
-            "header": "Year Sparkline",
+            "header": "Year 스파크라인",
             "path": ""
           }
         ]
