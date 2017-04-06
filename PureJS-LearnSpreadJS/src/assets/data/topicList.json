@@ -688,7 +688,7 @@
         "items": [
           {
             "header": "Excel 가져오기/내보내기",
-            "path": ""
+            "path": "ClientSideExcelIOComponent"
           }       
         ]
       }

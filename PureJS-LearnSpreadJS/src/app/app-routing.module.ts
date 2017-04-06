@@ -42,26 +42,28 @@ import { ExpenseBudgetComponent } from './use-cases/samples/expense-budget/expen
 import { CookBookComponent } from './use-cases/samples/cook-book/cook-book.component';
 import { TaxFormComponent } from './use-cases/samples/1040-tax-form/1040-tax-form.component';
 import { StudentCalendarComponent } from './use-cases/samples/student-calendar/student-calendar.component';
-import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component'
-import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component'
-import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component'
-import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component'
-import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component'
-import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component'
-import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component'
-import { AsyncFunctionComponent } from './calc/async-function/async-function.component'
-import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduction/array-formula-introduction.component'
-import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component'
-import { SheetLevelBindingComponent } from './data/sheet-level-binding/sheet-level-binding.component'
-import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-binding.component'
-import { TableBindingComponent } from './data/table-binding/table-binding.component'
-import { BasictableComponent } from './data/basictable/basictable.component'
-import { CustomtableComponent } from './data/customtable/customtable.component'
-import { TablestyleComponent } from './data/tablestyle/tablestyle.component'
-import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component'
-import { CustomSparklineComponent } from './data/custom-sparkline/custom-sparkline.component'
-import { SparklineComponent } from './data/sparkline/sparkline.component'
-import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-sparkline.component'
+import { CostOfGoodsSoldComponent } from './use-cases/samples/cost-of-goods-sold/cost-of-goods-sold.component';
+import { EVAExampleComponent } from './use-cases/templates/eva-example/eva-example.component';
+import { BasicfunctionsComponent } from './calc/basicfunctions/basicfunctions.component';
+import { IndirectFunctionComponent } from './calc/indirect-function/indirect-function.component';
+import { Excel2010functionComponent } from './calc/excel2010function/excel2010function.component';
+import { FunctionWildcardsComponent } from './calc/function-wildcards/function-wildcards.component';
+import { CustomFunctionsComponent } from './calc/custom-functions/custom-functions.component';
+import { AsyncFunctionComponent } from './calc/async-function/async-function.component';
+import { ArrayFormulaIntroductionComponent } from './calc/array-formula-introduction/array-formula-introduction.component';
+import { ArrayFormulaUsageComponent } from './calc/array-formula-usage/array-formula-usage.component';
+import { SheetLevelBindingComponent } from './data/sheet-level-binding/sheet-level-binding.component';
+import { CellLevelBindingComponent } from './data/cell-level-binding/cell-level-binding.component';
+import { TableBindingComponent } from './data/table-binding/table-binding.component';
+import { BasictableComponent } from './data/basictable/basictable.component';
+import { CustomtableComponent } from './data/customtable/customtable.component';
+import { TablestyleComponent } from './data/tablestyle/tablestyle.component';
+import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component';
+import { CustomSparklineComponent } from './data/custom-sparkline/custom-sparkline.component';
+import { SparklineComponent } from './data/sparkline/sparkline.component';
+import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-sparkline.component';
+import { ClientSideExcelIOComponent } from './Excel-IO/Client-Side-Excel-IO/client-side-excel-io/client-side-excel-io.component';
+
 
 const APP_ROUTES:Routes = [
     { path: '', component: OverviewComponent },  
@@ -125,6 +127,8 @@ const APP_ROUTES:Routes = [
     { path: 'CustomSparklineComponent', component: CustomSparklineComponent },
     { path: 'SparklineComponent', component: SparklineComponent },
     { path: 'CascadeSparklineComponent', component: CascadeSparklineComponent },
+    { path: 'ClientSideExcelIOComponent', component: ClientSideExcelIOComponent },
+    
 ];
 
 @NgModule({

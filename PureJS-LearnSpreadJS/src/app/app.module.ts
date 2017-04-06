@@ -66,7 +66,9 @@ import { TablestyleComponent } from './data/tablestyle/tablestyle.component';
 import { BasicSparklineComponent } from './data/basic-sparkline/basic-sparkline.component';
 import { CustomSparklineComponent } from './data/custom-sparkline/custom-sparkline.component';
 import { SparklineComponent } from './data/sparkline/sparkline.component';
-import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-sparkline.component'
+import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-sparkline.component';
+import { ClientSideExcelIOComponent } from './Excel-IO/Client-Side-Excel-IO/client-side-excel-io/client-side-excel-io.component';
+
 
 @NgModule({
   declarations: [
@@ -131,6 +133,8 @@ import { CascadeSparklineComponent } from './data/cascade-sparkline/cascade-spar
     CustomSparklineComponent,
     SparklineComponent,
     CascadeSparklineComponent,
+    ClientSideExcelIOComponent,
+    
   ],
   imports: [
     BrowserModule,
