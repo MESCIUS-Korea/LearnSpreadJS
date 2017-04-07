@@ -1,3 +1,36 @@
-<p>
-  pareto-sparkline works!
+<h1 class="page-header">
+ Pareto 스파크라인 | Pareto Sparkline
+</h1>
+<div id="content" class="content">
+<p>ParetoSparkline 함수를 사용하여 Pareto 스파크 라인을 만들 수 있습니다. <br/><br/>
+=<b>PARETOSPARKLINE(points, pointIndex, colorRange?, target?, target2?, highlightPosition?, label?, vertical?).</b><br/><br/>
+이 함수에는 다음과 같은 매개 변수가 있습니다.<br/><br/>
+
+<b>points</b> : 설명 할 모든 값을 포함하는 셀 범위를 나타내는 레퍼런스 (예 : "B2 : B7")<br/><br/>
+
+<b>pointIndex</b> : 점의 세그먼트 인덱스를 나타내는 숫자 또는 레퍼런스이며 pointIndex> = 1 (예 : 1 또는 "D2")<br/><br/>
+
+<b>colorRange</b> : (선택 사항) 세그먼트 상자의 색상을 포함하는 셀 범위를 나타내는 레퍼런스 (예 : "D2 : D7") 기본값은 null입니다.<br/><br/>
+
+<b>target</b> : (선택 사항) "target"행 위치를 나타내는 숫자 또는 레퍼런스 (예 : 0.5). 기본값은 null입니다.<br/><br/>
+
+<b>target2</b> : (선택 사항) "target2"행 위치를 나타내는 숫자 또는 레퍼런스 (예 : 0.5). 기본값은 null입니다.<br/><br/>
+
+<b>highlightPosition </b>: (선택 사항) 빨간색으로 색칠 될 세그먼트의 순위를 나타내는 숫자 또는 레퍼런스 (예 : 3). 기본값은 null입니다.<br/><br/>
+
+<b>label</b> : (선택 사항) 누적 백분율 (label = 1) 또는 단일 백분율 (label = 2) 또는 none (label = 0)으로 표시되는지 여부를 나타내는 숫자입니다. 기본값은 none입니다.<br/><br/>
+
+<b>vertical</b> : (선택 사항) 상자의 방향이 수직인지 여부를 나타내는 Boolean 값입니다. 기본값은 false입니다.<br/><br/>
+
 </p>
+
+
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Pareto Sparkline' src='//codepen.io/GrapeCity-Korea/embed/OpYeEG/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/OpYeEG/'>SpreadJS.10/Pareto Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      
