@@ -1,3 +1,29 @@
-<p>
-  pie-sparkline works!
+<h1 class="page-header">
+ 파이 스파크라인 | Pie Sparkline
+</h1>
+<div id="content" class="content">
+<p>수식에서 PieSparkline 함수를 사용하여 파이 스파크 라인을 만들 수 있습니다. <br/><br/>
+=<b>PIESPARKLINE(percentage,color1?,color2?,.....)</b> <br/><br/>
+이 함수에는 다음과 같은 매개 변수가 있습니다.<br/><br/>
+<b>percentage</b> <br/><br/>
 </p>
+<ul>
+  <li><b>매개 변수가 셀 (예 : A1)이면 percentage은 셀의 값입니다. </b></li>
+  <li><b>매개 변수가 범위 (예 : "A1 : B3") 인 경우 percentage은 각 셀의 값을 범위의 합으로 나눈 결과입니다. </b></li>
+  <li><b>매개 변수가 percent 값 (예 : 30 % 또는 0.3)이면 percentage이 값입니다. </b></li>
+  <li><b>구문 분석 값이 유효하지 않은 경우 0으로 처리됩니다. </b></li>
+</ul>   
+<p><b>color1?, color2? ... (선택사항) </b></p>
+<ul>
+  <li><b>색상 매개 변수 개수가 범위 개수보다 크거나 같으면 값과 색상이 일대일로 일치합니다. 중복 색상은 무시됩니다. </b></li>
+  <li><b>색상 매개 변수 개수가 범위 개수보다 작 으면 주어진 색상이 다시 사용되고 각 섹터가 다른 색상을 갖도록 선형 그래디언트를 만듭니다. </b></li>
+  <li><b>색상이 없으면 기본값으로 "darkgray"를 사용합니다. </b></li>
+</ul>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Pie Sparkline' src='//codepen.io/GrapeCity-Korea/embed/LWwyJE/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/LWwyJE/'>SpreadJS.10/Pie Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    

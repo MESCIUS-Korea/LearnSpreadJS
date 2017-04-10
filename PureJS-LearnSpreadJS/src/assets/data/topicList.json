@@ -295,11 +295,11 @@
             "path": "HbarVbarComponent"
           },
           {
-            "header": "Pareto 스파크라인",
+            "header": "파레토 스파크라인",
             "path": "ParetoSparklineComponent"
           },
           {
-            "header": "Pie 스파크라인",
+            "header": "파이 스파크라인",
             "path": "PieSparklineComponent"
           },
           {
@@ -331,11 +331,11 @@
             "path": "CustomeSparklineexComponent"
           },
           {
-            "header": "Month 스파크라인",
+            "header": "월 스파크라인",
             "path": "MonthSparklineComponent"
           },
           {
-            "header": "Year 스파크라인",
+            "header": "연(년) 스파크라인",
             "path": "YearComponent"
           }
         ]
