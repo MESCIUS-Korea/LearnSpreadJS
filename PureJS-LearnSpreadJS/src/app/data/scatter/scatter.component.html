@@ -1,3 +1,53 @@
-<p>
-  scatter works!
+<h1 class="page-header">
+ Scatter 스파크라인 | Scatter Sparkline
+</h1>
+<div id="content" class="content">
+<p>ScatterSparkline 함수를 사용하여 scatter sparkline 함수를 만들 수 있습니다. <br/><br/>
+=<b>SCATTERSPARKLINE(points1, points2?, minX?, maxX?, minY?, maxY?, hLine?, vLine?, xMinZone?, xMaxZone?, yMinZone?, yMaxZone?, tags?, drawSymbol?, drawLines?, color1?, color2?, dash?)</b>
+ <br/><br/>이 함수에는 다음과 같은 매개 변수가 있습니다. <br/><br/>
+<b>points1</b> : x, y 데이터의 첫 번째 Series입니다. "H1 : I3"와 같은 범위입니다. 행 계수가 열 계수보다 크거나 같으면 처음 두 열에서 데이터를 가져옵니다. 첫 번째 열은 x 값을 포함하고 두 번째 열은 y 값을 포함합니다. 그렇지 않으면 처음 두 행에서 데이터를 가져옵니다. 첫 번째 행에는 x 값이 포함되고 두 번째 행에는 y 값이 포함됩니다.
+<br/><br/>
+<b>points2</b> : (선택 사항) x, y 데이터의 두 번째 Series입니다.  "H4 : I6"과 같은 범위입니다. 행 계수가 열 계수보다 크거나 같으면 처음 두 열에서 데이터를 가져옵니다. 첫 번째 열은 x 값을 포함하고 두 번째 열은 y 값을 포함합니다. 그렇지 않으면 처음 두 행에서 데이터를 가져옵니다. 첫 번째 행에는 x 값이 포함되고 두 번째 행에는 y 값이 포함됩니다.
+<br/><br/>
+<b>minX</b> : (선택 사항) x 두 Series는의 최소 한도, 각 Series는 생략되면 고유 한 값을 가집니다.
+<br/><br/>
+<b>maxX</b> : (선택 사항) x 두 Series는의 최대 한도; 각 Series는 생략되면 고유 한 값을 가집니다.
+<br/><br/>
+<b>minY</b> : (선택 사항) y 두 Series는의 최소 한도. 각 Series는 생략되면 고유 한 값을 가집니다.
+<br/><br/>
+<b>maxY</b> : (선택 사항) y 두 Series는의 최대 한도. 각 Series는 생략되면 고유 한 값을 가집니다.
+<br/><br/>
+<b>hLine</b> : (선택 사항) 가로 축의 위치입니다. 생략하면 선이 안 만들어집니다.
+<br/><br/>
+<b>vLine</b> : (선택 사항) 세로 축의 위치입니다. 생략하면 선이 안 만들어집니다.
+<br/><br/>
+<b>xMinZone</b> : (선택 사항) x 회색 영역의 최소값. 이 네 개의 영역 매개 변수 중 하나라도 생략되면 회색 영역이 없습니다.
+<br/><br/>
+<b>xMaxZone</b> : (선택 사항) x 회색 영역의 최대 값. 이 네 개의 영역 매개 변수 중 하나라도 생략되면 회색 영역이 없습니다.
+<br/><br/>
+<b>yMinZone</b> : (선택 사항) y 회색 영역의 최소값. 이 네 개의 영역 매개 변수 중 하나라도 생략되면 회색 영역이 없습니다.
+<br/><br/>
+<b>yMaxZone</b> : (선택 사항) y 회색 영역의 최대 값. 이 네 개의 영역 매개 변수 중 하나라도 생략되면 회색 영역이 없습니다.
+<br/><br/>
+<b>tags</b> : (선택 사항) true이면 y 값이 첫 번째 Serie의 최대 값 인 지점을 "# 0000FF"로 표시하고 y 값이 첫 번째 시리즈의 최소값 인 지점을 "# CB0000"으로 표시합니다. . 기본값은 false입니다.
+<br/><br/>
+<b>drawSymbol</b> : (선택 사항) True이면 각 점을 심볼로 그립니다. 첫 번째 Serie의 심볼은 원이고 두 번째 Serie의 심볼은 사각형입니다. 기본값은 true입니다.
+<br/><br/>
+<b>drawLines</b> : (선택 사항) True이면 각 Serie의 순서에 따라 각 점을 한 행으로 연결하십시오. 기본값은 false입니다.
+<br/><br/>
+<b>color1</b> : (선택 사항) 첫 번째 일련의 점의 색상 문자열. 기본값은 "# 969696"입니다.
+<br/><br/>
+<b>color2</b> : (선택 사항) 두 번째 일련의 점의 색상 문자열. 기본값은 "# CB0000"입니다.
+<br/><br/>
+<b>dash</b> : (선택 사항) True이면 선은 점선입니다. 그렇지 않으면 라인은 실선입니다. 기본값은 false입니다.
 </p>
+
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Scatter Sparkline' src='//codepen.io/GrapeCity-Korea/embed/gWYPRq/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/gWYPRq/'>SpreadJS.10/Scatter Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>          

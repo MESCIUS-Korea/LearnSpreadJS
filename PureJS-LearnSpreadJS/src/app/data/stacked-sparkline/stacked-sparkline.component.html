@@ -1,3 +1,45 @@
+<h1 class="page-header">
+ Stacked 스파크라인 | Stacked Sparkline
+</h1>
+<div id="content" class="content">
+<p>StackedSparkline 함수를 사용하여 Stacked 스파크 라인을 만들 수 있습니다. textOrientation?, textSize?) <br/><br/>
+=<b>STACKEDSPARKLINE(points, colorRange?, labelRange?, maximum?, targetRed?, targetGreen?, targetBlue?, tragetYellow?, color?, highlightPosition?, vertical?, textOrientation?, textSize?)</b><br/><br/>
+이 함수에는 다음과 같은 매개 변수가 있습니다.<br/><br/>
+<b>points</b> : "A1 : A4"와 같이 설명 할 모든 값이 포함 된 셀 범위를 나타내는 레퍼런스입니다.<br/><br/>
+
+<b>colorRange</b> : (선택 사항) "B1 : B4"와 같이 모든 색상을 포함하는 셀 범위를 나타내는 레퍼런스입니다. 기본값은 색상으로 생성됩니다.
+<br/><br/>
+<b>labelRange</b> : (선택 사항) "C1 : C4"와 같이 모든 레이블을 포함하는 셀 범위를 나타내는 레퍼런스입니다. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>maximum</b> : (선택 사항) 스파크 라인의 최대 값을 나타내는 숫자.
+<br/><br/>
+<b>targetRed</b> : (선택 사항) 빨간색 선의 위치를 ​​나타내는 숫자. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>targetGreen</b> : (선택 사항) 녹색 선의 위치를 ​​나타내는 숫자. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>targetBlue</b> : (선택 사항) 파란색 선의 위치를 ​​나타내는 숫자. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>targetYellow</b> : (선택 사항) 노란색 선의 위치를 ​​나타내는 숫자. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>color</b> : (선택 사항) colorRange가 생략 된 경우 색상을 생성하기 위한 색상을 나타내는 문자열. 기본값은 "# 646464"입니다.
+<br/><br/>
+<b>highlightPosition</b> : (선택 사항) 하이라이트 영역의 인덱스를 나타내는 숫자. 기본값은 빈 문자열입니다.
+<br/><br/>
+<b>vertical</b> : (선택 사항) 스파크 라인을 세로로 표시할지 여부를 나타내는 Boolean 값입니다. 기본값은 false입니다.
+<br/><br/>
+<b>textOrientation</b> : (선택 사항) 레이블 텍스트의 방향을 나타내는 숫자입니다. 다음 중 하나입니다. </p>
+<ul>
+  <li><b>0 : (기본값) 수평 </b></li>
+  <li><b>1 : 수직 </b></li>
+</ul>
 <p>
-  stacked-sparkline works!
-</p>
+<b>textSize</b> : (선택 사항) 레이블 텍스트의 크기 (픽셀 단위)를 나타내는 숫자. 기본값은 10입니다.
+</p>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Stacked Sparkline' src='//codepen.io/GrapeCity-Korea/embed/NjKNJw/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/NjKNJw/'>SpreadJS.10/Stacked Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    
