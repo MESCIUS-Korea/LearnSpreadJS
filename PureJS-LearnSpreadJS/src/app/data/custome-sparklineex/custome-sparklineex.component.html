@@ -1,3 +1,46 @@
+<h1 class="page-header">
+ Compatible 스파크라인Ex | Compatible SparklineEx
+</h1>
+<div id="content" class="content">
 <p>
-  custome-sparklineex works!
+1. 스파크 라인을 사용자 정의 할 수 있습니다.
+<br/><br/>
+2. SparklineEx 유형에서 자신의 스파크 라인을 사용자 정의하는 데 도움이되는 두 가지 메소드를 노출하십시오.
 </p>
+<ul>
+<li><b>createFunction : SparkLineEx 함수입니다. 스파크 라인 수식은 함수에 의해 정의되며 Sparkline에 대한 데이터와 설정을 제공합니다.</b></li>
+<li><b>paint: : 스파크 라인 수식의 데이터 및 설정으로 스파크 라인을 렌더링합니다.</b></li>
+</ul>
+<p>3. 사용자 정의 스파크 라인 유형을 작성한 후 <b>addSparklineEx</b> 메소드를 사용하여 사용자 정의 스파크 라인을 스프레드에 추가 할 수 있습니다. 예 :
+</p>  
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span>&#123;
+GC.Spread.Sheets.Sparklines.SparklineEx.call(<span class="hljs-keyword">this</span>;
+&#125;
+CustomSparkline.prototype = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Sparklines.SparklineEx();
+CustomSparkline.prototype.createFunction = <span class="hljs-keyword">function</span>()&#123;
+   <span class="hljs-keyword">var</span> func = <span class="hljs-keyword">new</span> GC.Spread.CalcEngine.Functions.Function(<span class="hljs-string">'CUSTOMSPARKLINE'</span>,<span class="hljs-number">1</span>,<span class="hljs-number">255</span>);
+   func.evaluate = <span class="hljs-keyword">function</span>(args)&#123;&#125;;
+   func.acceptsReference = <span class="hljs-keyword">function</span>(argIndex)&#123;&#125;;
+   <span class="hljs-comment">//...</span>
+   <span class="hljs-keyword"> return</span> func;
+&#125;   
+CustomSparkline.prototype.paint = <span class="hljs-keyword">function</span>(context,value,x,y,width,height)&#123;
+   <span class="hljs-comment">//context - The canvas's 2d context.</span>
+   <span class="hljs-comment">//value - The value evaluated by the custom function.</span>
+   <span class="hljs-comment">//paint sparkline.</span>
+&#125;;
+$(<span class="hljs-keyword">function</span>()&#123;
+   <span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook(document.getElementById(<span class="hljs-string">'ss'</span>));
+   spread.addSparklineEx(<span class="hljs-keyword">new</span> CustomSparkline());
+&#125;);
+
+</code></pre>   
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom SparklineEx' src='//codepen.io/GrapeCity-Korea/embed/VbZJae/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/VbZJae/'>SpreadJS.10/Custom SparklineEx</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>          
