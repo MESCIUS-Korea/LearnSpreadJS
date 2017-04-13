@@ -213,6 +213,7 @@ const APP_ROUTES:Routes = [
     { path: 'CompatibleComponent', component: CompatibleComponent},
     { path: 'CustomeSparklineexComponent', component: CustomeSparklineexComponent},
     { path: 'MonthSparklineComponent', component: MonthSparklineComponent},
+    { path: 'YearComponent', component: YearComponent},
     { path: 'BasicFloatingObjectComponent', component: BasicFloatingObjectComponent},
     { path: 'CustomFloatingObjectComponent', component: CustomFloatingObjectComponent},
     { path: 'PictureComponent', component: PictureComponent},

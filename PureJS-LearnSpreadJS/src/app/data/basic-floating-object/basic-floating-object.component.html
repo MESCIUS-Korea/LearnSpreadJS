@@ -1,3 +1,51 @@
+<h1 class="page-header">
+  기본 플로팅 객체 | Basic Floating Object
+</h1>
+<div id="content" class="content">
 <p>
-  basic-floating-object works!
+1. 스프레드 시트에서 플로팅 대상을 시트에 추가 할 수 있습니다. 플로팅 개체는 Cell의 맨 위에 표시됩니다. <br/><br/>
+
+2. 플로팅 오브젝트에는 FloatingObject와 Picture의 두 가지 종류가 있습니다.
 </p>
+<ul>
+   <li><b>FloatingObject : 사용자가 HTMLElement 내용을 사용자 정의 할 수 있도록 content 속성을 표시합니다.</b></li>
+   <li><b>Picture : Excel 그림 기능과 유사한 기본 그림 기능을 제공하는 일부 기본 그림 속성을 노출합니다.</b></li>
+</ul>
+<p>
+3. FloatingObject를 시트에 추가하려면 FloatingObject 객체를 만들고 add 메서드를 사용하여 시트에 추가해야합니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> customFloatingObject = <span class="hljs-keyword">new</span> GC.Spread.Sheets.FloatingObjects.FloatingObject(<span class="hljs-string">'f1'</span>);
+customFloatingObject.startColumn(<span class="hljs-number">1</span>);
+customFloatingObject.endColumn(<span class="hljs-number">6</span>);
+customFloatingObject.endRow(<span class="hljs-number">6</span>);
+var div = <span class="hljs-keyword">document</span>.createElement(<span class="hljs-string">'div'</span>);
+div.innerHTML = <span class="hljs-string">'&lt;span&gt;Spread.Sheets support FloatingObject&lt;/span&gt;'</span> + 
+<span class="hljs-string">&lt;div style='</span>border: <span class="hljs-number">1</span>px dotted red; width: <span class="hljs-number">80</span>%; margin:auto;'<span class="hljs-string">&gt;'</span> + 
+<span class="hljs-string">'&lt;ul&gt;&lt;li&gt;I am list one.&lt;/li&gt;&lt;li&gt;I am list two.&lt;/li&gt;&lt;li&gt;I am list three.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;'</span>;
+customFloatingObject.content(div);
+sheet.floatingObjects.add(customFloatingObject);
+</code></pre>    
+<p>
+사용자 정의 플로팅 객체를 추가 한 후에는이 객체를 사용하여 작업 할 수 있습니다. get 메서드를 사용하여 이름을 가져 오거나 all 메서드를 사용하여 모든 FloatingObject 객체를 가져옵니다. 필요가 없으면 remove 메소드를 사용하여 이름으로 제거 할 수 있습니다.
+<br/><br/>
+4. 시트에 그림을 추가하려면 add 메서드를 사용하여 그림을 시트에 추가 할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.pictures.add(<span class="hljs-string">'f2'</span>, <span class="hljs-string">'images/splogo.png'</span>, <span class="hljs-number">62</span>, <span class="hljs-number">140</span>, <span class="hljs-number">180</span>, <span class="hljs-number">200</span>);
+<span class="hljs-keyword">var</span> pic = sheet.pictures.get(<span class="hljs-string">'f2'</span>);
+sheet.pictures.remove(<span class="hljs-string">'f2'</span>);</code></pre>  
+<p>
+그림을 추가 한 후 그림을 사용하여 작업 할 수 있습니다. get 메서드를 사용하여 이름으로 가져 오거나 all 메서드를 사용하여 모든 Picture 개체를 가져옵니다. 필요가 없으면 remove 메소드를 사용하여 이름으로 제거 할 수 있습니다.<br/><br/>
+5. FloatingObject와 Picture는 모두 플로팅 객체입니다. 그것들은 Cell의 맨 위에 있지만 다른 개체의 위에있는 Object가 있는 경우, 위의 개체 위에 Object를 올려 놓는 것이 좋습니다. zIndex 메서드를 사용하여 플로팅 객체의 Z- 인덱스를 설정합니다. 예:
+</p>      
+<pre class="sample-code"><code class="js hljs javascript">sheet.floatingObjects.zIndex(<span class="hljs-string">'f1'</span>, <span class="hljs-number">2000</span>);
+sheet.pictures.zIndex(<span class="hljs-string">'f2'</span>, <span class="hljs-number">2001</span>);
+</code></pre>
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Floating Object' src='//codepen.io/GrapeCity-Korea/embed/ygvBvw/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ygvBvw/'>SpreadJS.10/Basic Floating Object</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>
+  

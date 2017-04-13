@@ -1,3 +1,25 @@
+<h1 class="page-header">
+ 연(년) 스파크라인 | Year Sparkline
+</h1>
+<div id="content" class="content">
 <p>
-  year works!
-</p>
+YearSparkline 함수를 사용하여 연도 스파크 라인을 만들 수 있습니다. <br/><br/>
+= <b>YEARSPARKLINE (year, dataRange, emptyColor, startColor, middleColor, endColor). 또는 = YEARSPARKLINE (year, dataRange, colorRange)</b><br/><br/>
+이 함수에는 다음과 같은 매개 변수가 있습니다.<br/><br/>
+<b>year</b> : 전체 연도 번호 (예 : 2015)<br/><br/>
+<b>dataRange</b> : 레퍼런스는 첫 번째 열이 날짜이고 두 번째 열이 숫자 인 범위를 나타냅니다 (예 : 'A1 : B400')<br/><br/>
+<b>emptyColor</b> : 색 문자열은 값이 없거나 값이 0인 요일을 나타냅니다 (예 : 'lightgray')<br/><br/>
+<b>startColor </b> : 색 문자열은 'lightgreen'과 같이 값이 최소값 인 요일을 나타냅니다.<br/><br/>
+<b>middleColor</b> : 색 문자열은 값이 '녹색'과 같이 최소값과 최대 값의 평균값인 날짜를 나타냅니다.<br/><br/>
+<b>endColor </b> : 색 문자열은 값이 최대 값 인 요일을 나타냅니다 (예 : 'darkgreen')<br/><br/>
+<b>colorRange</b> : 레퍼런스가 데이터가 색상 문자열인 범위를 나타냅니다.
+</p>  
+
+  <br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Year Sparkline' src='//codepen.io/GrapeCity-Korea/embed/LyYBXG/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/LyYBXG/'>SpreadJS.10/Year Sparkline</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

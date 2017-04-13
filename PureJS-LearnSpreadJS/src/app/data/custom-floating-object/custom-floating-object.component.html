@@ -1,3 +1,44 @@
+<h1 class="page-header">
+  사용자 플로팅 객체 | Custom Floating Object
+</h1>
+<div id="content" class="content">
 <p>
-  custom-floating-object works!
+1. 위치 변경, 크기 조정 등 플로팅 개체를 사용자 지정할 수 있습니다.<br/><br/>
+2. 플로팅 개체의 위치와 크기를 변경할 수 있습니다. 위치와 크기는 두 가지 방법으로 설정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">floatingObject.startRow(1);
+floatingObject.startColumn(<span class="hljs-number">1</span>);
+floatingObject.startRowOffset(<span class="hljs-number">0</span>);
+floatingObject.startColumnOffset(<span class="hljs-number">0</span>);
+floatingObject.endRow(<span class="hljs-number">4</span>);
+floatingObject.endColumn(<span class="hljs-number">4</span>);
+floatingObject.endRowOffset(<span class="hljs-number">0</span>);
+floatingObject.endColumnOffset(<span class="hljs-number">0</span>);
+<span class="hljs-comment">// or</span>
+var point = new GC.Spread.Sheets.Point(<span class="hljs-number">62</span>, <span class="hljs-number">20</span>);
+floatingObject.position(point);
+floatingObject.width(<span class="hljs-number">186</span>);
+floatingObject.height(<span class="hljs-number">60</span>);</code></pre>  
+<p>
+3. 가끔 행의 높이 또는 열 너비의 크기를 조정할 것이므로 플로팅 개체의 위치나 크기가 변경되는 것을 원하지는 않습니다. 이 경우 dynamicMove 및 dynamicSize 메서드를 사용하십시오. 예 :
 </p>
+<pre class="sample-code"><code class="js hljs javascript">floatingObject.dynamicMove(<span class="hljs-number">false</span>);
+floatingObject.dynamicSize(<span class="hljs-number">false</span>);</code></pre>   
+<p>
+dynamicMove 메서드가 false이고 dynamicSize 메서드가 true이면 어느 것도 영향을 끼치지 않습니다. <br/><br/>
+4. UI 상호 작용에 따라 플로팅 객체를 변경하지 않으려면 isLocked 메서드를 사용하여 고정시킵니다. 잠그고 싶으면 먼저 시트를 잠급니다.
+<br/><br/>
+5. 하나의 플로팅 오브젝트가 다른 오브젝트와 겹치면 zIndex 메소드를 사용하여 위에서 아래로 순서를 변경할 수 있습니다. 예 :
+</p>   
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> zIndex = floatingObject.zIndex(<span class="hljs-string">'f1'</span>);
+floatingObject.zIndex(<span class="hljs-string">'f1'</span>, zIndex + <span class="hljs-number">1</span>);</code></pre> 
+<br/>
+
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Floating Object' src='//codepen.io/GrapeCity-Korea/embed/ygvqGO/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ygvqGO/'>SpreadJS.10/Custom Floating Object</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>
+  
