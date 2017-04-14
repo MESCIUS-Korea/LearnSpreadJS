@@ -1,3 +1,36 @@
+<h1 class="page-header">
+  그림 | Picture
+</h1>
+<div id="content" class="content">
+<p>1. 그림 레이아웃, 그림 테두리 등을 포함하여 그림을 사용자 지정할 수 있습니다.<br/><br/>
+2. 이미지를 그림으로 설정하거나 그림의 이미지를 변경하려면 <b>src</b> 방법을 사용하여 이미지를 변경하십시오. 그림의 src는 base64 이미지가 될 수 있습니다.  </p>
+<pre class="sample-code"><code class="js hljs javascript">picture.src(<span class="hljs-string">'images/logo.png'</span>);
+<span class="hljs-comment">var</span> originalWidth = picture.getOriginalWidth();
+<span class="hljs-comment">var</span> originalHeight = picture.getOriginalHeight();
+picture.width(originalWidth);
+picture.height(originalHeight);</code></pre>   
 <p>
-  picture works!
-</p>
+<b>pictureStretch</b> 메서드를 사용하여 그림의 레이아웃을 변경할 수 있습니다. 그림의 늘이기는 <b>ImageLayout</b> enum에 의해 정의됩니다. 때때로 <b>getOriginalWidth</b> 및 <b>getOriginalHeight</b> 메소드를 사용하여 이미지의 원래 크기를 가져올 수 있습니다.
+<br/><br/>
+3. 그림에 테두리를 추가 할 수 있습니다. 테두리는 DOM의 테두리 설정으로 설정됩니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">picture.borderStyle(<span class="hljs-string">'solid'</span>);
+picture.borderWidth(<span class="hljs-number">2</span>);
+picture.borderColor(<span class="hljs-string">'red'</span>);
+picture.borderRadius(<span class="hljs-number">4</span>);
+</code></pre>    
+<p>
+4. 때로는 그림의 일부가 투명하기 때문에 배경 영역에 배경색을 설정하려고합니다. <b>backColor</b> 메서드를 사용하여 그림의 배경색을 가져오고 설정합니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">picture.backColor(<span class="hljs-string">'green'</span>); </code></pre> 
+
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Picture' src='//codepen.io/GrapeCity-Korea/embed/wgyxOV/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/wgyxOV/'>SpreadJS.10/Picture</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>
+    

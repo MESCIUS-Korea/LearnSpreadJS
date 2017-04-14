@@ -3,9 +3,9 @@
 </h1>
 <div id="content" class="content">
 <p>
-1. 스프레드 시트에서 플로팅 대상을 시트에 추가 할 수 있습니다. 플로팅 개체는 Cell의 맨 위에 표시됩니다. <br/><br/>
+1. 스프레드 시트에서 플로팅 대상을 시트에 추가 할 수 있습니다. 플로팅 객체는 Cell의 맨 위에 표시됩니다. <br/><br/>
 
-2. 플로팅 오브젝트에는 FloatingObject와 Picture의 두 가지 종류가 있습니다.
+2. 플로팅 객체에는 FloatingObject와 Picture의 두 가지 종류가 있습니다.
 </p>
 <ul>
    <li><b>FloatingObject : 사용자가 HTMLElement 내용을 사용자 정의 할 수 있도록 content 속성을 표시합니다.</b></li>
@@ -34,8 +34,8 @@ sheet.floatingObjects.add(customFloatingObject);
 <span class="hljs-keyword">var</span> pic = sheet.pictures.get(<span class="hljs-string">'f2'</span>);
 sheet.pictures.remove(<span class="hljs-string">'f2'</span>);</code></pre>  
 <p>
-그림을 추가 한 후 그림을 사용하여 작업 할 수 있습니다. get 메서드를 사용하여 이름으로 가져 오거나 all 메서드를 사용하여 모든 Picture 개체를 가져옵니다. 필요가 없으면 remove 메소드를 사용하여 이름으로 제거 할 수 있습니다.<br/><br/>
-5. FloatingObject와 Picture는 모두 플로팅 객체입니다. 그것들은 Cell의 맨 위에 있지만 다른 개체의 위에있는 Object가 있는 경우, 위의 개체 위에 Object를 올려 놓는 것이 좋습니다. zIndex 메서드를 사용하여 플로팅 객체의 Z- 인덱스를 설정합니다. 예:
+그림을 추가 한 후 그림을 사용하여 작업 할 수 있습니다. get 메서드를 사용하여 이름으로 가져 오거나 all 메서드를 사용하여 모든 Picture 객체를 가져옵니다. 필요가 없으면 remove 메소드를 사용하여 이름으로 제거 할 수 있습니다.<br/><br/>
+5. FloatingObject와 Picture는 모두 플로팅 객체입니다. 그것들은 Cell의 맨 위에 있지만 다른 객체의 위에있는 Object가 있는 경우, 위의 객체 위에 Object를 올려 놓는 것이 좋습니다. zIndex 메서드를 사용하여 플로팅 객체의 Z- 인덱스를 설정합니다. 예:
 </p>      
 <pre class="sample-code"><code class="js hljs javascript">sheet.floatingObjects.zIndex(<span class="hljs-string">'f1'</span>, <span class="hljs-number">2000</span>);
 sheet.pictures.zIndex(<span class="hljs-string">'f2'</span>, <span class="hljs-number">2001</span>);
