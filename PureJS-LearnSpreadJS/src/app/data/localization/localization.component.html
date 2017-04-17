@@ -1,3 +1,37 @@
+<h1 class="page-header">
+  지역화 | Localization
+</h1>
+<div id="content" class="content">
 <p>
-  localization works!
+1. Spread.Sheets은 영어 문화 (기본값), 중국어 (해당 리소스 파일 필요) 및 일본어 (해당 리소스 파일 필요)에 대한 기본 지원을 제공합니다. 이를 사용하여 지역화 작업을 지원할 수 있습니다.
+<br/><br/>
+2. 지역화를 지원하려면 스프레드 링크 아래의 문서 머리 부분에 적절한 js 파일 링크를 추가해야합니다. 예 :
+</p>  
+<pre class="sample-code"><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    ...
+    &lt;script src=<span class="hljs-string">'.../spreadjs/gc.spread.sheets.all.x.xx.xxxxx.x.min.js'</span> type=<span class="hljs-string">'text/javascript'</span>&gt;&lt;/script&gt;
+    &lt;script src=<span class="hljs-value">'.../spreadjs/resources/ja/gc.spread.sheets.resources.ja.x.xx.xxxxx.x.min.js'</span> type=<span class="hljs-value">'text/javascript'</span>&gt;&lt;/script&gt;
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span></code></pre>  
+<p>3. 다음 방법 중 하나를 선택하여 지역화를 지원할 수 있습니다. <br/><br/>
+<b>Culture meta</b><br/><br/>  
+메타 태그를 사용하여 문화권을 설정할 수 있습니다.  
 </p>
+<pre class="sample-code"><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    ...
+    &lt;meta name=<span class="hljs-value">"spreadjs culture"</span> content=<span class="hljs-string">"ja-jp"</span> /&gt;
+    ...
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span></code></pre>       
+<p><b>코드로 변경</b><br/><br/>
+GC.Spread.Common.CultureManager.<b>culture</b> 메서드를 사용하여 문화권을 변경할 수 있습니다.
+</p>
+<pre class="sample-code"><code class="html hljs xml"><span class="hljs-comment">// init spread</span>
+GC.Spread.Common.CultureManager.culture(<span class="hljs-string">"ja-jp"</span>);
+<span class="hljs-comment">// GC.Spread.Common.CultureManager.culture("zh-cn");</span></code></pre>   
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Localization' src='//codepen.io/GrapeCity-Korea/embed/yMeREj/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/yMeREj/'>SpreadJS.10/Localization</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

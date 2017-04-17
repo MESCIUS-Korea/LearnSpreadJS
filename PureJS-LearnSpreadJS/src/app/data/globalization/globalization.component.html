@@ -1,3 +1,25 @@
+<h1 class="page-header">
+  세계화 | Globalization
+</h1>
+<div id="content" class="content">
 <p>
-  globalization works!
-</p>
+스프레드 시트는 세계화를 지원하기 위해 <b>CultureInfo</b>를 제공합니다.
+<br/><br/>
+1. <b>CultureInfo</b> 클래스를 사용하여 culture 문자열을 수정하고 사용자 지정 culture를 만들 수 있습니다. </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> myCulture = <span class="hljs-keyword">new</span>  GC.Spread.Common.CultureInfo();
+myCulture.NumberFormat.currencySymbol = <span class="hljs-string">'€'</span>
+myCulture.NumberFormat.numberDecimalSeparator = <span class="hljs-string">','</span>;
+<span class="hljs-comment">//다른 설정</span></code></pre>      
+<p>
+2. culture 이름과 함께 <b>addCultureInfo</b> 메서드를 사용하여 사용자 지정 culture를 추가합니다. <b>Culture</b> 메서드를 해당 이름으로 설정하여 culture를 사용합니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">GC.Spread.Common.CultureManager.addCultureInfo(<span class="hljs-string">'de-DE'</span>, myCulture);
+GC.Spread.Common.CultureManager.culture(<span class="hljs-string">'de-DE'</span>);</code></pre>   
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Globalization' src='//codepen.io/GrapeCity-Korea/embed/jyKJVz/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/jyKJVz/'>SpreadJS.10/Globalization</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

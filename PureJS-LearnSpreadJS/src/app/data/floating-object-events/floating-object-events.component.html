@@ -1,3 +1,34 @@
+<h1 class="page-header">
+  플로팅 객체 이벤트 | Floating Object Events
+</h1>
+<div id="content" class="content">
 <p>
-  floating-object-events works!
-</p>
+1. 스프레드 시트는 발생한 이벤트에 반응 할 수 있도록 시트에 플로팅 객체에 대한 이벤트를 제공합니다.
+<br/><br/>
+2. FloatingObject 플로팅 객체에는 <b>FloatingObjectSelectionChanged</b> (플로팅 객체 선택이 변경된 경우) 및 <b>FloatingObjectChanged</b> (플로팅 객체가 변경된 경우)의 두 가지 이벤트가 있습니다.
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">sheet.bind(GC.Spread.Sheets.Events.FloatingObjectSelectionChanged, <span class="hljs-keyword">function</span>(e, args) &#123;
+   <span class="hljs-comment">// do something</span>
+&#125;);
+sheet.bind(GC.Spread.Sheets.Events.FloatingObjectChanged, <span class="hljs-keyword">function</span>(e, args) 	
+&#123;
+   <span class="hljs-comment">// do something</span>
+&#125;);</code></pre>    
+<p>
+3. 그림 플로팅 객체에는 두 가지 종류의 이벤트가 있습니다. <b>PictureSelectionChanged</b> (플로팅 객체 선택이 변경된 경우) 및 <b>PictureChanged</b> (그림이 변경된 경우)
+</p>   
+<pre class="sample-code"><code class="js hljs javascript">sheet.bind(GC.Spread.Sheets.Events.PictureSelectionChanged, <span class="hljs-keyword">function</span>(e, args) &#123;
+    <span class="hljs-comment">// do something</span>
+&#125;);
+sheet.bind(GC.Spread.Sheets.Events.PictureChanged, <span class="hljs-keyword">function</span>(e, args) &#123;
+    <span class="hljs-comment">// do something</span>
+&#125;);</code></pre>    
+  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Floating Object Events' src='//codepen.io/GrapeCity-Korea/embed/pRaOVr/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/pRaOVr/'>SpreadJS.10/Floating Object Events</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    
