@@ -1,3 +1,25 @@
+<h1 class="page-header">
+  사용자 코멘트 | Custom Comment
+</h1>
+<div id="content" class="content">
 <p>
-  basic-commnet works!
-</p>
+1. 스프레드 시트에서 주석을 사용하여 시트에 노트를 추가 할 수 있습니다. 주석을 사용하면 포함 된 데이터의 추가 컨텍스트를 제공하여 시트를 더 쉽게 이해할 수 있습니다.
+<br/><br/>
+2. 시트에 주석을 추가하려면 먼저 주석을 작성하고 주석을 설정하십시오. 그런 다음 <b>add</b> 메소드를 사용하여 지정된 셀에 대한 주석을 설정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.comments.add(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-string">'new comment!'</span>);</code></pre>  
+<p>다음 예제와 같이 추가 한 주석을 제거하려는 경우가 있습니다. </p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.comments.remove(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>);</code></pre> 
+<p>3. 셀에 주석을 추가 한 후 <b>get</b> 메서드를 사용하여 주석을 가져 오거나 <b>all</b> 메서드를 사용하여 시트의 모든 주석을 가져올 수 있습니다. </p>
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> comment = sheet.comments.get(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>);
+<span class="hljs-keyword">var</span> comments = sheet.comments.all();</code></pre> 
+
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Comment' src='//codepen.io/GrapeCity-Korea/embed/rjdzJY/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/rjdzJY/'>SpreadJS.10/Basic Comment</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

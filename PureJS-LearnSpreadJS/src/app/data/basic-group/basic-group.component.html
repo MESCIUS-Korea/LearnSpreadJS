@@ -1,3 +1,31 @@
+<h1 class="page-header">
+ 기본그룹 | Basic Group
+</h1>
+<div id="content" class="content">
 <p>
-  basic-group works!
-</p>
+1. 그룹화하고 요약하려는 데이터 목록이있는 경우 행 또는 열의 개요를 작성할 수 있습니다. 행 그룹 패널은 행 헤더의 왼쪽에 있습니다. 열 그룹 패널이 열 헤더글 위에 있습니다.
+<br/><br/>
+2. 스프레드시트에 그룹을 추가하려면 다음 예제와 유사한 코드를 사용하십시오.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.rowOutlines.group(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+sheet.columnOutlines.group(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>); </code></pre>    
+<p>
+3. 다른 그룹에 그룹을 추가 할 수 있습니다. 각 그룹에 대해 하나씩 여러 레벨의 아웃라인를 만들 수 있습니다. 아웃라인 기호에서 더 높은 숫자로 표시되는 각 Inner레벨은 아웃라인 기호에서 더 낮은 숫자로 표시되는 이전 외부 수준에 대한 상세 데이터를 표시합니다. 요약 행 또는 열을 빠르게 표시하거나 각 그룹의 세부 정보 데이터를 표시하려면 아웃라인을 사용하십시오.
+<br/><br/>
+4. 더 이상 그룹이 필요하지 않으면 <b>ungroup</b> 또는 <b>ungroupRange</b> 메소드를 사용하여 그룹을 제거하십시오. 예 :
+</p>    
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.rowOutlines.ungroupRange(<span class="hljs-number">1</span>, <span class="hljs-number">10</span>);
+sheet.columnOutlines.ungroupRange(<span class="hljs-number">1</span>, <span class="hljs-number">5</span>);
+</code></pre> 
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Group' src='//codepen.io/GrapeCity-Korea/embed/YNjeMm/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/YNjeMm/'>SpreadJS.10/Basic Group</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>       

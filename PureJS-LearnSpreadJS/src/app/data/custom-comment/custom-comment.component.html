@@ -1,3 +1,43 @@
+<h1 class="page-header">
+  사용자 코멘트 | Custom Comment
+</h1>
+<div id="content" class="content">
 <p>
-  custom-comment works!
-</p>
+1. 주석 텍스트 서식 지정, 주석 테두리 설정, 주석 위치 및 크기 설정 등과 같은 주석을 사용자 정의 할 수 있습니다.
+<br/><br/>
+2. 주석을 추가하기 전에 텍스트 메소드를 사용하여 주석의 텍스트를 설정할 수 있습니다. 주석의 위치와 크기도 변경할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">comment.text(<span class="hljs-string">'new comment!'</span>);
+comment.location(new GC.Spread.Sheets.Point(<span class="hljs-number">62</span>, <span class="hljs-number">20</span>));
+comment.width(<span class="hljs-number">200</span>);
+comment.height(<span class="hljs-number">100</span>);</code></pre> 
+<p>
+3. 경우에 따라 행의 높이 또는 열 너비의 크기를 조정해야 할 수 있으며 주석의 위치나 크기를 변경하지 않으려는 경우가 있습니다. 이렇게하려면 <b>dynamicMove</b> 및 <b>dynamicSize</b> 메서드를 사용합니다. 예 :
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">comment.dynamicMove(<span class="hljs-number">false</span>);
+comment.dynamicSize(<span class="hljs-number">false</span>);</code></pre>   
+<p>
+주석의 dynamicMove 메서드가 false이고 dynamicSize 메서드가 true이면 둘 다 아무런 효과가 없습니다.
+<br/><br/>
+4. 주석 텍스트를 편집 한 후 글꼴, 텍스트 장식 등과 같은 내용의 서식을 지정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">comment.fontFamily(<span class="hljs-string">'sans-serif'</span>);
+comment.fontStyle(<span class="hljs-string">'italic'</span>);
+comment.fontSize(<span class="hljs-string">'10pt'</span>);
+comment.foreColor(<span class="hljs-string">'red'</span>);
+comment.backColor(<span class="hljs-string">'green'</span>);
+comment.opacity(<span class="hljs-number">0.5</span>);
+comment.textDecoration(GC.Spread.Sheets.TextDecorationType.underline);
+comment.horizontalAlign(GC.Spread.Sheets.HorizontalAlign.left);
+<span class="hljs-keyword">var</span> padding1 = new GC.Spread.Sheets.Padding(<span class="hljs-number">10</span>,<span class="hljs-number">20</span>,<span class="hljs-number">30</span>,<span class="hljs-number">40</span>);
+comment.padding(padding1);
+comment.autoSize(<span class="hljs-number">true</span>);
+</code></pre>   
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Comment' src='//codepen.io/GrapeCity-Korea/embed/LxdjrX/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/LxdjrX/'>SpreadJS.10/Custom Comment</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>        

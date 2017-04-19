@@ -1,3 +1,35 @@
+<h1 class="page-header">
+  사용자 그룹 | Custom Group
+</h1>
+<div id="content" class="content">
 <p>
-  custom-group works!
-</p>
+1. 스프레드시트는 범위 그룹의 방향 가져 오기 및 설정, 그룹 확장, 범위 그룹 표시 또는 숨기기 등 그룹을 사용자 정의 할 수있는 몇 가지 API를 제공합니다.
+<br/><br/>
+2. showRowOutline 또는 showColumnOutline 메서드를 사용하여 범위 그룹을 표시할지 여부를 가져 오거나 설정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.showRowOutline(<span class="hljs-number">false</span>); <span class="hljs-comment">// 행 범위 그룹을 숨깁니다.</span>
+sheet.showColumnOutline(<span class="hljs-number">true</span>); <span class="hljs-comment">// 열 범위 그룹을 표시합니다.</span></code></pre>  
+<p>
+3. 행 또는 열의 개요 (범위 그룹)를 확장하거나 축소하려면 expandGroup 또는 expand 메서드를 사용합니다 (지정된 수준의 모든 아웃라인을 확장합니다). 또는 개요 버튼 (+, -)를 클릭하여 아웃라인을 확장하거나 축소 할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.rowOutlines.expand(<span class="hljs-number">1</span>, <span class="hljs-number">false</span>));
+sheet.columnOutlines.expand(<span class="hljs-number">-1</span>, <span class="hljs-number">false</span>));</code></pre>  
+<p>4. 범위 그룹의 방향 (요약 버튼의 위치)을 가져 오거나 설정하려면 방향 메서드를 사용합니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+<span class="hljs-keyword">var</span> direction = GC.Spread.Sheets.Outlines.OutlineDirection.forward;
+sheet.rowOutlines.direction(direction);
+</code></pre>
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Group' src='//codepen.io/GrapeCity-Korea/embed/ygqKev/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ygqKev/'>SpreadJS.10/Custom Group</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      
+  
