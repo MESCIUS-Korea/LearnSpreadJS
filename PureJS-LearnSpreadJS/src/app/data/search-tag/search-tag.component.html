@@ -1,3 +1,29 @@
+<h1 class="page-header">
+  검색 태그 | Search Tag
+</h1>
+<div id="content" class="content">
 <p>
-  search-tag works!
-</p>
+문자열 유형 인 셀 태그를 검색 할 수 있습니다. 검색 순서는 zOrder (열 우선) 또는 nOrder (행 우선)로 설정할 수 있습니다.
+<br/><br/>
+1. <b>SearchCondition</b>을 준비한 다음 검색 태그에 대해 <b>searchTarget</b>을 <b>SearchFoundFlags.cellTag</b>로 설정합니다.
+<br/><br/>
+2. sheet.<b>search</b> (searchCondition)를 사용하여 검색을 수행하십시오.
+<br/><br/>
+검색 결과의 <b>findRowIndex</b> 및 <b>findColumnIndex</b>는 첫 번째로 일치하는 셀 위치를 알려줍니다. 둘 다 찾아지지 않으면 -1이됩니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spreadNS = GC.Spread.Sheets;
+<span class="hljs-keyword">var</span> condition = <span class="hljs-keyword">new</span> spreadNS.Search.SearchCondition();
+condition.searchTarget = spreadNS.Search.SearchFoundFlags.cellTag;
+condition.searchString = <span class="hljs-string">'demo'</span>;
+condition.searchOrder = spreadNS.Search.SearchOrder.zOrder;
+<span class="hljs-comment">// ... </span>
+<span class="hljs-keyword">var</span> result = sheet.search(condition);
+if (result.foundRowIndex < <span class="hljs-number">0</span> &#38;&#38; result.foundColumnIndex < <span class="hljs-number">0</span>) &#123;
+<span class="hljs-comment">// ... </span></code></pre>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Search Tag' src='//codepen.io/GrapeCity-Korea/embed/dNqvEZ/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/dNqvEZ/'>SpreadJS.10/Search Tag</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>        

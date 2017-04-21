@@ -1,3 +1,47 @@
+<h1 class="page-header">
+  기초 사용법 | Basic Usage
+</h1>
+<div id="content" class="content">
 <p>
-  basic-usage works!
+1. 태그를 사용하여 개인 데이터를 저장할 수 있습니다. Spread.Sheets는 셀, 행, 열 및 시트에 대한 태그를 지원합니다.
+<br/><br/>
+<b>Sheet.tag</b> (value?) : 시트의 태그를 가져 오거나 설정합니다.
+<br/><br/>
+<b>Sheet.getTag</b> (row, col, sheetArea?) / <b>Sheet.setTag</b> (row, col, tag, sheetArea?) : 태그를 가져 오거나 설정합니다.
+</p>  
+<ul>
+   <li><b>sheet : 행이 -1이고 col이 -1 일 때 </b></li>
+   <li><b>row : col이 -1이고 row> = 0 인 경우 </b></li>
+   <li><b>column : row가 -1이고 col> = 0 일 때 </b></li>
+   <li><b>cell : 행> = 0 및 col> = 0 일 때 </b></li>
+</ul>
+<p>
+<b>CellRange.tag</b>(value?) : 셀의 태그를 가져 오거나 설정합니다.
+<br/><br/>
+2. 태그가 설정되면 다음 이벤트가 발생합니다.
 </p>
+<ul>
+   <li><b>CellRange.tag (value)때 CellChanged 이벤트  </b></li>
+   <li><b> CellRange.tag (value)때 RowChanged 이벤트 </b></li>
+   <li><b>CellRange.tag (value)때 ColumnChanged 이벤트  </b></li>
+</ul>  
+<p>
+3. 태그를 null 또는 undefined로 설정하거나 Sheet.clear (row, column, rowCount, columnCount, sheetArea, StorageType.tag)를 사용하여 태그를 지울 수 있습니다. 예 :
+<br/><br/>
+예
+</p>    
+<pre class="sample-code"><code class="js hljs javascript">sheet.tag(<span class="hljs-string">'Sheet tag'</span>);
+sheet.setTag(<span class="hljs-number">3</span>, <span class="hljs-number">-1</span>, <span class="hljs-string">'Row tag'</span>);
+sheet.getRange(<span class="hljs-number">5</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>).tag(<span class="hljs-string">'Row tag too'</span>);
+sheet.getRange(<span class="hljs-number">-1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">3</span>).tag(<span class="hljs-string">'Column tag'</span>);
+sheet.getCell(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>).tag(<span class="hljs-string">'A1 tag'</span>);
+sheet.getRange(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>).tag(<span class="hljs-string">'Cells tag'</span>);
+sheet.clear(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>, <span class="hljs-number">9</span>, <span class="hljs-number">2</span>, spreadNS.SheetArea.viewport,spreadNS.StorageType.tag);</code></pre>  
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Usage' src='//codepen.io/GrapeCity-Korea/embed/XpBEpy/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/XpBEpy/'>SpreadJS.10/Basic Usage</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>            

@@ -230,6 +230,7 @@ const APP_ROUTES:Routes = [
     { path: 'CustomGroupComponent', component: CustomGroupComponent},
     { path: 'BasicUsageComponent', component: BasicUsageComponent},
     { path: 'ActionSupportComponent', component: ActionSupportComponent},
+    { path: 'SearchTagComponent', component: SearchTagComponent},
     { path: 'SlicerIntroductionComponent', component: SlicerIntroductionComponent},
     { path: 'SlicerSettingComponent', component: SlicerSettingComponent},
     { path: 'GeneralSlicerDataComponent', component: GeneralSlicerDataComponent},

@@ -1,3 +1,20 @@
+<h1 class="page-header">
+  코멘트 동작 | Comment Events
+</h1>
+<div id="content" class="content">
 <p>
-  comment-events works!
+1. 스프레드시트는 시트에있는 댓글에 대한 이벤트를 제공하여 발생한 이벤트에 반응하도록합니다.
+<br/><br/>
+2. 이벤트 <b>CommentChanged</b>는 코멘트이 변경되면 발생합니다 (예 : 일부 특성 변경).
 </p>
+<pre class="sample-code"><code class="js hljs javascript">sheet.bind(GC.Spread.Sheets.Events.CommentChanged, <span class="hljs-keyword">function</span>(e, args)&#123;
+   <span class="hljs-comment">// do something</span>
+&#125;);</code></pre>   
+<br/>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Comment Events' src='//codepen.io/GrapeCity-Korea/embed/JEvbWz/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/JEvbWz/'>SpreadJS.10/Comment Events</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>          
