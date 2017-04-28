@@ -457,7 +457,7 @@
             "path": "SlicerSettingComponent"
           },
           {
-            "header": "일반 슬라이서 데이터목",
+            "header": "일반 슬라이서 데이터",
             "path": "GeneralSlicerDataComponent"
           },
           {

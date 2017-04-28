@@ -1,3 +1,25 @@
-<p>
-  table-slicer-data works!
-</p>
+<h1 class="page-header">
+  테이블 슬라이서 데이터 | Table Slicer Data
+</h1>
+<div id="content" class="content">
+GeneralSlicerData 외에도 Spread.Sheets은 TableSlicerData도 제공합니다. TableSlicerData의 데이터 소스는 Spread.Sheets SheetTable입니다. TableTable을 사용하려면 TableTable을 TableSlicerData의 생성자로 설정해야합니다.
+
+RowFilter에 대한 정보와 SheetTable의 필터 대화 상자에서 확인 된 상태는 TableSlicerData와 연결된 Slicers의 필터 결과와 동기화됩니다. TableSlicerData와 연결된 모든 슬라이서는 onFilter 통지를 받고 코드 또는 필터 대화 상자를 사용하여 SheetTable 필터 이후에 필터링 된 결과를 가져옵니다.
+
+다음과 같이 TableSlicerData를 사용할 수 있습니다.
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-comment">// 현재 시트의 테이블 가져 오기</span>
+<span class="hljs-keyword">var</span> table = sheet.tables.findByName(<span class="hljs-string">'table1'</span>);
+<span class="hljs-comment">// 테이블에서 TableSlicerData 가져 오기</span>
+<span class="hljs-keyword">var</span> slicerData = table.getSlicerData();
+<span class="hljs-comment">//커스텀 슬라이서를 생성하여 dom 트리에 추가하십시오.</span>
+<span class="hljs-keyword">var</span> slicer1 = new CustomSlicer($(<span class="hljs-string">'#cityContainer'</span>)[<span class="hljs-number">0</span>]);
+<span class="hljs-comment">//열 데이터를 슬라이서로 설정.</span>
+slicer1.setData(slicerData, <span class="hljs-string">'City'</span>);
+</code></pre>    
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Table Slicer Data' src='//codepen.io/GrapeCity-Korea/embed/YNJGqW/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/YNJGqW/'>SpreadJS.10/Table Slicer Data</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>        

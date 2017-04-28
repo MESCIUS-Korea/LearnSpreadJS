@@ -1,3 +1,37 @@
-<p>
-  slicer-introduction works!
+<h1 class="page-header">
+  슬라이서 소개 | Slicer Introduction
+</h1>
+<div id="content" class="content">
+<p>  
+슬라이서는 테이블 데이터를 필터링하는 새로운 방법으로 제공됩니다. 필터링 후 테이블에 표시된 데이터를 명확하게 나타냅니다.
+<br/><br/>
+1. 슬라이서는 테이블을 사용하기 때문에 슬라이서를 만들려면 먼저 테이블을 추가해야합니다.
+<br/><br/>
+다음 코드와 같이 <b>add</b> 메서드를 사용하여 슬라이서를 추가 할 수 있습니다.
 </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> table = sheet.tables.findByName(<span class="hljs-string">'table1'</span>);
+<span class="hljs-keyword">var</span> slicer = sheet.slicers.add(<span class="hljs-string">'slicer1'</span>, <span class="hljs-string">'table1'</span>, <span class="hljs-string">'Name'</span>);
+slicer.position(<span class="hljs-keyword">new</span> GC.Spread.Sheets.Point(<span class="hljs-number">40</span>, <span class="hljs-number">180</span>));</code></pre>  
+<p>
+2. 슬라이서는 슬라이서 헤더와 슬라이서 바디로 구성됩니다.
+<br/><br/>
+Slicer header는 <b>slicer caption</b>과 <b>clear filter</b> 버튼으로 구성되어 있습니다. 슬라이서 캡션은 캡션을 표시하는 데 사용됩니다. 필터 제거 버튼은 슬라이서를 제거하는 데 사용되며 기본적으로 비활성화되어 있습니다. 슬라이서 항목이 필터링 된 경우에만 활성화됩니다.
+<br/><br/>
+슬라이서 바디는 슬라이서 항목으로 구성됩니다. 슬라이서 항목에는 4 가지 종류가 있습니다.
+</p>  
+<ul>
+  <li><b>데이터 항목 없음 : 항목이 다른 슬라이서에 의해 필터링되었습니다.  </b></li>
+  <li><b>데이터 항목 있음 : 항목이 다른 슬라이서에 의해 필터링되지 않았습니다.  </b></li>
+  <li><b>선택한 항목 : 항목 자체가 필터링되었습니다.  </b></li>
+  <li><b>선택하지 않은 항목 : 항목 자체가 필터링되지 않았습니다.  </b></li>
+</ul>
+<p>
+항목은 다른 슬라이서에 의해 필터링되거나 선택된 항목과 선택되지 않은 항목으로 나뉘어 질 때 데이터 항목 없음 및 데이터 항목 있음으로 나뉘어집니다.
+</p>    
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Slicer Introduction' src='//codepen.io/GrapeCity-Korea/embed/GrXmJY/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/GrXmJY/'>SpreadJS.10/Slicer Introduction</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>  

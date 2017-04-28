@@ -1,3 +1,34 @@
+<h1 class="page-header">
+  슬라이서 세팅 | Slicer Setting
+</h1>
+<div id="content" class="content">
 <p>
-  slicer-setting works!
-</p>
+슬라이서의 보기 및 동작을 사용자 정의하는 데 사용할 수있는 여러 슬라이서 특성이 있습니다. 특성은 아래와 같습니다.
+<br/><br/>
+<b>disableResizingAndMoving</b> : 'disableResizingAndMoving'속성이 true이고 슬라이서에서 마우스를 누르면 크기 조정 표시기가 없고 슬라이서를 이동하거나 크기를 조정할 수 없습니다. 그러나 슬라이서는 마우스를 사용하여 필터링하거나 'clearFilter'버튼을 선택하여 필터링 할 수 있습니다.
+<br/><br/>
+<b>isLocked</b> : 시트가 보호되어 있지 않으면 슬라이서의 'isLocked'속성이 적용되지 않습니다. 시트가 보호되고 슬라이서의 'isLocked'속성이 true이면 크기 조정 표시기가 나타나지 않으며 슬라이서를 마우스로 이동하거나 크기를 조정할 수 없습니다. 슬라이서는 마우스로 필터링 할 수 없으며 'clearFilter'버튼을 클릭하여 필터링 할 수 없습니다.
+<br/><br/>
+<b>fixPosition</b> : 'fixPosition'속성이 true이면 슬라이서의 위치는 스크롤, 숨기기, 표시, 크기 조정, 행 이동 또는 열 이동 후에 변경되지 않습니다.
+<br/><br/>
+<b>sortState</b> : 'sortState'는 슬라이서 항목의 정렬 순서를 나타냅니다. 'sortState'속성의 유형은 GC.Spread.Sheets.SortState입니다. 기본값은 GC.Spread.Sheets.SortState.ascending입니다.
+<br/><br/>
+<b>dynamicMove</b> 및 <b>dynamicSize</b> : 'dynamicMove'및 'dynamicSize'속성이 다르면 시트의 행 또는 열이 변경되고 슬라이서의 동작이 달라집니다.
+</p>  
+<ul>
+  <li><b>셀을 사용하여 이동 및 크기 조절 : dynamicMove 속성이 true이고 dynamicSize 속성이 true입니다. </b></li>
+  <li><b>이동 및 셀 크기 조정 안 함 : dynamicMove 속성은 true이고 dynamicSize 속성은 false입니다. </b></li>
+  <li><b>셀로 이동하거나 크기를 조정하지 않기 : dynamicMove 속성은 false이고 dynamicSize 속성은 true 또는 false입니다. </b></li>
+</ul>
+<p>
+<b>style</b> : Spread.Sheets는 14 가지 내장 슬라이서 스타일을 지원합니다. 내장 된 슬라이서 스타일을 사용하여 다음 코드로 슬라이서의보기를 변경할 수 있습니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">slicer.style(GC.Spread.Sheets.Slicers.SlicerStyles.dark3());</code></pre>    
+<p>슬라이서의 기본 스타일은 GC.Spread.Sheets.Slicers.SlicerStyles.light1 ()입니다.</p>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Slicer Setting' src='//codepen.io/GrapeCity-Korea/embed/ggBrOK/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ggBrOK/'>SpreadJS.10/Slicer Setting</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    
