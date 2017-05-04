@@ -469,10 +469,6 @@
             "path": "ItemSlicerComponent"
           },
           {
-            "header": "차트 슬라이서 사용예",
-            "path": "ChartSlicerUseCaseComponent"
-          },
-          {
             "header": "트리 슬라이서 사용예",
             "path": "TreeSlicerUseCaseComponent"
           },
