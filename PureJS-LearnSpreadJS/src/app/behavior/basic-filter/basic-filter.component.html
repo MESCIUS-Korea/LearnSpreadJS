@@ -1,3 +1,43 @@
-<p>
-  basic-filter works!
+<h1 class="page-header">
+ 필터 기초 | Basic Filter
+</h1>
+<div id="content" class="content">
+<p>  
+1. 필터 기능을 사용하면 데이터를 지정한 기준에 맞는 행만 표시하고 표시하지 않으려는 행은 숨길수 있습니다.
+<br/><br/>
+2. 시트에 필터를 설정하려면 먼저 행 필터를 만든 다음 rowFilter 메서드를 사용하여 행 필터를 설정합니다. 이때 설정할 수 있는 내장 필터가 몇 가지 종류가 존재합니다. 예들 들면:
 </p>
+<ul>
+  <li><b>addAverageFilter : 평균필터</b></li>
+  <li><b>addBackgroundFilter : 배경필터</b></li>
+  <li><b>addDateFilter : 날짜필터</b></li>
+  <li><b>addForegroundFilter : 전경필터</b></li>
+  <li><b>addNumberFilter : 숫자필터</b></li>
+  <li><b>addTextFilter : 텍스트필터</b></li>
+  <li><b>addTop10Filter : 상위 10개 필터</b></li>
+</ul>
+
+<p>
+예를 들면:
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> range = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">2</span>);
+<span class="hljs-keyword">var</span> rowFilter = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Filter.HideRowFilter(range);
+sheet.rowFilter(rowFilter);
+rowFilter.filterButtonVisible(<span class="hljs-number">false</span>);
+<span class="hljs-keyword">var</span> condition = <span class="hljs-keyword">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.textCondition, &#123;compareType: GC.Spread.Sheets.ConditionalFormatting.TextCompareType.contains,expected:<span class="hljs-string">'*e*'</span>&#125;);
+rowFilter.addFilterItem(<span class="hljs-number">1</span>, condition); 
+rowFilter.filter(<span class="hljs-number">1</span>);</code></pre> 
+<p>  
+또한 특정 조건을 만들고 <b>addFilterItem</b>메서드를 사용하여 해당 조건을 사용하는 필터를 행 필터에 추가할수 있습니다.
+<br>
+예를 들면:
+</p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> formulaCondition = <span class="hljs-keyword">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.formulaCondition, &#123;customValueType: GC.Spread.Sheets.ConditionalFormatting.CustomValueType.empty,formula: <span class="hljs-number">null</span>&#125;);
+rowFilter.addFilterItem(<span class="hljs-number">1</span>, formulaCondition);
+rowFilter.filter(<span class="hljs-number">1</span>);</code></pre> 
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Filter' src='//codepen.io/GrapeCity-Korea/embed/GrebQd/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/GrebQd/'>SpreadJS.10/Basic Filter</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe></div>  
