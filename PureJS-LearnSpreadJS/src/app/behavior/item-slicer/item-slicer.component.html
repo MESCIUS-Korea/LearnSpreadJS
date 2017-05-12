@@ -1,3 +1,55 @@
+<h1 class="page-header">
+  Item 슬라이서 | Item Slicer Works
+</h1>
+<div id="content" class="content">
 <p>
-  item-slicer works!
-</p>
+Spread.Sheets는 <b>ItemSlicer</b>를 제공합니다. ItemSlicer는 필터 UI입니다. 데이터를 필터링하는 편리한 방법을 제공합니다. <br/><br/>
+ItemSlicer는 슬라이서 구성 요소이며 시트와 독립적입니다. 어디서나 ItemSlicer를 추가 할 수 있습니다. <br/><br/>
+ItemSlicer는 슬라이서 데이터 (GeneralSlicerData, TableSlicerData 또는 <b>GeneralSlicerData</b>에서 확장되는 다른 슬라이서 데이터 포함)와 함께 사용해야합니다. TableSlicerData와 함께 ItemSlicer를 사용하면 ItemSlicer로 필터링 할 때 테이블을 동기화 할 수도 있습니다.<br/><br/>
+다음과 같이 자신 만의 ItemSlicer를 만들 수 있습니다.<br/><br/>
+(1) 데이터 원본과 새 GeneralSlicerData를 만듭니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> columnNames = [<span class="hljs-string">'Name'</span>, <span class="hljs-string">'Class'</span>, <span class="hljs-string">'Gender'</span>, <span class="hljs-string">'Math'</span>, <span class="hljs-string">'English'</span>, <span class="hljs-string">'Total Score'</span>];
+<span class="hljs-keyword">var</span> data = [[<span class="hljs-string">'Student1'</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'female'</span>, <span class="hljs-string">'69'</span>, <span class="hljs-string">'66'</span>, <span class="hljs-string">'135'</span>],
+             ...
+            [<span class="hljs-string">'Student5'</span>, <span class="hljs-number">3</span>, <span class="hljs-string">'male'</span>, <span class="hljs-string">'60'</span>, <span class="hljs-string">'30'</span>, <span class="hljs-string">'90'</span>]
+           ];
+<span class="hljs-keyword">var</span> slicerData = <span class="hljs-keyword">new</span> GC.Spread.Slicers.GeneralSlicerData(data, columnNames);</code></pre>      
+<p>
+(2) 열 데이터를 가져 와서 UI를 만듭니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> tableStr = <span class="hljs-string">"&#60;table border='1' cellpadding='0' cellspacing='0'&#62;&#60;tr&#62;"</span>;
+for (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &#60; columnNames.length; i++) 	&#123;
+    tableStr += <span class="hljs-string">"&#60;th&#62;"</span> + columnNames[i] + <span class="hljs-string">"&#60;/th&#62;"</span>;
+&#125;
+...
+tableStr += <span class="hljs-string">'&#60;/table&#62;'</span>;
+$listTable = $(tableStr);
+$(<span class="hljs-string">'#container'</span>).append($listTable);
+</code></pre> 
+<p>(3) 필터링 된 결과를 가져와 UI를 업데이트합니다. </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> filteredRowIndexs = slicerData.getFilteredRowIndexes();
+<span class="hljs-keyword">var</span> trs = $listTable.find('tr');
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = 0; i < slicerData.data.length; i++) &#123;
+    <span class="hljs-keyword">if</span> (filteredRowIndexs.indexOf(i) !== -1) &#123;
+        $(trs[i+1]).show();
+    &#125; <span class="hljs-keyword">else</span> &#123;
+        $(trs[i+1]).hide();
+    &#125;
+&#125;
+</code></pre> 
+<p>
+(4) ItemSlicer를 만들어 GeneralSlicerData에 첨부 한 다음 DOM 트리에 추가합니다. ItemSlicer의 크기를 조정할 수도 있습니다. 이제 ItemSlicer로 데이터를 쉽게 필터링하고 즐길 수 있습니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> genderSlicer = new GC.Spread.Sheets.Slicers.ItemSlicer(<span class="hljs-string">'Gender'</span>, slicerData, <span class="hljs-string">'Gender'</span>);
+$(<span class="hljs-string">'#genderSlicerHost'</span>).append(genderSlicer.getDOMElement());
+genderSlicer.height(<span class="hljs-number">200</span>);
+genderSlicer.width(<span class="hljs-number">200</span>);
+</code></pre> 
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Item Slicer' src='//codepen.io/GrapeCity-Korea/embed/ggBwxx/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ggBwxx/'>SpreadJS.10/Item Slicer</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>          
