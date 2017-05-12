@@ -1,3 +1,33 @@
+<h1 class="page-header">
+  합계 슬라이서 사용예 | Aggregation Slicer Use Case
+</h1>
+<div id="content" class="content">
 <p>
-  aggregation-slicer-use-case works!
-</p>
+GeneralSlicerData는 특정 열이나 범위의 데이터를 집계하는 <b>aggregateData</b> 메서드를 제공합니다.
+<br/><br/>
+<b>aggregateData(columnName: string, aggregateType: SlicerAggregateType, range?: ISlicerRangeConditional): number</b>
+<br/><br/>
+<b>SlicerAggregateType</b>은 다음과 같이 11 가지 집계 함수 유형을 제공합니다.
+</p>  
+<ul>
+  <li><b>AVERAGE</b></li>
+  <li><b>COUNT </b></li>
+  <li><b>COUNTA </b></li>
+  <li><b>MAX </b></li>
+  <li><b>MIN </b></li>
+  <li><b>PRODUCT </b></li>
+  <li><b>STDEV </b></li>
+  <li><b>STDEVP </b></li>
+  <li><b>SUBTOTAL </b></li>
+  <li><b>SUM </b></li>
+  <li><b>VARS </b></li>
+  <li><b>VARP </b></li>
+</ul>  
+<p>오른쪽에 표시된 코드와 같이 자체 데이터 집계 슬라이서를 만들 수도 있습니다. </p>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Aggregation Slicer Use Case' src='//codepen.io/GrapeCity-Korea/embed/zNMYXm/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/zNMYXm/'>SpreadJS.10/Aggregation Slicer Use Case</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>      

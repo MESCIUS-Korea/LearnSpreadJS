@@ -1,3 +1,47 @@
+<h1 class="page-header">
+  기본 검색 | Basic Search
+</h1>
+<div id="content" class="content">
 <p>
-  basic-search works!
-</p>
+1. 스프레드 시트에서 특정 번호 또는 텍스트 문자열과 같이 스프레드에서 무언가를 검색 할 수 있습니다.
+<br/><br/>
+2. 지정한 텍스트 문자열 또는 번호를 검색하려면 <b>Search</b> 메서드을 사용하여 다음 예와 같이 지정된 기준으로 셀의 텍스트를 검색합니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">sheet.setText(<span class="hljs-number">6</span>, <span class="hljs-number">10</span>, <span class="hljs-string">'testSearch'</span>);
+<span class="hljs-keyword">var</span> searchCondition = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Search.SearchCondition();
+searchCondition.searchString = <span class="hljs-string">'testSearch'</span>;
+<span class="hljs-keyword">var</span> searchresult = sheet.search(searchCondition); </code></pre>  
+<p>
+3. 검색 조건을 사용자 정의하려면 <b>SearchCondition</b>을 설정하십시오.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">this</span>.sheet.getCell(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>).text(<span class="hljs-string">'Demo string for search'</span>);
+<span class="hljs-keyword">var</span> condition = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Search.SearchCondition();
+condition.searchString = <span class="hljs-string">'for'</span>;
+condition.startSheetIndex = <span class="hljs-number">0</span>;
+condition.endSheetIndex = <span class="hljs-number">0</span>;
+condition.searchFlags = GC.Spread.Sheets.Search.SearchFlags.ignoreCase | GC.Spread.Sheets.Search.SearchFlags.blockRange;
+condition.searchOrder = GC.Spread.Sheets.Search.SearchOrder.nOrder;
+condition.searchTarget = GC.Spread.Sheets.Search.SearchFoundFlags.cellText;
+condition.sheetArea = GC.Spread.Sheets.SheetArea.viewport;
+condition.rowStart = <span class="hljs-number">0</span>;
+condition.columnStart = <span class="hljs-number">0</span>;
+condition.rowEnd = <span class="hljs-number">10</span>;
+condition.columnEnd = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">var</span> result = <span class="hljs-keyword">this</span>.spread.search(condition);</code></pre>    
+<p>
+4. 무언가를 검색하면 검색 결과를 얻을 수 있습니다. 검색 결과는 다음 속성을 포함하는 개체입니다.
+</p> 
+<ul>
+  <li><b>searchFoundFlag : 일치하는 항목을 지정하는 열거 형입니다. </b></li>
+  <li><b>foundSheetIndex : 일치하는 시트의 인덱스입니다. </b></li>
+  <li><b>foundRowIndex : 일치하는 행의 인덱스입니다. </b></li>
+  <li><b>foundColumnIndex : 일치하는 열의 인덱스입니다. </b></li>
+  <li><b>foundString : 발견 된 문자열입니다. </b></li>
+</ul>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Search' src='//codepen.io/GrapeCity-Korea/embed/apxgRN/?height=520&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/apxgRN/'>SpreadJS.10/Basic Search</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>                    

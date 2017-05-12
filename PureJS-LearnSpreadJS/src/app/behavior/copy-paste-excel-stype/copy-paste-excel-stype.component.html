@@ -1,3 +1,26 @@
+<h1 class="page-header">
+  스타일 복사/붙여넣기 | Copy Paste Excel Style
+</h1>
+<div id="content" class="content">
 <p>
-  copy-paste-excel-stype works!
+1. Spread.Sheets는 Excel에서 복사 스타일 / Span을 지원하고 Spread.Sheets Sheets에 붙여넣고 Spread.Sheets Sheets에서 스타일 / Span을 복사 한 다음 Excel에 붙여 넣습니다.
+<br/><br/>
+2.이 기능을 사용하려면 allowCopyPasteExcelStyle이 true 일 때 통합 문서 옵션을 설정하십시오. 예 :
 </p>
+<pre class="sample-code"><code class="js hljs javascript">workbook.options.allowCopyPasteExcelStyle = <span class="hljs-number">true</span>;</code></pre>      
+
+<p>
+그렇다면 Excel에서 스타일을 복사하여 Excel로 복사 할 수 있으며 기본값은 true입니다.
+<br/><br/>
+이제 ClipboardChanging 및 ClipboardChanged에서 이벤트 인수의 copyData가 string에서 Object &#123;text, html&#125;로 변경되었습니다.
+<br/><br/>
+ClipboardPasting 및 ClipboardPasted에서 pasteData &#123;text, html&#125;가 이벤트 인수에 추가되었습니다.
+</p>  
+
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Copy Paste Excel Style' src='//codepen.io/GrapeCity-Korea/embed/OWdpEX/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/OWdpEX/'>SpreadJS.10/Copy Paste Excel Style</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>              

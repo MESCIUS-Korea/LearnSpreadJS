@@ -499,15 +499,15 @@
             "path": "DirtyItemsComponent"
           },
           {
-            "header": "스타일 복사/붙혀넣기",
+            "header": "스타일 복사/붙여넣기",
             "path": "CopyPasteExcelStypeComponent"
           },
           {
-            "header": "확장영역 붙혀넣기",
+            "header": "확장영역 붙여넣기",
             "path": "PasteExtendRangeComponent"
           },
           {
-            "header": "복사/붙혀넣기 향상",
+            "header": "복사/붙여넣기 향상",
             "path": "CopyPasteEngancementComponent"
           }
         ]
@@ -544,7 +544,7 @@
       },
       {
         "header": "검색",
-        "path": "behavior-cellType",
+        "path": "behaviorcellType",
         "items": [
           {
             "header": "기본검색",

@@ -1,3 +1,43 @@
+<h1 class="page-header">
+  기본 셀 타입 | Basic Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  basic-celltype works!
+1. Spread.Sheets은 셀 유형을 제공합니다. 양방향 바인딩을 지원할 수 있습니다 (뷰 모델의 데이터 변경 사항이 뷰에 반영됩니다). 각 셀 유형은 디스플레이 모드와 편집 모드의 두 가지 모드를 제공합니다.
+<br/><br/>
+2. 셀 유형을 설정하려면 먼저 cellType 객체를 만든 다음 setCellType 메서드를 사용하여 시트, 셀, 열 또는 행의 cellType을 설정합니다. 예 :
 </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span>  b1 = <span class="hljs-keyword">new</span>  GC.Spread.Sheets.CellTypes.Button();
+b1.text(<span class="hljs-string">'Margin Left'</span>);
+b1.marginLeft(<span class="hljs-number">40</span>);
+sheet.setCellType(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, b1, GC.Spread.Sheets.SheetArea.viewport);
+<span class="hljs-comment">//or</span>
+sheet.getCell(<span class="hljs-number">3</span>,<span class="hljs-number">2</span>).cellType(b1);  </code></pre>  
+<p>
+경우에 따라 cellType을 열에 바인딩하여 데이터 바인딩과 함께 cellType을 사용할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> lines = [<span class="hljs-string">'Computers'</span>, <span class="hljs-string">'Washers'</span>, <span class="hljs-string">'Stoves'</span>];
+<span class="hljs-keyword">var</span> lineCellType = new GC.Spread.Sheets.CellTypes.ComboBox();
+lineCellType.items(lines);
+<span class="hljs-keyword">var</span> columns = [
+   &#123;name: <span class="hljs-string">'name'</span>, size: <span class="hljs-number">100</span>&#125;
+   &#123;name: <span class="hljs-string">'color'</span>, cellType: lineCellType, size: <span class="hljs-number">80</span>&#125;,
+];
+sheet.bindColumns(columns)
+b1.marginLeft(<span class="hljs-number">40</span>);</code></pre>    
+<p>
+셀 유형을 설정 한 후 <b>getCellType</b> 메소드를 사용하여 셀 유형을 가져올 수 있습니다. 셀 유형을 제거하려면 값을 null 또는 undefined로 설정하십시오.
+<br/><br/>
+3. Spread.Sheets는 스프레드 시트에서 이벤트 (<b>ButtonClicked</b>)를 제공합니다. 이 이벤트는 셀의 단추, 확인란 또는 하이퍼 링크를 클릭 할 때 발생합니다. 예 :
+</p> 
+<pre class="sample-code"><code class="js hljs javascript">spread.bind(GC.Spread.Sheets.Events.ButtonClicked, <span class="hljs-keyword">function</span>() &#123;
+   <span class="hljs-comment">//do some thing...</span>
+&#125;);
+</code></pre>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Cell Type' src='//codepen.io/GrapeCity-Korea/embed/dNxpON/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/dNxpON/'>SpreadJS.10/Basic Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>                

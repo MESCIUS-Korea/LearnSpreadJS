@@ -1,3 +1,36 @@
+<h1 class="page-header">
+  복사/붙여넣기 향상 | Copy Paste Enhancement
+</h1>
+<div id="content" class="content">
 <p>
-  copy-paste-engancement works!
-</p>
+1. Spread.Sheets는 데이터를 복사하거나 붙여 넣을 때 포함될 헤더를 지정하는 옵션을 제공합니다.
+<br/><br/>
+2. Workbook 옵션의 copyPasteHeaderOptions를 설정하여 포함될 헤더를 지정하십시오. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">workbook.options.copyPasteHeaderOptions = GC.Spread.Sheets.CopyPasteHeaderOptions.allHeaders </code></pre>  
+<p>
+<b>GC.Spread.Sheets.CopyPasteHeaderOptions:</b>
+</p>  
+<ul>
+  <li><b>noHeaders: 0 </b></li>
+  <li><b>rowHeaders: 1 </b></li>
+  <li><b>columnHeaders: 2 </b></li>
+  <li><b>allHeaders: 3 </b></li>
+</ul>  
+<p>
+3. 이제 Spread.Sheets는 연속되지 않은 여러 셀을 복사 한 다음 단일 범위를 붙여 넣을 수 있습니다. 그러나 다음과 같이 두 가지 경우 만 지원합니다.
+</p>  
+<ul>
+  <li><b>동일한 행 및 행 수 </b></li>
+  <li><b>동일한 열 및 열 수 </b></li>
+</ul>  
+<p>
+4. 스프레드 시트는 복사시 필터링 된 행을 무시합니다.
+</p>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Copy Paste Enhancement' src='//codepen.io/GrapeCity-Korea/embed/mRvMdY/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/mRvMdY/'>SpreadJS.10/Copy Paste Enhancement</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>                  

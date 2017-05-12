@@ -1,3 +1,106 @@
+<h1 class="page-header">
+  트리 슬라이서 사용예 | Tree Slicer Use Case
+</h1>
+<div id="content" class="content">
 <p>
-  tree-slicer-use-case works!
-</p>
+필요에 맞게 TableSlicerData를 사용자 정의 할 수 있습니다. 다음은 트리 슬라이서를 사용하는 방법입니다.
+<br/><br/>
+(1) 사용자 지정 TableSlicerData를 만듭니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-string">TreeSlicerData</span>(table, treeColumns) &#123;
+    GC.Spread.Sheets.Slicers.TableSlicerData.call(<span class="hljs-keyword">this</span>, table);
+    <span class="hljs-keyword">this</span>.listeners = [];
+    <span class="hljs-keyword">this</span>.suspended = <span class="hljs-number">false</span>;
+    ...
+&#125;
+TreeSlicerData.prototype = GC.Spread.Sheets.Slicers.TableSlicerData.prototype;
+TreeSlicerData.prototype.constructor = TreeSlicerData;</code></pre>   
+<p>
+(2) TableSlicerData API 함수를 상속합니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-comment">// TableSlicerData의 attachListener 함수를 상속받습니다.</span>
+TreeSlicerData.prototype.attachListener = <span class="hljs-keyword">function</span> (listener) &#123;
+    <span class="hljs-comment">//여기에서 생략 된 일부 코드는 오른쪽에서 볼 수 있습니다.</span>
+    ...
+&#125;;
+<span class="hljs-comment">// TableSlicerData의 dettachListener 함수를 상속받습니다.</span>
+TreeSlicerData.prototype.dettachListener = <span class="hljs-keyword">function</span> (listener) &#123;
+    ...
+&#125;;</code></pre>     
+<p>
+(3) 관련 TableSlicerData API 함수를 호출하는 함수를 만듭니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">TreeSlicerData.prototype.filter = <span class="hljs-keyword">function</span> (path) &#123;
+    <span class="hljs-keyword">this</span>.suspended = <span class="hljs-number">true</span>;
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.lastFilterPath) &#123;
+        for (var i = 0; i < this._lastFilterPath.length; i++) &#123;
+            <span class="hljs-comment">// TableSlicerData API 함수를 호출합니다.</span>
+            <span class="hljs-keyword">this</span>.doUnfilter(<span class="hljs-keyword">this</span>.treeColumns[i]);
+        &#125;
+    &#125;
+    <span class="hljs-keyword">this</span>.lastFilterPath = path;
+    <span class="hljs-keyword">var</span> current = <span class="hljs-keyword">this</span>.treeData;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = 0; i < path.length; i++) &#123;
+        ...
+        <span class="hljs-comment">// TableSlicerData API 함수를 호출합니다.</span>
+        <span class="hljs-keyword">this</span>.doFilter(<span class="hljs-keyword">this</span>.treeColumns[i], &#123; exclusiveRowIndexes: [exclusiveIndex] &#125;);
+    &#125;
+&#125;;</code></pre>    
+<p>
+(4) TableSlicerData와 관련된 슬라이서를 만듭니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-string">TreeSlicer</span>(slicerData, treeColumns) &#123;
+  slicerData.buildDataTree();
+  <span class="hljs-keyword">this</span>.data = slicerData;
+  <span class="hljs-keyword">this</span>.slicerData = slicerData;
+  <span class="hljs-keyword">this</span>.treeColumns = treeColumns;
+  <span class="hljs-keyword">this</span>.treeDatas = slicerData.treeData;
+  <span class="hljs-keyword">this</span>.slicerData.attachListener(this);
+  <span class="hljs-keyword">this</span>.onDataLoaded();
+&#125;
+TreeSlicer.prototype.constructor = TreeSlicer;
+</code></pre>  
+<p>
+(5) Slicer UI를 빌드하고 doFilter 함수를 호출하십시오.
+</p>   
+<pre class="sample-code"><code class="js hljs javascript"> TreeSlicer.prototype.onDataLoaded = <span class="hljs-keyword">function</span> () &#123;
+    ...
+    $(treeItems.allDoms).addClass(<span class="hljs-string">'treeSlicer_Item'</span>).mousedown(<span class="hljs-keyword">function</span> (obj) &#123;
+        ...
+        <span class="hljs-keyword">if</span> (treeItem === treeItems) &#123;
+            self.data.clearFilter();    <span class="hljs-comment">// TableSlicerData 함수를 호출한다.</span>
+        &#125;
+        <span class="hljs-keyword">else if</span> (treeItem) &#123;
+        <span class="hljs-keyword">if</span> (treeItem === treeItems) &#123;
+            ...
+            self.data.filter(path);    <span class="hljs-comment">// TableSlicerData 함수를 호출한다.</span>
+        &#125;
+    &#125;);
+    ...
+&#125;;</code></pre>  
+<p>
+(6) 데이터를 Spread에 추가하고 테이블을 만듭니다.
+</p>   
+<pre class="sample-code"><code class="js hljs javascript">spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook($(<span class="hljs-string">'#ss'</span>)[0]);
+<span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
+sheet.suspendPaint();
+<span class="hljs-comment">// Sheet에 데이터를 추가합니다.</span>
+...
+sheet.tables.add(<span class="hljs-string">'table1'</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">6</span>, <span class="hljs-number">5</span>);
+sheet.resumePaint();
+</code></pre>  
+<p>
+(7) TableSlicerData를 만들고 슬라이서에 연결하십시오. DOM 트리에 슬라이서를 추가하십시오.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> table = sheet.tables.find(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+<span class="hljs-keyword">var</span> dataSource = <span class="hljs-keyword">new</span> TreeSlicerData(table, [<span class="hljs-string">'Continent'</span>, <span class="hljs-string">'Country'</span>, <span class="hljs-string">'City'</span>]);
+<span class="hljs-keyword">var</span> treeSlicer = <span class="hljs-keyword">new</span> TreeSlicer(dataSource, [<span class="hljs-string">'Continent'</span>, <span class="hljs-string">'Country'</span>, <span class="hljs-string">'City'</span>]);
+$(<span class="hljs-string">'#slicer_Tree'</span>).append(treeSlicer.getDOMElement());
+</code></pre>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Tree Slicer User Case' src='//codepen.io/GrapeCity-Korea/embed/xgQKbO/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/xgQKbO/'>SpreadJS.10/Tree Slicer User Case</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    

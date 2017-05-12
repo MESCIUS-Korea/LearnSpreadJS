@@ -1,3 +1,42 @@
+<h1 class="page-header">
+  동작 추적 | Dirty Items
+</h1>
+<div id="content" class="content">
 <p>
-  dirty-items works!
+1. 동작 추적(Dirty Items)은 변경된 데이터를 가져 오는 데 도움을 줄 수 있습니다. 동작 추적은 행, 삭제 된 행, 업데이트 된 행 (업데이트 된 셀이있는 행) 또는 업데이트 된 셀에 삽입 될 수 있습니다.
+<br/><br/>
+2. 동작 추적(Dirty Items)은 다음과 같이 정의됩니다.
 </p>
+<ul>
+<li><b>일반적으로 한 셀 값을 변경하면 dirty한 상태가 됩니다</b></li>
+<li><b>셀이 dirty한 상태이면 현재 행이 dirty한 상태입니다.</b></li>
+<li><b>한 행이 삽입되고 셀에 값이 설정된 경우 행은 dirty 행이 아닌 삽입 된 행으로 간주됩니다. cell은 dirty 셀로 간주되지 않습니다.</b></li>
+<li><b>바인딩 데이터를로드 할 때 항목이 dirty 상태는 아니지만 spreadSheet를 사용하여 바인딩 데이터 값을 변경하면 항목이 dirty한 상태로 됩니다.</b></li>
+<li><b>항목은 실행 취소 작업 후에도 dirty 상태를 유지합니다.</b></li>
+</ul>
+<p>
+3. 시트에서 <b>getDirtyRows</b> 메소드를 호출하여 dirty 행을 모두 얻을 수 있습니다. 기존 바인딩 데이터가있는 경우 사용자는 dirty 행에서 <b>row, item</b> 및 <b>originalItem</b>을 가져옵니다. 그렇지 않으면 값이있는 <b>row</b>만 가져옵니다.
+<br/><br/>
+4. <b>getDirtyCells</b> 메소드를 호출하여 dirty 셀을 모두 가져올 수 있습니다. 지정된 범위가 주어지면 다음 순서로 운영 논증을 제공하십시오.
+</p>
+<ul>
+<li><b>row : 범위의 왼쪽 위 셀의 행 인덱스입니다.</b></li>
+<li><b>col : 범위의 왼쪽 위 셀의 열 인덱스입니다.</b></li>
+<li><b>rowCount : 범위의 총 행 수입니다.</b></li>
+<li><b>colCount : 범위의 총 열 수입니다.</b></li>
+</ul>
+<p>
+dirty상태인 각 셀은 <b>row</b>, <b>col</b>, <b>oldValue</b>, <b>newValue</b>와 같은 정보를 제공합니다.<br/><br/>
+5. 시트에서 <b>getDeletedRows</b> 메소드를 호출하여 삭제 된 행을 모두 가져올 수 있습니다. 기존 바인딩 데이터가있는 경우 사용자는 dirty 행에서 행과 originalItem을 가져옵니다. 그렇지 않으면 값이 있는 행만 가져옵니다.
+<br/><br/>
+6. 시트에서 getInsertRows 메소드를 호출하여 삽입 된 모든 행을 가져올 수 있습니다. 삽입 된 각 행은 행 및 항목 (데이터)에 대한 정보를 제공합니다.
+<br/><br/>
+7. dirty, 삽입 및 삭제 된 상태는 <b>clearPendingChanges</b>에 의해 지울 수 있습니다. <b>setRowCount</b>, <b>setColumnCount</b>, <b>fromSSON</b> 또는 <b>setDataSource</b>를 호출 한 후 자동으로 지워집니다.
+</p>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Dirty Items' src='//codepen.io/GrapeCity-Korea/embed/pRqVZL/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/pRqVZL/'>SpreadJS.10/Dirty Items</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>              
