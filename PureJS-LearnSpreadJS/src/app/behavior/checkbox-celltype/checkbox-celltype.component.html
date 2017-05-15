@@ -1,3 +1,35 @@
+<h1 class="page-header">
+  체크박스 셀 타입 | Check Box Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  checkbox-celltype works!
-</p>
+1. CheckBox는 CheckBox 셀을 나타냅니다.
+<br/><br/>
+2. CheckBox 셀을 만들려면 다음 예제대로 하시면 됩니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> c = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.CheckBox();
+sheet.setCellType(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, c, GC.Spread.Sheets.SheetArea.viewport);</code></pre>
+<p>3. CheckBox는 <b>isThreeState</b> CheckBox을 지원합니다. isThreeState 메서드를 사용하여 CheckBox이 세 가지 상태를 지원하는지 여부를 가져 오거나 설정할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">c.isThreeState(<span class="hljs-number">true</span>);
+<span class="hljs-keyword">var</span> state = c.isThreeState(); </code></pre>
+<p>세 가지 상태는 true, false 또는 indeterminate입니다. 모든 상태에는 자체 텍스트가 있습니다. <b>textTrue</b>, <b>textFalse</b> 및 <b>textIndeterminate</b> 메서드를 사용하여 이러한 상태의 텍스트를 가져오고 설정할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">c.isThreeState(<span class="hljs-number">true</span>);
+c.textTrue(<span class="hljs-string">'Check state'</span>);
+c.textFalse(<span class="hljs-string">'UnCheck state'</span>);
+c.textIndeterminate(<span class="hljs-string">'Indeterminate state'</span>); </code></pre>
+<p>4. <b>caption</b> 메서드를 사용하여 CheckBox 셀의 caption을 가져오고 설정할 수 있습니다. <b>textAlign</b> 메서드를 사용하여 CheckBox와 관련된 텍스트 정렬을 가져오고 설정합니다. 설정은 <b>CheckBoxTextAlign</b> enum 값입니다. </p>
+<ul>
+  <li><b>top : 텍스트가 CheckBox의 맨 위에 있습니다. </b></li>
+  <li><b>bottom : 텍스트가 CheckBox 아래에 있습니다.</b></li>
+  <li><b>left : 텍스트는 CheckBox의 왼쪽에 있습니다.</b></li>
+  <li><b>right : 텍스트는 CheckBox의 오른쪽에 있습니다. </b></li>
+</ul>  
+<pre class="sample-code"><code class="js hljs javascript">c.caption(<span class="hljs-string">'Check Box'</span>);
+c.textAlign(GC.Spread.Sheets.CellTypes.CheckBoxTextAlign.left); </code></pre>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Check Box Cell Type' src='//codepen.io/GrapeCity-Korea/embed/jygMGJ/?height=520&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/jygMGJ/'>SpreadJS.10/Check Box Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>           

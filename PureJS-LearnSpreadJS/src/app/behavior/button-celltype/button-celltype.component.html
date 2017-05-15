@@ -1,3 +1,36 @@
+<h1 class="page-header">
+  버튼 셀 타입 | Button Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  button-celltype works!
+1. <b>버튼</b>은 버튼 셀을 나타냅니다.
+<br/><br/>
+2. 버튼 셀을 만들려면 다음 예제대로 하시면 됩니다.
 </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> b1 = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.Button();
+sheet.setCellType(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, b1, GC.Spread.Sheets.SheetArea.viewport);</code></pre>    
+<p>
+3. 제공되는 많은 API를 사용하여 Button을 사용자 정의 할 수 있습니다. 셀의 버튼 위치를 제어하려면 다음 방법을 사용하십시오.
+</p>
+<ul>
+  <li><b>marginTop : 셀을 기준으로 버튼의 위쪽 여백을 픽셀 단위로 가져 오거나 설정합니다. </b></li>
+  <li><b>marginRight : 셀을 기준으로 버튼의 오른쪽 여백을 픽셀 단위로 가져 오거나 설정합니다. </b></li>
+  <li><b>marginBottom : 셀을 기준으로 버튼의 아래쪽 여백을 픽셀 단위로 가져 오거나 설정합니다. </b></li>
+  <li><b>marginLeft : 셀을 기준으로 버튼의 왼쪽 여백을 픽셀 단위로 가져 오거나 설정합니다. </b></li>
+</ul>  
+<pre class="sample-code"><code class="js hljs javascript">b1.marginLeft(<span class="hljs-number">15</span>);
+b1.marginTop(<span class="hljs-number">7</span>);
+b1.marginRight(<span class="hljs-number">15</span>);
+b1.marginBottom(<span class="hljs-number">7</span>);</code></pre>  
+<p>
+4. <b>text</b> 메서드를 사용하여 버튼의 내용을 가져오고 설정할 수 있습니다. <b>buttonBackColor</b> 메서드를 사용하여 버튼의 배경색을 가져오고 설정합니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">b1.text(<span class="hljs-string">'Margin'</span>);
+b1.buttonBackColor(<span class="hljs-string">'red'</span>); </code></pre>  
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Button Cell Type' src='//codepen.io/GrapeCity-Korea/embed/KaOgWJ/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/KaOgWJ/'>SpreadJS.10/Button Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>         

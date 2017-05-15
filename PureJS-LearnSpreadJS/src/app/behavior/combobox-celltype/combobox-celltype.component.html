@@ -1,3 +1,40 @@
+<h1 class="page-header">
+  콤보 박스 셀 타입 | Combo Box Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  combobox-celltype works!
-</p>
+1. ComboBox는 콤보 박스 셀을 나타냅니다.
+<br/><br/>
+2. 콤보 박스 셀을 만들려면 다음 예제대로 하시면 됩니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> combo = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.ComboBox();
+sheet.setCellType(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, combo, GC.Spread.Sheets.SheetArea.viewport);</code></pre>    
+<p>
+3. editorValueType 메소드를 사용하여 기본 데이터 모델에 기록 된 값을 가져오고 설정할 수 있습니다. 에디터 값 유형은 EditorValueType enum입니다.
+</p>  
+<ul>
+  <li><b>text:  선택한 항목의 텍스트 값을 모델에 씁니다. </b></li>
+  <li><b>index: 선택한 항목의 인덱스를 모델에 씁니다. </b></li>
+  <li><b>value: 선택한 항목의 해당 데이터 값을 모델에 씁니다. </b></li>
+</ul>
+<pre class="sample-code"><code class="js hljs javascript">combo.editorValueType(GC.Spread.Sheets.CellTypes.EditorValueType.text); </code></pre>
+<p>
+4. 다른 editorValueType 설정은 다른 유형의 에디터 값을 작성합니다. 콤보 상자의 값은 콤보 상자의 드롭 다운 목록 항목에 따라 다릅니다. items 메소드를 사용하여 항목을 가져오고 설정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">combo.items([
+ &#123; text: <span class="hljs-string">'Oranges'</span>, value: <span class="hljs-string">'11k'</span> &#125;,
+ &#123; text: <span class="hljs-string">'Apples'</span>, value: <span class="hljs-string">'15k'</span> &#125;,
+ &#123; text: <span class="hljs-string">'Grape'</span>, value: <span class="hljs-string">'100k'</span> &#125;]); </code></pre>
+<p>5. 편집 가능한 메서드를 사용하여 사용자가 콤보 박스 에디터에서 입력 할 수 있는지 여부를 설정합니다. 기본값은 false입니다. 선택 만 허용됩니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">editableCombo.editable(<span class="hljs-number">true</span>); </code></pre>
+<p>
+6. itemHeight 메서드를 사용하여 드롭 다운 목록에서 각 항목의 높이를 설정할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">combo.itemHeight(<span class="hljs-number">24</span>); </code></pre>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Combo Box Cell Type' src='//codepen.io/GrapeCity-Korea/embed/rjXMJV/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/rjXMJV/'>SpreadJS.10/Combo Box Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>           
