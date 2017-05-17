@@ -1,3 +1,36 @@
+<h1 class="page-header">
+ 사용자 셀 타입 | Custom Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  custom-celltype works!
-</p>
+1. 자신 만의 custom cellType을 만들어야 할 때가 있습니다. 셀이 표시 모드에있는 경우를 그릴 수 있으며 셀이 편집 모드에 있을 때 편집기를 사용자 정의하고 셀 유형 자체로 마우스와 키보드 상호 작용을 처리 할 수 있습니다.
+<br/><br/>
+2. <b>Base</b>를 상속하고 <b>paint</b>, <b>createEditorElement</b>, <b>getEditorValue</b> 등과 같은 필수 메소드를 구현하여 셀 유형을 사용자 정의 할 수 있습니다. 그 후에는 사용자 정의 cellType을 사용할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> MyCellType() &#123;
+MyCellType.prototype = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.Base();
+MyCellType.prototype.paint = <span class="hljs-keyword">function</span> (ctx, value, x, y, w, h, style, options) &#123;
+  <span class="hljs-comment">//캔버스에 셀을 칠합니다. </span>
+&#125;;
+MyCellType.prototype.createEditorElement = <span class="hljs-keyword">function</span>() &#123;
+   <span class="hljs-comment">//DOM 요소를 작성한 값을 리턴합니다. </span>
+&#125;;
+MyCellType.prototype.getEditorValue = <span class="hljs-keyword">function</span>(editorContext) &#123;
+   <span class="hljs-comment">//에디터의 값을 가져옵니다. </span>
+&#125;;
+MyCellType.prototype.setEditorValue = <span class="hljs-keyword">function</span>(editorContext, value) &#123;
+   <span class="hljs-comment">//에디터의 값을 설정합니다. </span>
+&#125;;
+MyCellType.prototype.activateEditor = <span class="hljs-keyword">function</span>(editorContext, cellStyle, cellRect) &#123;
+   <span class="hljs-comment">//편집기의 특성 또는 속성 설정 및 편집기의 바인딩 이벤트 설정을 포함하여 편집기를 활성화합니다. </span>
+&#125;;
+<span class="hljs-comment">//... 다른 메소드 구현</span>
+sheet.getRange(-1, 1, -1, 1).cellType(<span class="hljs-keyword">new</span> MyCellType());</code></pre>
+&#125;
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Cell Type' src='//codepen.io/GrapeCity-Korea/embed/qrWWRP/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/qrWWRP/'>SpreadJS.10/Custom Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>            

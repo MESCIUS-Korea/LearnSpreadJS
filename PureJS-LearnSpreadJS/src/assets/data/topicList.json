@@ -537,8 +537,12 @@
             "path": "HyperlinkCelltypeComponent"
           },
           {
-            "header": "사용자 헤더 셀 타입",
+            "header": "사용자 셀 타입",
             "path": "CustomCelltypeComponent"
+          },
+          {
+            "header": "사용자 헤더 셀 타입",
+            "path": "CustomheaderCelltypeComponent"
           }
         ]
       },

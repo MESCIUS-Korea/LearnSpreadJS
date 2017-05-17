@@ -1,3 +1,61 @@
+<h1 class="page-header">
+ 사용자 헤더 셀 타입 | Custom Header Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  customheader-celltype works!
-</p>
+1. Spread.Sheets은 행 및 열 헤더에 대한 사용자 정의 셀 유형을 지원하여 행 및 열 데이터 처리를 지원합니다.
+<br/><br/>
+2. 사용자 지정 헤더 셀 유형을 만들려면 <b>RowHeader</b> 또는 <b>ColumnHeader</b> 또는 다른 기본 제공 CellType을 기반으로 사용자 정의 헤더 셀 유형을 만듭니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> TopItemsCellType(count) &#123;
+   GC.Spread.Sheets.CellTypes.Button.apply(<span class="hljs-keyword">this</span>);
+   <span class="hljs-comment">// ... </span>
+   <span class="hljs-keyword">this</span>.text(<span class="hljs-string">"Top "</span> + count);
+&#125;
+TopItemsCellType.prototype = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.Button();</code></pre>
+<p>
+3. 사용자 정의 헤더 셀 유형의 경우 마우스 이벤트를 처리하는 다음 메소드를 제공하십시오.
+</p>  
+<ul>
+  <li><b>getHitInfo : processMouse 메소드에 제공 될 히트 정보를 포함하는 객체를 가져옵니다.</b></li>
+  <li><b>processMouseDown : 마우스 버튼을 눌렀을 때 수행 할 동작을 제공합니다. </b></li>
+  <li><b>processMouseMove : 마우스 이동을 위해 수행 할 조치를 제공합니다. </b></li>
+  <li><b>processMouseUp : 마우스 버튼 업 수행 작업을 제공합니다. </b></li>
+  <li><b>processMouseEnter : 마우스 입력을 위해 수행 할 조치를 제공합니다. </b></li>
+  <li><b>processMouseLeave : 마우스를 놓고 수행 할 작업을 제공합니다. </b></li>
+</ul>
+<p>다음은 getHitInfo 메소드의 샘플입니다.</p>
+<pre class="sample-code"><code class="js hljs javascript">TopItemsCellType.prototype.getHitInfo = <span class="hljs-keyword">function</span> (x, y, cellStyle, cellRect, context) &#123;
+   <span class="hljs-keyword">var</span> self = this;
+   <span class="hljs-keyword">var</span> leftX = cellRect.x &#43; self.marginLeft(),
+       rightX = cellRect.x &#43; cellRect.width &#45; self.marginRight(),
+       topY = cellRect.y &#43; self.marginTop(),
+       bottomY = cellRect.y &#43; cellRect.height &#45; self.marginBottom();
+
+   <span class="hljs-keyword">var</span> info = &#123; x: x, y: y, row: context.row, col: context.col, cellRect: cellRect, sheetArea: context.sheetArea, sheet: context.sheet &#125;;
+   <span class="hljs-keyword">if</span> (leftX &#60;= x &#38;&#38; x &#60;= rightX &#38;&#38; topY &#60;= y &#38;&#38; y &#60;= bottomY) &#123;
+       info.isReservedLocation = <span class="hljs-numger">true</span>;
+   &#125;	
+   <span class="hljs-keyword">return</span> info;
+&#125;; </code></pre>   
+<p>
+4. <b>ButtonClicked</b> 이벤트는 getHitInfo 메서드를 재정의 한 후 행 및 열 헤더 셀의 CheckBox, Button 및 HyperLink에서 사용할 수 있습니다.
+<br/><br/>
+스프레드 또는 시트에 바인딩하여 <b>ButtonClicked</b> 이벤트를 처리 할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">spread.bind(GC.Spread.Sheets.Events.ButtonClicked, <span class="hljs-keyword">function</span> (e, args) &#123;
+   <span class="hljs-keyword">var</span> sheet = args.sheet, sheetArea = args.sheetArea,
+   row = args.row, col = args.col,
+   cellType = sheet.getCellType(row, col, sheetArea);
+
+   <span class="hljs-keyword">if</span> (cellType <span class="hljs-keyword">instanceof</span> TopItemsCellType) &#123;
+       <span class="hljs-comment">// ...</span>
+   &#125;
+&#125;);</code></pre>    
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Header Cell Type' src='//codepen.io/GrapeCity-Korea/embed/GWKKWw/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/GWKKWw/'>SpreadJS.10/Custom Header Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>    

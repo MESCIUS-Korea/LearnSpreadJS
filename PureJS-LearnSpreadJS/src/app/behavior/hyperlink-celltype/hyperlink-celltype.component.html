@@ -1,3 +1,26 @@
+<h1 class="page-header">
+ 하이퍼링크 셀 타입 | Hyperlink Cell Type
+</h1>
+<div id="content" class="content">
 <p>
-  hyperlink-celltype works!
-</p>
+1. 하이퍼 링크는 하이퍼 링크 셀을 나타냅니다.
+<br/><br/>
+2. 하이퍼 링크 셀을 만들려면 다음 예를 따르십시오.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> h = <span class="hljs-keyword">new</span> GC.Spread.Sheets.CellTypes.HyperLink();
+sheet.setCellType(<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, h, GC.Spread.Sheets.SheetArea.viewport);</code></pre>
+<p>3. text 메서드를 사용하여 하이퍼 링크의 텍스트 문자열을 가져오고 설정할 수 있습니다. 또한 마우스 포인터가 하이퍼 링크 위에 있을 때 나타나는 툴팁을 설정할 수 있습니다. 예 : </p>
+<pre class="sample-code"><code class="js hljs javascript">h.text(<span class="hljs-string">'Spread.Sheets Site'</span>);
+h.linkToolTip(<span class="hljs-string">'This is the link to Spread.Sheets site'</span>); </code></pre>
+<p>
+4. 하이퍼 링크를 클릭하기 전후에 하이퍼 링크 색상이 다르면 방문한 링크를 쉽게 구별 할 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript">h.linkColor(<span class="hljs-string">'red'</span>);
+h.visitedLinkColor(<span class="hljs-string">'blue'</span>); </code></pre>
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Hyperlink Cell Type' src='//codepen.io/GrapeCity-Korea/embed/ryBBMM/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/ryBBMM/'>SpreadJS.10/Hyperlink Cell Type</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>             
