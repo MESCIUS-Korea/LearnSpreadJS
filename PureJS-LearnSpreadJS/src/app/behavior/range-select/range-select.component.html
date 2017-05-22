@@ -1,3 +1,31 @@
+<h1 class="page-header">
+ 범위 선택 | Range Select
+</h1>
+<div id="content" class="content">
 <p>
-  range-select works!
-</p>
+스프레드 시트에서 범위를 수동으로 입력하는 대신 범위를 선택하여 최종 사용자가 범위 (예 : "Sheet1! $ A $ 5 : $ C $ 10")를 입력하도록 허용해야하는 경우가 있습니다. 이 기능의 결과 또는 반환 값은 텍스트 상자에있는 하나 이상의 범위의 주소를 나타내는 텍스트입니다 (두 개의 범위 "Sheet1! A1 : B5, Sheet2! G11"의 예).
+<br/><br/>
+1. 범위 선택 모드를 사용하려면 <b>&#123;rangeSelectMode : true&#125;</b> 옵션이 있는 formulaTextBox를 만들어야 합니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> rangeSelect = createElement("div");
+<span class="hljs-keyword">var</span> fbx = <span class="hljs-keyword">new</span> GC.Spread.Sheets.FormulaTextBox.FormulaTextBox(rangeSelect, &#123;rangeSelectMode: <span class="hljs-number">true</span>&#125;);</code></pre>    
+<p>
+2. FormulaTextBox의 통합 문서 메서드를 사용하여이 formulaTextBox를 스프레드에 첨부 할 수 있습니다. 예를 들면 다음과 같습니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span>  workbook = <span class="hljs-keyword">new</span>  GC.Spread.Sheets.workbook(document.getElementById(<span class="hljs-string">'ss'</span>))
+fbx.workbook(workbook); </code></pre>    
+<p>
+fbx1.workbook ()에 인수가 없으면 범위 분리 선택
+<br/><br/>
+3. FormulaTextBox의 텍스트 메소드를 사용하여 수식 텍스트 상자의 텍스트를 가져올 수 있습니다. 예 :
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> str = fbx.text();</code></pre>   
+<p>4. destroy 메소드를 사용하여 수식 텍스트 상자의 모든 요소를 제거 할 수 있습니다. 예 :</p>
+<pre class="sample-code"><code class="js hljs javascript">fbx.destroy();</code></pre> 
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Range Select' src='//codepen.io/GrapeCity-Korea/embed/oZvvoq/?height=520&theme-id=light&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/oZvvoq/'>SpreadJS.10/Range Select</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>                

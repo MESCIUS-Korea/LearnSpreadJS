@@ -1,3 +1,27 @@
+<h1 class="page-header">
+ 기본 수식입력줄 | Basic Formula Text Box
+</h1>
+<div id="content" class="content">
 <p>
-  basic-formula-textbox works!
+1. 수식을 입력 할 때 사용 가능한 함수 이름을 잊어 버릴 수 있습니다. Spread.Sheets은 수식을 입력 할 때 함수 설명을 표시하는 수식 목록을 제공합니다. 수식 목록이 표시되면 Tab 키를 누르면 수식 이름이 자동 완성됩니다.
+<br/><br/>
+2. 수식에 범위를 입력하면 범위 표시기가 표시됩니다. 마우스를 클릭하고 범위를 선택할 수 있습니다.
+<br/><br/>
+3. Function 클래스를 사용하여 함수를 추가합니다. 예 :
 </p>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> fn = <span class="hljs-keyword">new</span> GC.Spread.CalcEngine.Functions.Function(<span class="hljs-string">'squareFunction'</span>, <span class="hljs-number">0</span>, 1, <span class="hljs-string">'Returns x * x.'</span>)
+fn.evaluate = <span class="hljs-keyword">function</span> (x) &#123;
+   <span class="hljs-keyword">return</span> x * x;
+&#125;;
+</code></pre>  
+<p>
+또한 아래와 같이 함수 설명을 얻을 수 있습니다.
+</p>  
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> functionDescription = fn.description(); </code></pre> 
+<h2>
+  샘플코드:
+</h2>
+<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Formula Text Box' src='//codepen.io/GrapeCity-Korea/embed/VpZZzd/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/VpZZzd/'>SpreadJS.10/Basic Formula Text Box</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>              
