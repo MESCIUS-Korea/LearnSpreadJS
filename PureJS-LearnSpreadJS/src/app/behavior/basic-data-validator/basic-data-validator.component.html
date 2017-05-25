@@ -1,3 +1,43 @@
-<p>
-  basic-data-validator works!
-</p>
+<h1 class="page-header">
+  데이터 유효성 검사 | Basic Data Validator
+</h1>
+<div id="content" class="content">
+  <p>
+    1. 데이터 유효성 검사는 사용자가 셀에 데이터를 입력할 때 타입이나 크기 등을 제한하는데 사용할 수있는 기능입니다. 사용자가 유효하지 않은 데이터를 입력하지 못하도록 데이터 유효성 검사를 구성 할 수 있습니다.</p>
+  <p>
+    2. 데이터 유효성 검사를 시트에 추가하려면 유효성 검사를 만든 다음 시트에 추가하면 됩니다. 예를들면:
+  </p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> dv1 = <span class="hljs-keyword">new</span> GC.Spread.Sheets.DataValidation.createListValidator(<span class="hljs-string">'Fruit,Vegetable,Food'</span>);
+dv1.inputTitle(<span class="hljs-string">'Please choose a category:'</span>);
+dv1.inputMessage(<span class="hljs-string">'Fruit, Vegetable, Food'</span>);
+sheet.setDataValidator(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>, dv1);</code></pre> 
+  <p>
+    그래서 다음과 같이 6 가지 유형의 유효성 검사를 만들 수 있습니다.
+  </p>
+  <ul>
+    <li><b>createNumberValidator : 숫자를 기준으로 유효성 검사를 만듭니다.</b></li>
+    <li><b>createDateValidator : 날짜를 기반으로 검사를 생성합니다.</b></li>
+    <li><b>createTextLengthValidator : 텍스트 길이에 따라 유효성 검사를 생성합니다.</b></li>
+    <li><b>createFormulaValidator : 수식을 기반으로 유효성 검사를 만듭니다.</b></li>
+    <li><b>createFormulaListValidator : 수식 목록을 기반으로 검사를 만듭니다.</b></li>
+    <li><b>createListValidator :리스트에 기반해 유효성 검사를 위한 데이터를 작성합니다.</b></li>
+  </ul>
+  <p>
+    3. 유효성 검사를 셀에 설정하면 <b>getDataValidator</b> 메서드를 사용하여 셀 데이터 유효성 검사를 가져올 수 있습니다. 그리고 <b>isValid</b> 메서드를 사용하여 셀 값이 유효한지 여부를 확인할 수 있습니다. 예를들면:
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">sheet.isValid(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'Fruit'</span>); <span class="hljs-number">// true</span>
+<span class="hljs-keyword">var</span> validList = sheet.getDataValidator(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+validList.isValid(sheet, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">'Fruit'</span>)
+<span class="hljs-number">// 데이터 유효성 검사 초기화</span>
+sheet.setDataValidator(<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">null</span>);</code></pre> 
+  <p>
+    4. <b>highlightInvalidData</b> 옵션을 사용하여 잘못된 데이터를 강조 표시할지 여부를 가져 오거나 설정할 수 있습니다. 이 값을 true로 설정하면 값이 유효하지 않으면 셀에 빨간색 원이 생깁니다.
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">spread.options.highlightInvalidData = <span class="hljs-number">true</span>;</code></pre> 
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Data Validator' src='//codepen.io/GrapeCity-Korea/embed/NdZXao/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/NdZXao/'>SpreadJS.10/Basic Data Validator</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

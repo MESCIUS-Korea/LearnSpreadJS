@@ -1,3 +1,29 @@
-<p>
-  basic-print works!
-</p>
+<h1 class="page-header">
+  인쇄 기초 | Basic Print
+</h1>
+<div id="content" class="content">
+  <p>
+    Spread.Sheets는 몇 가지 플러그 항목을 기능으로 제공하고 있습니다. 사용자의 요구사항에 맞게 이러한 항목들을 스프레드 시트에 사용할 수 있습니다. <b>Print</b>는 이러한 항목들 중 대표적인
+    예입니다.
+    <br/><br/> 1. 프린트 기능을 쓰기 위해서는, 아래와 같은 js 파일의 링크를 헤더요소에 추가합니다. 예를 들면:
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"> &#60;head&#62;
+   ...
+   &#60;script src='.../spreadjs/gc.spread.sheets.all.x.xx.xxxxx.x.min.js' type='text/javascript'&#62;&#60;/script>&#62;
+   &#60;script src='.../spreadjs/pluggable/gc.spread.sheets.print.x.xx.xxxxx.x.min.js' type='text/javascript'&#62;&#60;/script&#62;
+  &#60;/head&#62;
+</code></pre>
+  <p>
+    2. 그리고 나서 프린트 메소드를 실행하여 프린트 기능을 사용하시면 됩니다. 사용 방법은 아래와 같습니다:
+    <br/><br/>spread.print(<b>sheetIndex?</b>)<br/>
+    <br/> sheetIndex 파라메터에 프린트를 원하는 시트 번호를 넣으면 해당 시트만 프린트 됩니다.(비어있는 경우 모든 시트 인쇄).
+    <br/>예를 들면 아래와 같은 코드로 간단하게 모든 시트를 프린트 할수 있습니다.:
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">spread.print();
+</code></pre>
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+  <iframe height='520' scrolling='no' title='SpreadJS.10/Basic Print' src='//codepen.io/GrapeCity-Korea/embed/qmxRWE/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/qmxRWE/'>SpreadJS.10/Basic Print</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe></div>

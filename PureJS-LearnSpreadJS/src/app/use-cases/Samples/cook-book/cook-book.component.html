@@ -4,17 +4,12 @@
 <div id="content" class="content">
   <p>사람들은 종종 요리법을 공유하고 요리법 카드 모음을 만듭니다. 스프레드를 사용하여 쉽게 레시피를 만들 수 있습니다.</p>
   <p>Spread.Sheets를 사용하여 recipe를 이미지와 공유하고 <b>backgroundImage</b> 및 <b>addSpan</b>을 사용하여 셀을 병합합니다.</p>
-  
-<pre class="sample-code">
-  <code class="html hljs xml">
-    <span class="hljs-doctype">var sd = JSON.parse(data);</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.suspendPaint();</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.fromJSON(sd[0]);</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.resumePaint();</span>&gt;</span>
-  </code>
-</pre>
 
-<br/>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sd = <span class="hljs-string">JSON</span>.parse(data);
+spread.suspendPaint();
+spread.fromJSON(sd[0]);
+spread.resumePaint();</code></pre> 
+
 <h2>
   샘플코드:
 </h2>

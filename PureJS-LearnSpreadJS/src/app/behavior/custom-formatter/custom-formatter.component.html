@@ -1,57 +1,44 @@
 <h1 class="page-header">
-  사용자 정의 필터 | Custom Filters
+  사용자 정의 포멧터 | Custom Formatter
 </h1>
 <div id="content" class="content">
-<p>  
-1. 개발자는 열에 필터를 설정한 다음 해당 필터를 사용자 정의(Custom) 할수 있습니다. 
-<br/><br/>
-
-2. 개발자는 <b>filterButtonVisible</b>메소드를 사용하여 원하는 곳에 필터 버튼을 적용하거나 가져올수 있습니다. 예를 들면:
-</p>
-<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> range = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
-<span class="hljs-keyword">var</span> rowFilter = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Filter.HideRowFilter(range);
-sheet.rowFilter(rowFilter);
-rowFilter.filterButtonVisible(<span class="hljs-number">false</span>);</code></pre>  
-<p>
-
-3. 만일 어떤 행이 필터링되는지를 알고 싶다면 isFiltered 메서드를 사용하시면 됩니다. 또한 isRowFilteredOut 메소드를 사용하여 지정된 행이 필터링되었는지 확인하고 isColumnFiltered 메소드를 사용하여 지정된 컬럼이 필터링되었는지 확인 할 수 있습니다. 예를들면:
-</p>
-<pre class="sample-code"><code class="js hljs javascript">sheet.setValue(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
-sheet.setValue(<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>);
-sheet.setValue(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">3</span>);
-<span class="hljs-keyword">var</span> range = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>);
-rowFilter = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Filter.HideRowFilter(range);
-<span class="hljs-keyword">var</span> compareType = GC.Spread.Sheets.ConditionalFormatting.TextCompareType.equalsTo;
-<span class="hljs-keyword">var</span> condition = <span class="hljs-keyword">new</span> GC.Spread.Sheets.ConditionalFormatting.Condition(GC.Spread.Sheets.ConditionalFormatting.ConditionType.textCondition,&#123; compareType: compareType, expected: <span class="hljs-string">'3'</span>&#125;);
-<span class="hljs-keyword">var</span> rowfilter = sheet.rowFilter();
-rowfilter.addFilterItem(<span class="hljs-number">0</span>, condition);
-rowfilter.filter(<span class="hljs-number">0</span>);
-rowfilter.isFiltered(); <span class="hljs-number">// true</span>
-rowfilter.isColumnFiltered(<span class="hljs-number">0</span>); <span class="hljs-number">// true</span>
-rowfilter.isRowFilteredOut(<span class="hljs-number">2</span>); <span class="hljs-number">// false</span> </code></pre>  
-<p>
-
-4. getFilterItems를 사용하여 지정된 열에 사용된 필터의 모든 리스트를 가져올 수 있습니다. 또한 getFilteredItems를 사용하여 필터링 된 조건을 모두 가져올 수 있습니다. 예를들면:
-</p>
-<pre class="sample-code"><code class="js hljs javascript">rowfilter.getFilterItems(<span class="hljs-number">0</span>);
-rowfilter.getFilteredItems();</code></pre>  
-<p>
-
-5. 필터링 된 행을 정렬 할 수 있습니다. sortColumn를 사용하면 지정된 열을 원하는 순서로 정렬하고 getSortState를 사용하여 현재 정렬 상태를 가져올 수 있습니다. 예를들면:
-</p>
-<pre class="sample-code"><code class="js hljs javascript">rowfilter.SortColumns(<span class="hljs-number">0, true</span>); <span class="hljs-number">// sort as ascending.</span>
-rowfilter.getSortState() === GC.Spread.Sheets.SortState.ascending; <span class="hljs-number">// true</span></code></pre>  
-<p>
-
-6. 필터링을 원하지 않으면 일부 필터를 제거하거나 모든 필터를 지울 수 있습니다. 예를들면:
-</p>
-<pre class="sample-code"><code class="js hljs javascript">rowfilter.removeFilterItems(<span class="hljs-number">0</span>);
-rowfilter.unfilter(<span class="hljs-number">0</span>);
-rowfilter.reset(); </code></pre>  
-<h2>
-  샘플코드:
-</h2>
-<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
-<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Filters' src='//codepen.io/GrapeCity-Korea/embed/bgJJyV/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/bgJJyV/'>SpreadJS.10/Custom Filters</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+  <p>
+    FormatterBase를 사용하면 셀 텍스트의 서식 지정 및 색상 지정 규칙을 사용하여 사용자 정의 포맷터를 만들 수 있습니다.
+    <br/><br/> 1. FormatterBase에 클래스 기반을 만듭니다. 예를들면 :
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-string">CustomNumberFormat()</span> &#123;
+&#125;
+CustomNumberFormat.prototype = <span class="hljs-keyword">new</span> GC.Spread.Formatter.FormatterBase();</code></pre>
+  <p>
+    2. 셀 텍스트의 형식 및 색상에 대한 규칙을 정의하는 형식 (obj, conditionalForeColor)을 아래와 같이 제공합니다. 
+  </p>
+  <ul>
+    <li><b>obj : 원시 셀 값입니다.</b></li>
+    <li><b>conditionalForeColor : 텍스트의 색상값입니다(선택 사항). 값을 색상 문자열로 설정하여 규칙을 적용할수 있습니다.</b></li>
+  </ul>
+  <p>
+    <b>format</b> 메소드는 형식화 된 문자열을 반환합니다. 동시에 값 범위를 기준으로 텍스트에 색을 지정할 수 있습니다. 예를들면 :
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-string">formatNumber</span>(value, conditionalForeColor) &#123; 
+   <span class="hljs-keyword">if</span> (<span class="hljs-string">isFinite</span>(value)) &#123; 
+       <span class="hljs-keyword">if</span> (value >= <span class="hljs-number">10</span>) &#123; 
+           conditionalForeColor.value = <span class="hljs-string">"green"</span>; 
+       &#125; <span class="hljs-keyword">else if</span> (value > <span class="hljs-number">0</span>) &#123; 
+           conditionalForeColor.value = <span class="hljs-string">"gold"</span>; 
+       &#125; <span class="hljs-keyword">else</span> &#123; 
+           conditionalForeColor.value = <span class="hljs-string">"blue"</span>; 
+       &#125;
+   &#125; <span class="hljs-keyword">else</span> &#123; 
+       conditionalForeColor.value = <span class="hljs-string">"red"</span>; 
+   &#125;
+   <span class="hljs-keyword">return</span> value.toString(); 
+&#125;</code></pre>
+  <p>
+    3. <b>parse</b> (str)를 사용하여 지정된 문자열에서 파싱 된 값을 반환합니다.</p>
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Formatter' src='//codepen.io/GrapeCity-Korea/embed/WRmqGa/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/WRmqGa/'>SpreadJS.10/Custom Formatter</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
 </iframe>
-</div>  
+</div>

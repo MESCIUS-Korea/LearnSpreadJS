@@ -1,3 +1,36 @@
-<p>
-  basic works!
-</p>
+<h1 class="page-header">
+  조건부 서식 | Basic Conditional Format
+</h1>
+<div id="content" class="content">
+  <p>
+   1. 수천 행의 데이터가있는 시트의 경우 개개의 데이터를 통해 전체적인 패턴이나 추세를 이해하는 것은 매우 어렵습니다. 스파크 라인과 마찬가지로 조건부 서식은 데이터를 시각화하고 시트를 더 쉽게 이해할 수있는 또 다른 방법을 제공합니다.
+  </p>
+  <p>
+    2. Spread.Sheets에 조건부 서식을 추가하려면 먼저 <b>conditionalFormats</b>를 사용하여 시트의 조건부 서식을 가져옵니다. 그런 다음 조건부 규칙을 만들고 <b>addRule</b> 메서드를 사용하여 추가 할 수 있습니다. 또한 <b>addSpecificTextRule</b>, <b>addCellValueRule</b> 등과 같이 지정된 규칙의 add 메소드를 사용할 수도 있습니다. 예를들면 :
+  </p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> style = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span class="hljs-string">'#CCFFCC'</span>;
+<span class="hljs-keyword">var</span> cvRule = cfs.addCellValueRule(GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan, <span class="hljs-number">100</span>,<span class="hljs-number">0</span>, style, [<span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>)]);</code></pre> 
+  <p>
+    3. 시트에 일부 규칙을 추가 한 후에는 <b>getRule</b> 메소드를 사용하여 규칙 색인이나 또는 모든 조건부 규칙을 가져올 수 있습니다. 예를들면:
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> cfs = sheet.conditionalFormats;
+<span class="hljs-number">//  The new added is at the end.</span>
+<span class="hljs-keyword">var</span> cvRule = cfs.getRule(<span class="hljs-number">1</span>);
+
+<span class="hljs-number">// Or get all the conditional rules.</span>
+<span class="hljs-keyword">var</span> rules = cfs.getRules();</code></pre> 
+  <p>
+    4. 조건부 규칙을 제거하려면 <b>removeRule</b>, <b>removeRuleByRange</b> 또는 <b>clearRule</b> 메서드를 사용합니다. 예를들면 :
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> cfs = sheet.conditionalFormats;
+cfs.removeRule(cvRule)
+cfs.removeRuleByRange(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>);
+cfs.clearRule(); <span class="hljs-number">//removes all rules</span></code></pre> 
+ <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Basic Conditional Format' src='//codepen.io/GrapeCity-Korea/embed/rjRVvg/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/rjRVvg/'>SpreadJS.10/Basic Conditional Format</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

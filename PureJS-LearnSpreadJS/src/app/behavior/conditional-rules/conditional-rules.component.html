@@ -1,3 +1,39 @@
-<p>
-  conditional-rules works!
-</p>
+<h1 class="page-header">
+  조건부 규칙 | Conditional Rules
+</h1>
+<div id="content" class="content">
+  <p>
+   1. 조건부 서식에는 많은 규칙이 있습니다. 뚀 각 규칙마다 고유 한 기능이 있습니다. 이러한 조건부 규칙을 사용하면 데이터의 형식을 더 잘 지정할 수 있습니다.
+  </p>
+  <p>
+    2. Spread.Sheets은 다음과 같은 기본 제공 규칙을 제공합니다.
+  </p>
+  <ul>
+    <li><b>NormalConditionRule : 셀 값 규칙, 특정 텍스트 규칙, 수식 규칙, 날짜 발생 규칙, 상위 10개 값 규칙, 고유 규칙, 중복 규칙, 평균 규칙</b></li>
+    <li><b>ScaleRule : 두 개의 눈금 규칙, 세 눈금 규칙</b></li>
+    <li><b>DataBarRule : 데이터 막대 규칙</b></li>
+    <li><b>IconSetRule : 아이콘 세트 규칙</b></li>
+  </ul>
+  <p>
+    3. 지정된 룰을 작성하거나 특정한 룰을 추가 할 때 룰의 조건을 사용자 정의 할 수 있습니다. 예를들면 :
+  </p>
+ <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> cfs = sheet.conditionalFormats;
+<span class="hljs-keyword">var</span> style = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Style();
+style.backColor = <span class="hljs-string">'#CCFFCC'</span>;
+<span class="hljs-keyword">var</span> operator = GC.Spread.Sheets.ConditionalFormatting.ComparisonOperators.greaterThan;
+<span class="hljs-keyword">var</span> ranges = [<span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>)];
+cfs.addCellValueRule(operator, <span class="hljs-number">100</span>, 0, style, ranges);</code></pre> 
+  <p>
+    때로는 규칙에 대한 몇 가지 세부적인 설정을 지정해야합니다. 규칙 객체를 가져 와서 규칙의 API를 사용하여 기능을 설정할 수 있습니다. 예를들면 :
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">iconSetRule.ranges([<span class="hljs-keyword">new</span> GC.Spread.Sheets.Range(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>,<span class="hljs-number">1</span>)]);
+iconSetRule.iconSetType(GC.Spread.Sheets.ConditionalFormatting.IconSetType.threeArrowsColored);
+iconSetRule.reverseIconOrder(<span class="hljs-number">true</span>);
+iconSetRule.showIconOnly(<span class="hljs-number">true</span>);</code></pre> 
+ <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Conditional Rules' src='//codepen.io/GrapeCity-Korea/embed/mRoeWx/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/mRoeWx/'>SpreadJS.10/Conditional Rules</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

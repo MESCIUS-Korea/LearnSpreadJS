@@ -1,3 +1,28 @@
-<p>
-  basic-formatter works!
-</p>
+<h1 class="page-header">
+  기본 포멧터 | Basic Formatter
+</h1>
+<div id="content" class="content">
+  <p>
+    1. 스프레드 시트에서 각 셀의 형식을 사용자 정의하여 원하는 형식으로 데이터를 표시 할 수 있습니다.
+  </p>
+  <p>
+    2. 셀의 포맷터를 설정하려면 <b>setFormatter</b> 메소드를 사용하여 포맷터 문자열을 셀에 설정하고 <b>getFormatter</b> 메소드를 사용하여 셀의 포맷터를 가져옵니다. 또한 formatter 메소드를 사용하여 셀, 열 또는 행의 설정을 가져와 다른 셀의 포맷터로 설정할수 있습니다. 예를들면:
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">sheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">6</span>, <span class="hljs-keyword">new</span> <span class="hljs-string">Date</span>(<span class="hljs-number">2013,3,1</span>));
+sheet.setFormatter(<span class="hljs-number">9</span>, <span class="hljs-number">6</span>, <span class="hljs-string">'d-mmm;@'</span>);
+<span class="hljs-number">//or</span>
+sheet.getCell(<span class="hljs-number">9, 6</span>).formatter(<span class="hljs-string">'d-mmm;@'</span>);</code></pre>
+  <p>
+    3. 셀의 일반 형식을 설정할 수 있습니다. <b>GeneralFormatter</b>를 만들어 셀에 설정합니다. 예를들면:
+  </p>
+   <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> generalFormat = <span class="hljs-keyword">new</span> GC.Spread.Formatter.GeneralFormatter(
+            <span class="hljs-string">'[Red]+0.00;[Green]-0.00;[Yellow]0;[Blue]@'</span>);
+<span class="hljs-keyword">var</span> cell = sheet.getCell(<span class="hljs-number">0, 0</span>);
+cell.formatter(generalFormat);</code></pre>
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+  <iframe height='520' scrolling='no' title='SpreadJS.10/Basic Formatter' src='//codepen.io/GrapeCity-Korea/embed/ZLPboQ/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/ZLPboQ/'>SpreadJS.10/Basic Formatter</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+</div>

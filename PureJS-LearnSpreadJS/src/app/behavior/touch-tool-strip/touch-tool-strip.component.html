@@ -1,3 +1,56 @@
-<p>
-  touch-tool-strip works!
-</p>
+<h1 class="page-header">
+  터치 도구 모음 항목 | Touch Tool Strip
+</h1>
+<div id="content" class="content">
+  <p>
+    1. 특정 영역이 선택된 상태에서 선택 항목을 누르면 터치 도구 모음이 나타납니다.
+    <br/><br/> 2. 붙여 넣기, 잘라 내기, 복사 및 자동 완성과 같은 기본 제공 도구 모음 항목을 사용할 수 있습니다.
+    <br/><br/> 3. 터치 도구 모음 항목 아이템을 커스터마이징하고 터치 도구 모음 항목 스트립에 새로운 아이템을 추가 할 수도 있습니다
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> text = <span class="hljs-string">'clear'</span>
+<span class="hljs-keyword">var</span> image = <span class="hljs-string">'image/clear.jpg';</span>
+<span class="hljs-keyword">var</span> item = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Touch.TouchToolStripItem(name, text, image, <span class="hljs-keyword">function</span> () &#123;
+   spread.touchToolStrip.close();
+   alert(<span class="hljs-string">'지우기 실행...'</span>);
+&#125;);
+spread.touchToolStrip.add(item);</code></pre>
+
+  <p>
+    텍스트 메서드를 사용하여 항목의 텍스트를 가져오고 설정하며 글꼴 메서드를 사용하여 항목 텍스트의 글꼴을 가져오고 설정 한 다음 foreColor 메서드를 사용하여 항목 텍스트의 색을 가져오고 설정할 수 있습니다.
+  </p>
+  <p>
+    4. 터치 도구 모음 항목을 추가 한 후 <b>getItem</b>와 <b>getItems</b>를 사용하여 항목을 가져올 수 있습니다. 또한 모든 항목을 삭제하거나 지울 수 있습니다.
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript">var <span class="hljs-keyword">foreColor</span> = $(<span class="hljs-string">"#color"</span>).val();
+  if (<span class="hljs-number">!foreColor</span>) &#123;
+      alert(<span class="hljs-string">"아이템 텍스트의 색상을 입력해 주세요."</span>);
+  &#125;
+  var <span class="hljs-keyword">name</span> = $(<span class="hljs-string">"#name"</span>).val();
+  var <span class="hljs-keyword">item</span> = spread.touchToolStrip.getItem(<span class="hljs-keyword">name</span>);
+  if (item) &#123;
+      <span class="hljs-keyword">item</span>.foreColor(<span class="hljs-keyword">foreColor</span>);
+  &#125;
+  var <span class="hljs-keyword">font</span> = $(<span class="hljs-string">"#font"</span>).val();
+  if (<span class="hljs-number">!font</span>) &#123;
+      alert(<span class="hljs-string">"아이템 텍스트의 폰트를 입력해 주세요."</span>);
+  &#125;
+  var <span class="hljs-keyword">name</span> = $(<span class="hljs-string">"#name"</span>).val();
+  var <span class="hljs-keyword">item</span> = spread.touchToolStrip.getItem(name);
+  if (<span class="hljs-keyword">item</span>) &#123;
+      <span class="hljs-keyword">item</span>.font(<span class="hljs-keyword">font</span>);
+  &#125; </code></pre>
+  <p>
+    5. 제공된 API를 사용하여 도구 모음을 사용자 정의 할 수 있습니다. 예 :
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> toolStrip = spread.touchToolStrip;
+toolStrip.imageAreaHeight(<span class="hljs-number">50</span>); <span class="hljs-number">//Sets the image area height.</span>
+toolStrip.itemHeight(<span class="hljs-number">80</span>); <span class="hljs-number">//Sets the toolbar item height.</span>
+toolStrip.itemWidth(<span class="hljs-number">120</span>); <span class="hljs-number">//Sets the toolbar item width.</span>
+toolStrip.separatorHeight(<span class="hljs-number">80</span>); <span class="hljs-number">//Sets the toolbar separator height.</span>
+spread.touchToolStrip.add(item);</code></pre>
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+ <iframe height='560' scrolling='no' title='SpreadJS.10/Touch Tool Strip' src='//codepen.io/GrapeCity-Korea/embed/dNBJBe/?height=560&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/dNBJBe/'>SpreadJS.10/Touch Tool Strip</a> by GrapeCity Korea (<a href='https://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe></div>

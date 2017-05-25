@@ -1,21 +1,16 @@
 <h1 class="page-header">
-  클경비 예산
+  비용경비 예산
 </h1>
 <div id="content" class="content">
   <p>비용 예산은 기업의 판매량과 이익에 영향을 미치는 중요한 요소입니다.</p>
   <p>Spread.Sheets를 사용하여 관련 데이터를 표에 표시하고 조건부 형식을 사용하여 데이터를 시각화 할 수 있습니다.</p>
   <p>예를 들어, <b>IconSetRule</b>을 사용하여 다른 상태를 표시하고, <b>DataBarRule</b>을 사용하여 모든 예산을 표시하는 등의 작업을 수행 할 수 있습니다</p>
   
-<pre class="sample-code">
-  <code class="html hljs xml">
-    <span class="hljs-doctype">var sd = JSON.parse(data);</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.suspendPaint();</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.fromJSON(sd[0]);</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">spread.resumePaint();</span>&gt;</span>
-  </code>
-</pre>
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sd = <span class="hljs-string">JSON</span>.parse(data);
+spread.suspendPaint();
+spread.fromJSON(sd[0]);
+spread.resumePaint();</code></pre> 
 
-<br/>
 <h2>
   샘플코드:
 </h2>

@@ -1,3 +1,46 @@
-<p>
-  custom-fill works!
-</p>
+<h1 class="page-header">
+  사용자 정의 채우기 | Custom Fill
+</h1>
+<div id="content" class="content">
+  <p>
+    1. 마우스 끌기 외에도 채우기 데이터를 할수 있는 방법은 많이 있습니다.
+    <br><br>사용자는 아래와 같이 5 가지 형태로 데이터를 채우기 할 수 있습니다:
+  </p>
+  <ul>
+    <li><b>Auto: 자동완성 유형입니다.</b></li>
+    <li><b>Direction: 원하는 방향으로 채우기를 선택할수 있는 유형입니다..</b></li>
+    <li><b>Linear: 선형 채우기 유형입니다.</b></li>
+    <li><b>Growth: 증가 채우기 유형입니다.</b></li>
+    <li><b>Date: 날짜 채우기 유형입니다.</b></li>
+  </ul>
+  <p>
+    2. Spread.Sheets는 아래와 같이 채우기 기능을 위한 메소드를 제공합니다..
+  </p>
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-number">// 지정된 범위를 자동으로 채웁니다.</span>
+<span class="hljs-number">// 값이 문자열이면 값이 다른 셀에 복사됩니다.</span>
+<span class="hljs-number">// 값이 숫자이면 TREND 수식에 의해 새 값이 생성됩니다.</span>
+sheet.fillAuto(startRange, fillRange, &#123;series: GC.Spread.Sheets.Fill.FillSeries.column, fillType: GC.Spread.Sheets.Fill.FillType.auto&#125;);
+
+<span class="hljs-number">// 지정된 방향으로 지정된 범위를 채 웁니다.</span>
+sheet.fillAuto(startRange, fillRange, &#123;direction: GC.Spread.Sheets.Fill.FillDirection.left, fillType: GC.Spread.Sheets.Fill.FillType.direction&#125;);
+
+<span class="hljs-number">// 소스 값 유형이 number인 경우 지정된 범위 선형 추세를 채 웁니다.</span>
+<span class="hljs-number">// 다음 값은 step 및 stop 값에 의해 생성됩니다.</span>
+<span class="hljs-number">// 다음 값은 현재 셀 값에 단계 값을 추가하여 계산됩니다.</span>
+sheet.fillAuto(startRange, fillRange, &#123;series: GC.Spread.Sheets.Fill.FillSeries.column, step: step, stop: stop, fillType: GC.Spread.Sheets.Fill.FillType.linear&#125;);
+
+<span class="hljs-number">// 소스 값 유형이 number 일 때 지정된 범위 증가 추세를 채 웁니다.</span>
+<span class="hljs-number">// 다음 값은 step 및 stop 값에 의해 생성됩니다.</span>
+<span class="hljs-number">// 다음 값은 단계 값에 현재 셀을 곱하여 계산됩니다.</span>
+sheet.fillAuto(startRange, fillRange, &#123;series: GC.Spread.Sheets.Fill.FillSeries.column, step: step, stop: stop, fillType: GC.Spread.Sheets.Fill.FillType.growth&#125;;
+
+<span class="hljs-number">// 소스 값 유형이 날짜 일 때 지정된 범위를 채 웁니다.</span>
+<span class="hljs-number">// 다음 값은 현재 값에 단계 값을 추가하여 생성됩니다.</span>
+<span class="hljs-number">// 단계 값은 날짜 단위를 기준으로 증가합니다.</span>
+sheet.fillAuto(startRange, fillRange, &#123;series: GC.Spread.Sheets.Fill.FillSeries.column, unit: GC.Spread.Sheets.Fill.FillDateUnit.month, step: step, stop: stop, fillType: GC.Spread.Sheets.Fill.FillType.date&#125;);</code></pre>
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Fill' src='//codepen.io/GrapeCity-Korea/embed/XRyvXa/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/GrapeCity-Korea/pen/XRyvXa/'>SpreadJS.10/Custom Fill</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe></div>

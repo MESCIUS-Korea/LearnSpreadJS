@@ -2,45 +2,43 @@
   필터 동작 | Filter Action
 </h1>
 <div id="content" class="content">
-<p>  
-Filter 개체의 <b>onFilter</b> 메서드는 사용자 지정 필터 동작을 만드는 기능을 제공합니다.
-<br/><br/>
-1. RowFilterBase에서 확장 된 새 클래스를 만듭니다. 예를들면 :
-</p>
+  <p>
+    Filter 개체의 <b>onFilter</b> 메서드는 사용자 지정 필터 동작을 만드는 기능을 제공합니다.
+    <br/><br/> 1. RowFilterBase에서 확장 된 새 클래스를 만듭니다. 예를들면 :
+  </p>
 
-<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <b><span class="hljs-string">SelectionFilter</span></b> (range) &#123;
+  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">function</span> <b><span class="hljs-string">SelectionFilter</span></b> (range) &#123;
 GC.Spread.Sheets.Filter.RowFilterBase.call(<span class="hljs-keyword">this</span>, range);
 &#125;
-SelectionFilter.prototype = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Filter.RowFilterBase();</code></pre>  
+SelectionFilter.prototype = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Filter.RowFilterBase();</code></pre>
 
-<p> 
-2. 다음 단계는 <b>onFilter</b>(args)를 대체하여 사용자 정의 필터를 적용하는 것입니다. args.action은 다음 <b>FilterActionType</b>중 하나의 요소를 가집니다.
-</p>  
+  <p>
+    2. 다음 단계는 <b>onFilter</b>(args)를 대체하여 사용자 정의 필터를 적용하는 것입니다. args.action은 다음 <b>FilterActionType</b>중 하나의 요소를 가집니다.
+  </p>
 
-<ul>
-  <li><b>filter</b></li>
-  <li><b>unfilter</b></li>
-</ul>
-<pre class="sample-code"><code class="js hljs javascript">SelectionFilter.prototype.onFilter = <span class="hljs-keyword">function</span> (args) &#123;
+  <ul>
+    <li><b>filter</b></li>
+    <li><b>unfilter</b></li>
+  </ul>
+  <pre class="sample-code"><code class="js hljs javascript">SelectionFilter.prototype.onFilter = <span class="hljs-keyword">function</span> (args) &#123;
    <span class="hljs-keyword">var</span> sheet = args.sheet;
    <span class="hljs-keyword">if</span> (args.action === GC.Spread.Sheets.Filter.FilterActionType.filter) &#123;
-       sheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"Select the filtered items"</span>);
+       sheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"필터링 된 아이템을 선택 하세요"</span>);
    &#125;<span class="hljs-keyword">else</span> &#123;
-       sheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"No filtered items"</span>);
+       sheet.setValue(<span class="hljs-number">9</span>, <span class="hljs-number">1</span>, <span class="hljs-string">"필터링된 아이템이 없습니다."</span>);
    &#125;
-&#125;;</code></pre> 
-<p>
-이 기능을 사용하여 현재 필터가 적용되어 있는지 확인하고 추가로 필터를 적용할지 또는 필터를 제거해야하는지 결정하시면 됩니다. 예를들면:
-</p>
+&#125;;</code></pre>
+  <p>
+    이 기능을 사용하여 현재 필터가 적용되어 있는지 확인하고 추가로 필터를 적용할지 또는 필터를 제거해야하는지 결정하시면 됩니다. 예를들면:
+  </p>
 
-<p>
-<b>filterButtonVisble</b> 메서드를 사용하여 필터 버튼을 표시할지 여부를 결정할 수 있습니다.
-</p>
+  <p>
+    <b>filterButtonVisble</b> 메서드를 사용하여 필터 버튼을 표시할지 여부를 결정할 수 있습니다.
+  </p>
 
-<h2>
-  샘플코드:
-</h2>
-<p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
-<iframe height='520' scrolling='no' title='SpreadJS.10/Custom Filters' src='//codepen.io/GrapeCity-Korea/embed/bgJJyV/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/bgJJyV/'>SpreadJS.10/Custom Filters</a> by GrapeCity Korea (<a href='http://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='http://codepen.io'>CodePen</a>.
-</iframe>
-</div>  
+  <h2>
+    샘플코드:
+  </h2>
+  <p><code><b>결과화면과 함께 HTML, JS 코드도 확인이 가능합니다.</b></code></p>
+<iframe height='520' scrolling='no' title='SpreadJS.10/Filter Action' src='//codepen.io/GrapeCity-Korea/embed/BpEEwe/?height=520&theme-id=light&default-tab=js,result&embed-version=2&editable=true' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='https://codepen.io/GrapeCity-Korea/pen/BpEEwe/'>SpreadJS.10/Filter Action</a> by GrapeCity Korea (<a href='https://codepen.io/GrapeCity-Korea'>@GrapeCity-Korea</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe></div>
