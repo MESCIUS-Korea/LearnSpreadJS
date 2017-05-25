@@ -2,12 +2,12 @@
     Spread 배경화면 | Spread Background
 </h1>
 <div id="content" class="content">
-    <p>1. 스프레드 시트의 배경 모양을 사용자 정의 할 수 있습니다.</p>
+    <p>1. Spread.Sheets의 배경 모양을 사용자 정의 할 수 있습니다.</p>
     <br/>
-    <p>2. backColor 또는 backgroundImage를 사용하여 모든 시트의 배경색 또는 배경 이미지를 설정할 수 있습니다. 배경색과 배경 이미지를 모두 설정하면 배경 이미지가 표시됩니다. 이미지가 표시됩니다. </p>
+    <p>2. backColor 또는 backgroundImage를 사용하여 모든 시트의 배경색 또는 배경 이미지를 설정할 수 있습니다. 배경색과 배경 이미지를 모두 설정하면 배경 이미지가 표시됩니다. </p>
     <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
 spread.options.backColor = <span class="hljs-string">'red'</span>;
-<span class="hljs-comment">// The backColor will work if the backgroundImage not set.</span>  
+<span class="hljs-comment">// backgroundImage가 설정되어 있지 않으면 backColor가 작동합니다.</span>  
 spread.options.backgroundImage = <span class="hljs-string">'images/back.PNG'</span>;</code></pre>
     <p>Spread.Sheets는 <b>backgroundImageLayout</b>을 사용하여 이미지 레이아웃을 제어하는 기능을 제공합니다. 이미지 레이아웃에는 다음 유형이 포함됩니다. :</p>
      <ul>

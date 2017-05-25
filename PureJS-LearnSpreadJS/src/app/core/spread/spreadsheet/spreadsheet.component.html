@@ -2,11 +2,11 @@
   스프레드시트 | SpreadSheet
 </h1>
 <div id="content" class="content">
-  <p>스프레드 시트는 시트, 탭 스트립, 스크롤바 등으로 구성됩니다. 핵심 부분은 시트입니다. 시트를 사용자 정의 할 수 있습니다.</p>
-  <p>1. 더 많은 시트를 추가하여 더 많은 데이터를 배치하려면 빈 시트를 추가 할 색인 매개 변수를 설정하거나 두 번째 매개 변수를 추가 할 시트 인 두 개의 매개 변수를 설정하십시오. 예 : </p>
+  <p>Spread.Sheets는 시트, 탭 스트립, 스크롤바 등으로 구성됩니다. 핵심 부분은 시트입니다. 시트를 사용자 정의 할 수 있습니다.</p>
+  <p>1. 더 많은 시트를 추가하여 더 많은 데이터를 배치하려면 빈 시트를 추가 할 인덱스 매개 변수를 설정하거나 두 번째 매개 변수를 추가 할 시트 인 두 개의 매개 변수를 설정하십시오. 예 : </p>
    <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
 spread.addSheet(spread.getSheetCount());
-<span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Worksheet('<span class="hljs-string">'New Sheet'</span>')
+<span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Worksheet(<span class="hljs-string">'New Sheet'</span>)
 spread.addSheet(<span class="hljs-number">0</span>, sheet);</code></pre>
 <br/>
   <p>2. 시트 수를 사용자 정의 할 수 있습니다.  <b>getSheetCount</b> 및 <b>setSheetCount</b>를 사용하여 시트 수를 가져오고 설정하십시오. 예 :</p>
@@ -24,12 +24,12 @@ spread.addSheet(<span class="hljs-number">0</span>, sheet);</code></pre>
 spread.clearSheets();</code></pre>
 <br/>
 <p>
-5. 활성 시트는 현재 작업하고 있는 시트입니다. getActiveSheet를 사용하여 활성 시트를 가져온 다음 설정을 사용자 정의 할 수 있습니다. <b>getActiveSheetIndex</b> 및 <b>setActiveSheetIndex</b>를 사용하여 활성 시트 색인을 가져 와서 설정할 수도 있습니다. 예 :
+5. Active 시트는 현재 작업하고 있는 시트입니다. getActiveSheet를 사용하여 Active 시트를 가져온 다음 설정을 사용자 정의 할 수 있습니다. <b>getActiveSheetIndex</b> 및 <b>setActiveSheetIndex</b>를 사용하여 Active 시트 인덱스를 가져 와서 설정할 수도 있습니다. 예 :
 </p>  
  <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
 <span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
 <span class="hljs-comment">// customize sheet</span>
-spread.setActiveSheetIndex(<span class="hljs-number">1</span>); <span class="hljs-comment">// change the active sheet.</span>
+spread.setActiveSheetIndex(<span class="hljs-number">1</span>); <span class="hljs-comment">// active sheet를 바꿉니다</span>
 <span class="hljs-keyword">var</span> activeSheetIndex = spread.getActiveSheetIndex();</code></pre>
 <h2>
   샘플코드:
