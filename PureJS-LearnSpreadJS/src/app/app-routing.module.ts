@@ -267,12 +267,11 @@ const APP_ROUTES:Routes = [
     { path: 'BasicFilterComponent', component: BasicFilterComponent},
     { path: 'FilterButtonVisibleComponent', component: FilterButtonVisibleComponent},
     { path: 'FilterActionComponent', component: FilterActionComponent},
-    { path: 'CustomFormatterComponent', component: CustomFormatterComponent},
     { path: 'BasicTouchComponent', component: BasicTouchComponent},
     { path: 'TouchToolStripComponent', component: TouchToolStripComponent},
     { path: 'BasicPrintComponent', component: BasicPrintComponent},
     { path: 'CustomPrintComponent', component: CustomPrintComponent},
-
+    { path: 'CustomFiltersComponent', component: CustomFiltersComponent},
 
 ];
 

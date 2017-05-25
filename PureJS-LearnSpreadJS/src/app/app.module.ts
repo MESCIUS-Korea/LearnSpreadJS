@@ -142,6 +142,7 @@ import { BasicPrintComponent } from './behavior/basic-print/basic-print.componen
 import { CustomPrintComponent } from './behavior/custom-print/custom-print.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,    
@@ -278,6 +279,7 @@ import { CustomPrintComponent } from './behavior/custom-print/custom-print.compo
     TouchToolStripComponent,
     BasicPrintComponent,
     CustomPrintComponent,
+
     
   ],
   imports: [
