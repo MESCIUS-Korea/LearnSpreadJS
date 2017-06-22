@@ -13,15 +13,17 @@
     <div class="menu-title">
       PureJS Edition
     </div>
+
     <ul id="menu-content" class="menu-content collapse out">
       <div *ngFor='let tocs of toc'>
-        <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + tocs.path" *ngIf='tocs.items == null' (click)="onSelect(tocs.path)">{{tocs.header}}</li>
-        <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + tocs.path" *ngIf='tocs.items != null'>{{tocs.header}}<span class="arrow"></span></li>        
+        <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + tocs.path">
+          {{tocs.header}}<span class="arrow"></span>          
+        </li>
         <ul class="sub-menu collapse" [attr.id]="tocs.path">
           <div *ngFor='let item1 of tocs.items'>
-            <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + item1.path" *ngIf='item1.items == null' (click)="onSelect(item1.path)">{{item1.header}}</li>
-            <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + item1.path" *ngIf='item1.items != null'>{{item1.header}}<span class="arrow"></span></li>
-
+            <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + item1.path" *ngIf='item1.items == null' (click)="onSelect(item1.path)">{{item1.header}}</li>              
+            <li data-toggle="collapse" class="collapsed" [attr.data-target]="'#' + item1.path" *ngIf='item1.items != null' >{{item1.header}}<span class="arrow"></span></li>                            
+            
             <ul class="sub-menu2 collapse" [attr.id]="item1.path">
               <div *ngFor='let item2 of item1.items'>
                 <li class="collapsed" (click)="onSelect(item2.path)">
