@@ -3,19 +3,19 @@
 </h1>
 <div id="content" class="content">
 <p>
-1. 스프레드 시트에서 일부 셀의 내용을 사용하는 수식을 만들어 다른 셀에 결과를 표시 할 수 있습니다. 다양한 함수를 사용하여 복잡한 수식을 쉽게 계산할 수도 있습니다. <br/><br/>
-2. 스프레드 시트는 다양한 기능을 제공합니다. : <b>SUM</b>과 같이 일반적으로 사용되는 몇 가지 기본 기능과 <b>MAX</b>와 같은 일부 고급 기능은 다음 공식 코드에서 설명하고 설명합니다.
+1. Spread.Sheets에서 일부 셀의 내용을 사용하는 수식을 만들어 다른 셀에 결과를 표시 할 수 있습니다. 다양한 함수를 사용하여 복잡한 수식을 쉽게 계산할 수도 있습니다. <br/><br/>
+2. Spread.Sheets는 다양한 기능을 제공합니다. : <b>SUM</b>과 같이 일반적으로 사용되는 몇 가지 기본 기능과 <b>MAX</b>와 같은 일부 고급 기능은 다음 공식 코드에서 설명하고 설명합니다.
 </p>  
 <pre class="sample-code"><code class="html hljs xml"> <span class="hljs-comment">//Returns the sum of the values contained in the range A1:C5.</span>
 =SUM(A1:C5)
-<span class="hljs-comment">//Returns the largest value in the range A1:C5.</span>
+<span class="hljs-comment">//A1 : C5 범위에서 가장 큰 값을 반환합니다.</span>
 =MAX(A1:C5)</code></pre>
 <p>
 = SUM (A1 : C5)을 셀에 직접 입력 할 수 있습니다. 또는 setFormula 메소드를 사용하여 수식을 적용 할 수 있습니다.
 </p>  
 <pre class="sample-code"><code class="html hljs xml"><span class="hljs-keyword">var</span> spread = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
 <span class="hljs-keyword">var</span> sheet = spread.getActiveSheet();
-<span class="hljs-comment">// set some values to C4:C7</span>
+<span class="hljs-comment">// 일부 값을 C4:C7에 설정하세요.</span>
 sheet.setFormula(<span class="hljs-number">8</span>,<span class="hljs-number">2</span>, <span class="hljs-string">'=MAX(C4:C7)'</span>);</code></pre>
 
 
