@@ -3,11 +3,70 @@
 </h1>
 
 <div id="content" class="content">
-  <p>클라이언트 측 엑셀 가져 오기 및 내보내기는 엑셀 파일 (.xlsx)을 스프레드 json 및 스프레드 json으로 내 보냅니다.<br/><br/> 1. ExcelIO 기능을 사용하려면 관련 js 파일 링크를 스프레드
-    링크 아래의 문서 머리 부분에 추가해야합니다. 예 :</p>
+  <p>클라이언트 측 엑셀 가져 오기 및 내보내기는 엑셀 파일 (.xlsx)을 스프레드 json 및 스프레드 json으로 내 보냅니다.<br/><br/> 
+    1. ExcelIO 기능을 사용하려면 관련 js 파일 링크를 스프레드 링크가 있는 헤더 부분에 아래와 같이 추가해야합니다. 예 :
+  </p>
+   <pre class="sample-code"><code class="js hljs javascript"> &#60;head&#62;
+   ...
+   &#60;script src='.../spreadjs/gc.spread.sheets.all.x.xx.xxxxx.x.min.js' type='text/javascript'&#62;&#60;/script>&#62;
+   &#60;script src='.../spreadjs/pluggable/gc.spread.excelio.x.xx.xxxxx.x.min.js' type='text/javascript'&#62;&#60;/script&#62;
+  &#60;/head&#62;
+</code></pre>
 
+  <p>
+    2. Workbook과 IO 인스턴스를 초기화 합니다.
+  </p>
+    <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Workbook(<span class="hljs-string">document</span>.getElementById('ss'));
+<span class="hljs-keyword">var</span> excelIo = <span class="hljs-keyword">new</span> GC.Spread.Excel.IO();
+</code></pre>
 
+  
+  <p>
+    3. 그러면 클라이언트 측 ExcelIO를 사용하여 excel 파일 (.xlsx)을 json으로 가져오거나 Spread json을 Excel 파일로 내보낼 수 있습니다. ExcelIO 구성 요소의 <b>open</b> 메서드를 사용하여 가져 오거나 ExcelIO 구성 요소의 <b>save</b> 메서드를 사용하여 내보낼 수 있습니다. 
+  </p>
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-number">//excel file을 Spread.Sheet json파일로 가져옵니다.</span>
+excelIo.open(excelFile, <span class="hljs-keyword">function</span> (json) &#123;
+    <span class="hljs-keyword">var</span> workbookObj = json;
+    workbook.fromJSON(workbookObj);
+&#125;, <span class="hljs-keyword">function</span> (e) &#123;
+    <span class="hljs-number">// process error</span>
+    <span class="hljs-string">console</span>.log(e);
+&#125;);
+<span class="hljs-number">//파일을 Excel로 내보내기 위해 Spread.Sheets json을 내보냅니다.</span>
+excelio.save(json, <span class="hljs-keyword">function</span> (blob) &#123;
+    <span class="hljs-number">//원하는 대로 구현하세요. </span>
+    <span class="hljs-number">//당신은 저장할 수 있습니다 같이</span>
+&#125;, <span class="hljs-keyword">function</span> (e) &#123;
+    <span class="hljs-number">//process error</span>
+    <span class="hljs-string">console</span>.log(e);
+&#125;);</code></pre>
   <br/>
+<p>
+    4. 또한 <b>암호</b>를 사용하여 Excel 파일을 열거나 저장할 수 있습니다.<b>열기 및 저장</b> 방법에 <b>&#123;password : xxxx&#125; 옵션</b>을 전달하면됩니다. 예 :
+</p>
+
+<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-number">//import excel file to Spread.Sheets json</span>
+excelIo.open(excelFile, <span class="hljs-keyword">function</span> (json) &#123;
+    <span class="hljs-keyword">var</span> workbookObj = json;
+    workbook.fromJSON(workbookObj);
+&#125;, <span class="hljs-keyword">function</span> (e) &#123;
+    <span class="hljs-number">// process error</span>
+    <span class="hljs-string">console</span>.log(e);
+&#125;,&#123;password:xxxx&#125;);
+<span class="hljs-number">//export Spread.Sheets json to excel file</span>
+excelio.save(json, <span class="hljs-keyword">function</span> (blob) &#123;
+    <span class="hljs-number">//do whatever you want with blob</span>
+    <span class="hljs-number">//such as you can save it</span>
+&#125;, <span class="hljs-keyword">function</span> (e) &#123;
+    <span class="hljs-number">//process error</span>
+    <span class="hljs-string">console</span>.log(e);
+&#125;,&#123;password:xxxx&#125;);</code></pre>
+  <br/>
+
+
+
+
   <h2>
     샘플코드:
   </h2>

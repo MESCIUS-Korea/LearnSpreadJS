@@ -11,7 +11,7 @@ spread.repaint();</code></pre>
 
   <br/>
   <p>
-    3. 대부분의 경우 Spread를 변경하면 구성 요소가 자동으로 새로 고칩니다. 한 번에 많은 변경을 실시해, 스프레드가 여러 차례 다시 칠해지기를 원하지 않는 경우, <b>suspendPaint</b>를 호출 해 변경을 실시하면서 페인트 다시 그만 둘 수 있습니다. 변경이 끝나면 <b>resumePaint</b>를 호출하여 재 페인트된 스프레드를 알 수 있습니다. <br/>예를 들어:
+    3. 대부분의 경우 Spread를 변경하면 구성 요소가 자동으로 새로 고칩니다. 한 번에 많은 변경을 실시해, Spread가 여러 차례 다시 칠해지기를 원하지 않는 경우, <b>suspendPaint</b>를 호출 해 변경을 실시하면서 페인트 다시 그만 둘 수 있습니다. 변경이 끝나면 <b>resumePaint</b>를 호출하여 재 페인트된 Spread를 알 수 있습니다. <br/>예를 들어:
   </p>
   <pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> spread  = $(<span class="hljs-string">'#ss'</span>).data(<span class="hljs-string">'workbook'</span>);
 spread.suspendPaint(); 
