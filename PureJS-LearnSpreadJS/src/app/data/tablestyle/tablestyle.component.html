@@ -21,7 +21,7 @@ table.highlightLastColumn(<span class="hljs-number">true</span>); <span class="h
 table.setColumnName(<span class="hljs-number">1</span>, <span class="hljs-string">'column2'</span>); <span class="hljs-comment">//테이블 헤더 텍스트를 설정</span>
 table.setColumnFormula(<span class="hljs-number">0</span>, <span class="hljs-string">'=SUM(A1:A4)'</span>); <span class="hljs-comment">//지정된 인덱스를 사용하여 테이블 바닥 글 수식 설정</span>
 <span class="hljs-string">'SUM(B2:B5)'</span>  === table.getColumnFormula(<span class="hljs-number">0</span>); <span class="hljs-comment"> //지정된 인덱스가있는 테이블 바닥 글 수식을 가져옵니다.</span></code></pre>  
-<p>3. 스프레드 시트는 내장 된 표 스타일을 지원하거나 표 스타일을 사용자 정의 할 수 있습니다. 예 :</p>
+<p>3. Spread.Sheets는 내장 된 표 스타일을 지원하거나 표 스타일을 사용자 정의 할 수 있습니다. 예 :</p>
 <pre class="sample-code"><code class="js hljs javascript">table.style(GC.Spread.Sheets.Tables.TableThemes.dark1);
 <span class="hljs-keyword">var</span> border = <span class="hljs-keyword">new</span> GC.Spread.Sheets.LineBorder();
 <span class="hljs-keyword">var</span> styleInfo = <span class="hljs-keyword">new</span> GC.Spread.Sheets.Tables.TableStyle(<span class="hljs-string">'red'</span>, <span class="hljs-string">'black'</span>,<span class="hljs-string">'10px arial'</span>, border, border, border, border, border, border);

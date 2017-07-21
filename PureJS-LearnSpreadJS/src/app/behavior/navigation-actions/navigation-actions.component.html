@@ -8,8 +8,8 @@
   <li><b>moveToPreviousCell : 이전 셀로 이동합니다 (Shift + Tab의 기본 동작). </b></li>
   <li><b>selectNextControl : 지정되지 않은 경우 spread.nextControl 지정된 요소 또는 자동 감지 된 요소를 선택합니다. </b></li>
   <li><b>selectPreviousControl : 설정되지 않은 경우 spread.previousControl 지정된 요소 또는 자동 감지 된 요소를 선택합니다. </b></li>
-  <li><b>moveToNextCellThenControl : 활성 셀이 마지막으로 표시된 셀이면 다음 셀로 이동 한 후 다음 컨트롤을 선택합니다. </b></li>
-  <li><b>moveToPreviousCellThenControl : 활성 셀이 첫 번째 보이는 셀이면 이전 셀로 이동 한 다음 이전 컨트롤을 선택합니다. </b></li>
+  <li><b>moveToNextCellThenControl : Active 셀이 마지막으로 표시된 셀이면 다음 셀로 이동 한 후 다음 컨트롤을 선택합니다. </b></li>
+  <li><b>moveToPreviousCellThenControl : Active 셀이 첫 번째 보이는 셀이면 이전 셀로 이동 한 다음 이전 컨트롤을 선택합니다. </b></li>
 </ul>
 <p>
 2. nextControl 및 previousControl 메서드를 사용하여 선택한 컨트롤을 설정합니다. 예 :
@@ -18,7 +18,7 @@
 spread.nextControl(<span class="hljs-keyword">document</span>.getElementById(<span class="hljs-string">'myNextControl'</span>));
 spread.previousControl(<span class="hljs-keyword">document</span>.getElementById(<span class="hljs-string">'myPreviousControl'</span>));
 
-<span class="hljs-comment">// let auto detect에 의해 하나를 지정하지 않고 undefined로 설정합니다.</span>
+<span class="hljs-comment">// auto detect에 의해 하나를 지정하지 않고 undefined로 설정합니다.</span>
 spread.nextControl(<span class="hljs-comment">undefined</span>);</code></pre>      
 <p>
 3. 등록 메소드를 사용하여 네비게이션 키와 해당 조치를 설정하십시오. 예 :
