@@ -40,7 +40,7 @@
             "path": "ScrollBar"
           },
           {
-            "header": "Spread 배경화면",
+            "header": "Spread 배경",
             "path": "spreadbackground"
           },
           {
@@ -190,7 +190,7 @@
             "path": "FunctionWildcardsComponent"
           },
           {
-            "header": "사용자 정의 함수",
+            "header": "사용자 함수",
             "path": "CustomFunctionsComponent"
           },
           {
@@ -247,7 +247,7 @@
             "path": "BasictableComponent"
           },
           {
-            "header": "사용자 정의 테이블",
+            "header": "사용자 테이블",
             "path": "CustomtableComponent"
           },
           {
@@ -265,7 +265,7 @@
             "path": "BasicSparklineComponent"
           },
           {
-            "header": "사용자 정의 스파크라인",
+            "header": "사용자 스파크라인",
             "path": "CustomSparklineComponent"
           },
           {
@@ -327,7 +327,7 @@
             "path": "CompatibleComponent"
           },
           {
-            "header": "사용자 정의 스파크라인",
+            "header": "Custom 스파크라인",
             "path": "CustomeSparklineexComponent"
           },
           {
@@ -393,7 +393,7 @@
             "path": "BasicGroupComponent"
           },
           {
-            "header": "사용자 정의 그룹",
+            "header": "사용자 그룹",
             "path": "CustomGroupComponent"
           }
         ]
@@ -407,7 +407,7 @@
             "path": "BasicCommnetComponent"
           },
           {
-            "header": "사용자 정의 코멘트",
+            "header": "사용자 코멘트",
             "path": "CustomCommentComponent"
           },
           {
@@ -537,11 +537,11 @@
             "path": "HyperlinkCelltypeComponent"
           },
           {
-            "header": "사용자 정의 셀 타입",
+            "header": "사용자 셀 타입",
             "path": "CustomCelltypeComponent"
           },
           {
-            "header": "사용자 정의 헤더 셀 타입",
+            "header": "사용자 헤더 셀 타입",
             "path": "CustomheaderCelltypeComponent"
           }
         ]
@@ -593,7 +593,7 @@
             "path": "BasicDataValidatorComponent"
           },
           {
-            "header": "사용자 정의 유효성 검사",
+            "header": "사용자 유효성 검사",
             "path": "CustomDataValidatorsComponent"
           }
         ]
@@ -607,7 +607,7 @@
             "path": "BasicFillComponent"
           },
           {
-            "header": "사용자 정의 채우기",
+            "header": "사용자 채우기",
             "path": "CustomFillComponent"
           }
         ]
@@ -617,11 +617,11 @@
         "path": "behavior-format",
         "items": [
           {
-            "header": "기본 포멧터",
+            "header": "기본 양식",
             "path": "BasicFormatterComponent"
           },
           {
-            "header": "사용자 정의 양식",
+            "header": "사용자 양식",
             "path": "CustomFormatterComponent"
           }
         ]
@@ -631,11 +631,11 @@
         "path": "behavior-touch",
         "items": [
           {
-            "header": "기본 터치",
+            "header": "기본 터지",
             "path": "BasicTouchComponent"
           },
           {
-            "header": "터치 도구 모음 항목",
+            "header": "터치 툴 스크립",
             "path": "TouchToolStripComponent"
           }
         ]
@@ -645,11 +645,11 @@
         "path": "behavior-print",
         "items": [
           {
-            "header": "기본 인쇄",
+            "header": "기본 프린트",
             "path": "BasicPrintComponent"
           },
           {
-            "header": "사용자 정의 인쇄",
+            "header": "사용자 프린트",
             "path": "CustomPrintComponent"
           }
         ]
@@ -659,7 +659,7 @@
         "path": "behavior-filter",
         "items": [
           {
-            "header": "필터 기초",
+            "header": "기본 필터",
             "path": "BasicFilterComponent"
           },
           {
@@ -671,7 +671,7 @@
             "path": "FilterActionComponent"
           },
           {
-            "header": "사용자 정의 필터",
+            "header": "사용자 필터",
             "path": "CustomFiltersComponent"
           }
         ]
@@ -687,7 +687,7 @@
         "path": "excelIO-clienId",
         "items": [
           {
-            "header": "클라이언트에서 엑셀 가져오기 내보내기",
+            "header": "Excel 가져오기/내보내기",
             "path": "ClientSideExcelIOComponent"
           }       
         ]
@@ -731,6 +731,10 @@
           {
             "header": "부동산 투자 분석",
             "path": "RealEstateInvestmentAnalysisComponent"
+          },
+          {
+            "header": "LBO DCF 모델",
+            "path": ""
           },
           {
             "header": "EVA 예제",

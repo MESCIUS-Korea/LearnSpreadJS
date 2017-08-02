@@ -1,14 +1,18 @@
 <h1 class="page-header">
-  1040 세금 양식 | 1040 Tax Form
+  1040 세금 양식
 </h1>
 <div id="content" class="content">
   <p>양식 1040 (미국 개인 소득세 환급)은 IRS에 제출 된 개인 (개인) 연방 소득세 신고서의 시작 양식입니다.</p>
   <p>Spread.Sheets는 <b>fromJSON</b>을 사용하여 저장된 파일의 데이터를로드합니다.</p>
   
-<pre class="sample-code"><code class="js hljs javascript"><span class="hljs-keyword">var</span> sd = <span class="hljs-string">JSON</span>.parse(data);
-spread.suspendPaint();
-spread.fromJSON(sd[0]);
-spread.resumePaint();</code></pre> 
+<pre class="sample-code">
+  <code class="html hljs xml">
+    <span class="hljs-doctype">var sd = JSON.parse(data);</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">spread.suspendPaint();</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">spread.fromJSON(sd[0]);</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">spread.resumePaint();</span>&gt;</span>
+  </code>
+</pre>
 
 <br/>
 <h2>
